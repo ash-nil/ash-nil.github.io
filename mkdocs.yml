@@ -1,1 +1,29 @@
-site_name: My Docs
+# configuration:
+theme:
+  name: material
+repo_name: ash-nil/ash-nil.github.io
+repo_url: https://github.com/ash-nil/ash-nil.github.io
+
+# site info
+site_name: Ashley Nilson - Sample Work
+site_url: https://ash-nil.github.io/
+site_author: Ashley Nilson
+site_description: >-
+  A few samples of work completed by Ashley Nilson, a data analyst with a strong background in project management and an MS in Applied Data Science for Business with a Graduate Certificate in Business Intelligence & Analytics from Portland State University. 
+
+# navigation
+nav:
+- Home: index.md
+- "Traffic Analysis (Python)": docs/Traffic_Analysis.html
+- "EV Charging Optimization (R)": docs/EV_Charging_Optimization.html
+- "Fraudulent Account Detection (Python)": docs/Fraudulent_Acct_Detection.html
+- "AB Game Testing (Python)": docs/Game_AB_Testing.html
+- "Temporal Database Updates (SQL)": docs/Database_Updates.sql
+- "Housing Price Prediction (Python)": docs/Housing_Price_Prediction.html
+- HBR Reports:
+  - "Asante Teaching Hospital Billing (PDF)": docs/HBR_Reports/Asante.pdf
+  - "Danushi Plant Manufacturing (PDF)": docs/HBR_Reports/Danshui.pdf
+  - "London Water Pricing (PDF)": docs/HBR_Reports/LondonWater.pdf
+  - "Police Billing Structure (PDF)": docs/HBR_Reports/PolicePricing.pdf
+  - "Tidal Cloud Accounting (PDF)": docs/HBR_Reports/TidalCloud.pdf
+  - "Toliza Museum of Art Admission (PDF)": docs/HBR_Reports/Toliza.pdf

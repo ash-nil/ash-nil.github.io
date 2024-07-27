@@ -2,10 +2,8 @@
 title: "EV Charging Station Optimization Project"
 author: "Bryan Hernandez,  Morgan Mahon, Ashley Nilson, and Sujitha Raj Rajagopal"
 date: "`r Sys.Date()`"
-output: pdf_document
-toc: true
+output: html_document
 wrap: sentence
-bibliography: Citations.bib
 editor_options: 
   markdown: 
     wrap: 72
@@ -289,7 +287,7 @@ print(day_counts)
 
 ```
 
-```{r visualize_data by week}
+```{r visualize_data by week, eval=FALSE}
 # converting to date format
 Blink2$Connection <- as.Date(Blink2$Connection, format = "%A, %B %d, %Y")
 
@@ -341,7 +339,7 @@ occurrences_stats <- date_occurrences %>%
 print(occurrences_stats)
 ```
 
-```{r visualize times by days of week}
+```{r visualize times by days of week, eval=FALSE}
 #  correct format
 Blink2$CTime <- as.POSIXct(Blink2$CTime, format = "%I:%M:%S %p")
 
@@ -360,7 +358,7 @@ ggplot(Blink2, aes(x = CTime, fill = Day_of_Week)) +
 
 ```
 
-```{r min, median, max}
+```{r min, median, max, eval=FALSE}
 # correct format: character format, convert it to POSIXct
 Blink2$CTime <- as.POSIXct(Blink2$CTime, format = "%I:%M:%S %p")
 
