@@ -1,0 +1,498 @@
+---
+title: "Housing Price Prediction"
+author: "Ashley Nilson"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, echo=FALSE, message = FALSE, fig.show='hide'}
+#call needed packages
+knitr::opts_chunk$set(echo = TRUE, message=FALSE)
+library(lessR)
+library(dplyr)
+library(tidyr)
+library(rlang)
+library(stringr)
+library(glmnet)
+library (kableExtra) 
+library(bookdown)
+library(formatR)
+```
+
+\newpage
+
+## Introduction
+
+For this report, I'll be working with the *[Housing Price Prediction dataset](https://www.kaggle.com/datasets/harishkumardatalab/housing-price-prediction)*, found on *[Kaggle](https://www.kaggle.com/)*. Each sample in the dataset represents a single house in an unnamed sqft of India. As shown below, there are no missing values within the dataset and we have a mix of categorical and continuous variables. Each sample is numerically labeled by its row number.
+
+To make the calculations easier to understand for a US audience, we're going to transform the price (currently in Rupees) to USD. The current exchange rate as of this report is 0.012 USD for every 1 rupee, so that will be the calculation used. Additionally, one of the columns (area) is in square feet, so we will rename that column for clarity.  
+
+```{r read in dataset, echo=FALSE, results='hide'}
+#read in dataset, display details
+d <- Read("data/HOUSING-details.csv")
+d$price.usd <- 0.012*(d$price)
+colnames(d)[2] <- "sqft"
+details(d)
+```
+
+```{r, echo=FALSE}
+#display dataset head
+kbl (t(head(d)), booktabs=T, escape=F, align="c", 
+     caption = "Dataset Head") |>
+  kable_styling(latex_options = c("hold_position","scale_down", "striped"))
+```
+
+
+
+
+Each variable represents the following house features:
+
+**Integers**
+
+- *price*: The price of the house in rupees.
+- *price.usd*: The price of the house in USD.
+- *sqft*: The total sqft of the house in square feet. 
+- *bedrooms*: The number of bedrooms in the house.
+- *bathrooms*: The number of bathrooms in the house.
+- *stories*: The number of stories in the house.
+- *parking*: The number of parking spaces available within the house.
+
+**Categorical**
+
+- *mainroad*: Whether the house is connected to the main road (Yes/No).
+- *guestroom*: Whether the house has a guest room (Yes/No).
+- *basement*: Whether the house has a basement (Yes/No).
+- *hotwaterheating*: Whether the house has a hot water heating system (Yes/No).
+- *airconditioning*: Whether the house has an air conditioning system (Yes/No).
+- *prefarea*: Whether the house is located in a preferred sqft (Yes/No).
+- *furnishingstatus*: The furnishing status of the house (Fully Furnished, Semi-Furnished, Unfurnished).
+
+### Variables of Interest
+
+For this report, we will work with a single target variable: price.usd. 
+
+Since the full dataset has a total of 13 variables (including our targets), we will proactively reduce the number of variables for the sake of simplicity in this project. With that, the variables we will include (including our target) are price.usd, sqft, bedrooms, bathrooms, stories, parking, basement, airconditioning, and prefarea. 
+
+## Analysis
+
+```{r, results='hide', echo=FALSE, fig.show='hide'}
+#conduct regression analysis
+reg <- reg(price.usd ~ sqft + bedrooms + bathrooms + stories + 
+             basement + airconditioning + parking + prefarea)
+```
+
+The intention of our analysis is to generate a model for predicting the price (in USD) of a given home. The target variable is *price.usd* and the predictor variables are:  
+
+- sqft (continuous)
+- bedrooms (continuous)
+- bathrooms (continuous)
+- stories (continuous)
+- basementyes (binary dummy variable)
+- airconditioningyes (binary dummy variable)
+- parking (continuous)
+- prefareayes (binary dummy variable)
+
+The dummy variables for basement, airconditioning, and prefarea were automatically generated using the lessR regression analysis instruction; the "no" selections were dropped so the variables were updated to include "yes" at the end. A 0 in these fields would indicate "no" while a 1 would indicate "yes" for these variables.
+
+### Scatterplot
+
+As we begin our work, we'll want to review some basic information on the regression analysis to ensure we're working with predictors that correlate to the target variable, but not to each other.  
+
+The first step in that process is to review the scatterplots for each predictor alongside the target (price.usd). As an example, we'll generate two plots for two predictors: sqft  found in and bedrooms. The first set of plots, shown in \@ref(fig:lm.scatter), uses the best-fitting least squares line while the other set of plots, shown in \@ref(fig:exp.scatter), uses the best-fitting exponential curve.   
+
+```{r, results='hide', echo=FALSE, fig.show="hold", out.width="50%", fig.cap="Sqft Feet and Bedrooms Scatterplots, Least Squares"}
+#generate least squares scatterplots on single predictor variables
+Plot(sqft, price.usd, fit="lm")
+Plot(bedrooms, price.usd, fit="lm")
+```
+
+```{r, results='hide', echo=FALSE, fig.show="hold", out.width="50%", fig.cap="Sqft and Bedrooms Scatterplots, Exponential Curve"}
+#generate exponential curve scatterplots on single predictor variables
+Plot(sqft, price.usd, fit="exp")
+Plot(bedrooms, price.usd, fit="exp")
+```
+
+Each plot does appear to fit the data, though the exponential curve has slightly better metrics with R^2^ when reviewing the variables on an individual basis:
+
+*Area*:  
+
+- Least Squares Line: Fit: MSE = 359,716,100; R^2^ = 0.287
+- Exponential Curve: MSE = 0.098; R^2^ = 0.295
+
+*Bedrooms*:  
+
+- Least Squares Line: MSE = 436,925,507; R^2^ = 0.134
+- Exponential Curve: MSE = 0.120; R^2^ = 0.137
+
+With that, for the sake of this project, we're going to conduct a logistic regression for the target variable prior to continuing our analysis. To do so, we're making a logarithmic transformation on the target variable, and will rerun our regression analysis using the transformed variable.  
+
+```{r log reg prep, echo=FALSE, fig.show='hide', results='hide'}
+#logarithmic transform price.usd
+d$price.usd.log <- log(d$price.usd)
+
+#verify change
+details(d)
+```
+
+
+```{r run initial log, echo=FALSE, fig.show='hide', results='hide'}
+#run new analysis with log transformed target
+reg.log <- reg(price.usd.log ~ sqft + bedrooms + bathrooms + stories + 
+             basement + airconditioning + parking + prefarea)
+```
+
+
+### Correlation Matrix
+
+At this point, we're going to review our Correlation Coefficient output from the regression analysis. 
+
+```{r, echo=FALSE}
+#generate a display of the correlation coefficients
+reg.cor <- matrix(c(1.00,	0.54,	0.37,	0.49,	0.42,	0.22,	0.46,	0.37,	0.34,
+                    0.54,	1.00,	0.15,	0.19,	0.08,	0.05,	0.22,	0.35,	0.23,
+                    0.37,	0.15,	1.00,	0.37,	0.41,	0.10,	0.16,	0.14,	0.08,
+                    0.49,	0.19,	0.37,	1.00,	0.33,	0.10,	0.19,	0.18,	0.06,
+                    0.42,	0.08,	0.41,	0.33,	1.00,	-0.17,	0.29,	0.05,	0.04,
+                    0.22,	0.05,	0.10,	0.10,	-0.17,	1.00,	0.05,	0.05,	0.23,
+                    0.46,	0.22,	0.16,	0.19,	0.29,	0.05,	1.00,	0.16,	0.12,
+                    0.37,	0.35,	0.14,	0.18,	0.05,	0.05,	0.16,	1.00,	0.09,
+                    0.34,	0.23,	0.08,	0.06,	0.04,	0.23,	0.12,	0.09,	1.00), nrow=9)
+rownames(reg.cor) <- c(reg.log$vars)
+colnames(reg.cor) <- c(reg.log$vars)
+kbl (reg.cor, booktabs=T, escape=F, align="c", 
+     caption = "Correlation Coefficients") |>
+  kable_styling(latex_options = c("hold_position","scale_down", "striped"))
+  
+```
+
+From the information provided, we can determine that the predictor variables do relate to the target variable, to differing degrees. Sqft (the house's area), bathrooms (count of bathrooms in the house), airconditioningyes (if the house has air conditioning) and stories (the number of floors) have the highest correlation scores with reference to our target (price.usd). The lowest score is basementyes (if the house has a basement), at 0.22.  
+
+Collinearity between predictor variables does not appear to be a problem in this dataset given that the highest correlation coefficient between two predictor variables is 0.41 with most of the scores well below that threshold.  
+
+As such, based on this cursory review, to predict the price.usd of a given house the final model would likely include sqft, bathrooms, airconditioningyesm and stories. Some of the other variables be included as well, however the actual selection will be dependent on how the interactions between variables are adjusted with further model adjustments.  
+
+### Estimated Model
+
+The estimates from our final model are included in the table below. It is important to note that while sqft shows as having a 0.000 estimated slope coefficient to three decimal points, the actual slope coefficient is 0.000056. Although this may seem small, in the scale of our analysis it is actually quite impactful (as will be shown in our hypothesis test).    
+
+```{r, echo=FALSE}
+#generate a display of the estimates for the dataset
+reg.est <- matrix(format(c(9.956, 0.000, 0.018, 0.188, 0.102, 0.116, 0.171, 0.054, 0.158, 
+                   0.041, 0.000, 0.014, 0.020, 0.012, 0.020, 0.021, 0.011, 0.022,
+                   241.399, 11.929, 1.265, 9.303, 8.322, 5.770, 8.294, 4.835, 7.144, 
+                   0.000, 0.000, 0.206, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000,
+                   9.875, 0.000, -0.010, 0.149, 0.078, 0.076, 0.130, 0.032, 0.115, 
+                   10.037, 0.000, 0.046, 0.228, 0.126, 0.155, 0.211, 0.077, 0.202),nsmall=3), nrow=9)
+rownames(reg.est) <- c("(Intercept)", reg.log$vars[2:9])
+colnames(reg.est) <- c("Estimate", "Std Err", "t-value", "p-value", "Lower 95", "Upper 95")
+reg.est["airconditioningyes",] <- c(0.168,   0.022,    7.605,    format(0.000, nsmall=3),    
+                                    0.125,    0.212)
+kbl (reg.est, booktabs=T, escape=F, align="c",   
+     caption = "Initial Model Estimates") |>
+  kable_styling(latex_options = c("hold_position", "striped"))
+  
+```
+
+
+From the information shown above, we can generate an the following regression model. For the model, we are using 6 decimal points rather than 3, to better illustrate the model.
+
+$$
+ \begin{split}
+ \begin{aligned}
+     log \: \hat{y} = 9.933829	 &+ 0.000056 \cdot x_{sqft} \\ 
+     &+ 0.026280 \cdot x_{bedrooms} \\
+     &+ 0.172082 \cdot x_{bathrooms} \\ 
+     &+ 0.104458 \cdot x_{stories} \\ 
+     &+ 0.126682 \cdot x_{basementyes} \\ 
+     &+ 0.168142 \cdot x_{airconditioningyes} \\ 
+     &+ 0.060303 \cdot x_{parking} \\ 
+     &+ 0.139599 \cdot x_{prefareayes} \\
+  \end{aligned}
+  \end{split}
+$$
+This model uses the intercept and the sample slope coefficients for each predictor variable, which will be multiplied by provided values to generate the natural logarithm of the estimated price.usd. To get an actual price.usd prediction, we will need to take the result and provide its inverse (the exponential function). Each sample slope coefficient is an indication of how much the (natural log) price.usd of a house approximately changes within our sample data with a one-unit change in the specified predictor variable, when the other predictor variables held constant (i.e. no change in their values).    
+
+As an example, the sample slope coefficient of 0.000056 for $b_{sqft}$ indicates, *for these sample data only when all other variables are held constant*, every unit (square foot) increase in sqft produces, on average, a 0.000056 increase in the natural log of the house's price in USD.  
+
+To provide an example of how the estimated model applies to an actual house, we'll work with the second row in the dataset, house~2~. That house has the following details:  
+
+```{r, echo=FALSE, fig.show='hide'}
+kbl (d[2,c("price.usd", "price.usd.log", "sqft", "bedrooms", "bathrooms", "stories", "basement", "airconditioning", "parking", "prefarea")], booktabs=T, escape=F, align="c", 
+     caption = "Second row of dataset") |>
+  kable_styling(latex_options = c("hold_position","scale_down"))
+```
+
+The manually calculated estimation for this house's price.usd is:
+$$
+ \begin{split}
+ \begin{aligned}
+     log \: \hat{y} = 14.356678	 &+ 0.000056 \cdot 8960 \\ 
+     &+ 0.026280 \cdot 4 \\
+     &+ 0.172082 \cdot 4 \\ 
+     &+ 0.104458 \cdot 4 \\ 
+     &+ 0.126682 \cdot 0 \\ 
+     &+ 0.168142 \cdot 1 \\ 
+     &+ 0.060303 \cdot 3 \\ 
+     &+ 0.139599 \cdot 0\\
+  \end{aligned}
+  \end{split}
+$$
+
+The result of this calculation is $log\: \hat{y} = 11.99592$. When we take the inverse of the log for that value, the estimated house price in USD is approximately 162,092. Do note that the log of price.USD provided in the readout for the house is more accurate, as it is not rounded. However, we're including these calculations as representations of the process.    
+
+Since this is just an estimate, there will of course be a residual (difference between the fitted value and the actual value). The residual can be calculated with the  formula $e_i = Y_i - \hat{Y} = 147000 - 162092 = -15092$, which tells us that when given the predictor variable values for house~2~, our model generates a fitted value that is 15,092 more than the actual value for this house in USD.    
+
+### Hypothesis Test
+
+The core of the hypothesis test is to determine if there is a relation between each predictor variable and our target variable (price.usd). What's being tested is the null hypothesis, that $\beta_{i} = 0$ and therefore in the population, a change in predictor~i~ for a house *does not* lead to consistent increases or decreases in the price of a house, when all other predictor variables are held constant.
+
+The alternative to the null hypothes is $\beta_{i} \ne 0$ and therefore in the population, a change in predictor~i~ for a house *does* lead to consistent increases or decreases in the price of a house, when all other predictor variables are held constant.
+
+Two key values in this test are the *t-value* and the *p-value*. The *t-value* is the number of estimated standard errors $\beta_{i}$ is from the null hypothesized slope (0). The *p-value* is the probability of obtaining an estimated slope coefficient $\beta_{i}$ with a given *t-value*; the cutoff for the p-value is generally $\alpha = 0.05$ so if the p-value is above that cutoff we *fail to reject* the null hypothesis.      
+
+For this, we will provide examples using two of the predictor variables: sqft and bedrooms. We will provide the null hypothesis for each, the alternative, and calculations that lead to *reject* or *failing to reject* the null hypothesis.   
+
+#### Hypothesis Test for Area   
+
+- Null hypothesis: $\beta_{sqft} = 0$
+- Alternative: $\beta_{sqft} \ne 0$
+- t-value: $t_{sqft} = \frac{b_{sqft} - 0}{s_{sqft}} = \frac{0.000056 - 0}{0.000005} = 11.2$
+- p-value: 0.000 to three decimal points
+
+**Decision**: If the null hypothesis that $\beta_{sqft}=0$ is true, obtaining a value for b~sqft~ more than eleven standard errors from 0 is very unlikely, with a probability of 0.000 to three decimal digits. As such, we *reject* the null hypothesis for $\beta_{sqft}$.
+
+**Executive Summary**: Our calculations from the sample dataset indicate there is a reasonable relationship between the sqft  of a house and the price of the house. When the sqft of a house increases, with all other predictor variables unchanged, the price of the house will generally also increase (this can be applied to either the USD or rupee value for the home).
+
+#### Hypothesis Test for Bedrooms
+
+- Null hypothesis: $\beta_{bedrooms} = 0$
+- Alternative: $\beta_{bedrooms} \ne 0$
+- t-value: $t_{bedrooms} = \frac{b_{bedrooms} - 0}{s_{bedrooms}} = \frac{0.026280 - 0}{0.014961} = 1.757$
+- p-value: 0.080 to three decimal points
+
+**Decision**: If the null hypothesis that $\beta_{bedrooms}=0$ is true, obtaining a value for b~sqft~ less than two standard errors from 0 is highly likely, with a probability of 0.080 to three decimal digits. As such, we *fail to reject* the null hypothesis for $\beta_{bedrooms}$.
+
+**Executive Summary**: Our calculations from the sample dataset indicate there is not a reasonable relationship between the number of bedrooms listed for a house and the price of the house. When the number of bedrooms of a house increases, with all other predictor variables unchanged, there is no reliable impact on the price of the house (this can be applied to either the USD or rupee value for the home).
+
+### Confidence Interval
+
+The confidence interval for the slope coefficient b~i~ provides an estimated range for the value of the population slope coefficient, $\beta_{i}$. Knowing that in a normal distribution, approximately 95% of values will fall within approximately 2 standard deviations of the mean, the confidence interval uses the estimated slope coefficient b~i~ and it's standard deviation to determine upper and lower bounds for the population slope coefficient $\beta_{i}$. As with prior sections, we will work with sqft and bedrooms.  
+
+#### Confidence Interval for Area
+
+- Sample Slope Coefficient: $b_{sqft} = 0.000056$
+- Standard Error: $s_{b-sqft} = 0.000005$
+- Margin of Error: $b_{sqft} \pm 2 \cdot s_{b-sqft} = 0.000056 \pm 2 \cdot 0.000005$
+- Lower Bound: $0.000056 - 2 \cdot 0.000005 = 0.000056 - 0.00001  = 0.000046$
+- Upper Bound: $0.000056 + 2 \cdot 0.000005 = 0.000056 + 0.00001 = 0.000066$
+
+**Executive Summary**: Based on our calculations with the provided dataset we can estimate that when the sqft  of a house increases by 1 square foot, and no changes are made to other predictor variables, the price of the house will increase within an expected range for about 95% of houses within the main population. 
+
+**Consistancy**: The range of values in the confidence interval are all positive values, not including 0, which is consistent with our rejection of the null hypothesis and our resulting determination that $b_{sqft} \ne 0$.
+
+#### Confidence Interval for Bedrooms
+
+- Sample Slope Coefficient: $b_{bedrooms} = 0.026280$
+- Standard Error: $s_{b-bedrooms} = 74745.616$
+- Margin of Error: $b_{bedrooms} \pm 2 \cdot s_{b-bedrooms} = 0.026280 \pm 2 \cdot 0.014961$
+- Lower Bound: $0.026280 - 2 \cdot 0.014961 = 0.026280 - 0.029922  = -0.003642$
+- Upper Bound: $0.026280 + 2 \cdot 0.014961 = 0.026280 + 0.029922 = 0.056202$
+
+**Executive Summary**: Based on our calculations with the provided dataset we are unable to provide a reliable estimation on price.usd change for when the number of bedrooms of a house increases and no changes are made to other predictor variables. 
+
+**Consistancy**: The range of values in the confidence interval are include 0 as the lower bound is a negative number and the upper bound is positive. This is consistent with our failure to reject the null hypothesis and our resulting determination that $b_{sqft} = 0$.
+
+### Model Fit
+
+For the model fit, there are two main elements we're considering: R^2^, and PRESS R^2^. The values for our model are included below:  
+
+- R^2^: 0.649
+- PRESS R^2^: 0.637
+
+Best practices for most models needs an R^2^ value above .6, which these results display. Additionally, PRESS R^2^, which tests the model against a simluation of testing data, has a score above .6 as well. As such, the model in its current status fits relatively well. However, it's always worth further analysis to continue refining the model.  
+
+#### Outliers
+
+The first thing we'll consider is outliers. There are 11 potential outliers, shown below. We identified these outliers by conducting a search for possible outliers that have at least one of the followign features: a studentized residual greater than 2.5 or less than -2.5, a DFFITS score greater than 0.5, or a Cook's Distance greater than 0.5.
+
+```{r, echo=FALSE}
+#generate a display of the potential outliers
+outliers <- matrix(reg.log$out_residuals[6:25],nrow=20)
+outliers <- str_split_fixed(outliers[,1], '\\s+', 16)
+columns <- c(c(reg.log$vars[2:9]), "price.usd", "fitted", "resid", "rstdnt", "dffits", "cooks")
+rows <- outliers[,2]
+outliers <- matrix(round(as.numeric(outliers[, -c(1:2)]),3), ncol=14, dimnames = (list(rows,columns)))
+outliers <- subset(outliers, outliers[,'rstdnt'] > 2.5 | 
+                     outliers[,'rstdnt'] < (-2.5) | outliers[,'dffits'] > .5 | 
+                     outliers[,'cooks'] > .5)
+kbl (outliers, booktabs=T, escape=F, align="c", 
+     caption = "Potential Outliers") |>
+  kable_styling(latex_options = c("hold_position","scale_down", "striped"))
+```
+
+Although there are some potential outliers that could be kept in the model, most are ripe for removal due to their studentized residual scores. Additionally, for the size of our dataset, removing 11 values will provide a minimal impact on the available data. As such, we'll remove all the potential outliers. To verify the removal, we'll check what row/house 5 (included in the outlier list) is before and after removing the outliers. 
+
+
+```{r remove outliers, echo=FALSE, fig.show='hide', results='hide'}
+#row 5 before removal
+before <- d[5,c("price.usd", "price.usd.log", "sqft", "bedrooms", "bathrooms", "stories", "basement", "airconditioning", "parking", "prefarea")]
+
+#remove outliers from dataset
+d <- d[-c(500, 532, 402, 14,  541, 537, 21,  510, 5,   16,  28),]
+
+after <- d[5,c("price.usd", "price.usd.log", "sqft", "bedrooms", "bathrooms", "stories", "basement", "airconditioning", "parking", "prefarea")]
+```
+
+```{r, echo=FALSE, fig.show='hide'}
+#display outlier removal
+removed <- rbind(before, after)
+rownames(removed) <- c("Before", "After")
+kbl (removed, booktabs=T, escape=F, align="c", 
+     caption = "5th Row Before and After Outlier Removal") |>
+  kable_styling(latex_options = c("hold_position","scale_down"))
+```
+
+
+```{r analysis without outliers, echo=FALSE, fig.show='hide', results='hide'}
+#run standardized analysis after removing outliers
+reg.log2 <- reg(price.usd.log ~ sqft + bedrooms + bathrooms + stories + 
+                  basement + airconditioning + parking + prefarea)
+```
+
+    
+### Model Selection
+
+Now that we've reviewed various statistics on the model and also removed our outliers, we'll want to continue reviewing the p-values for each predictor variable as that is a good indicator of if the variable would be beneficial to the overall model. As shown below, when reviewing the p-values for the estimated slope coefficients for each predictor variable, the bedrooms (number of bedrooms) has a p-value well above the cutoff of $\alpha = 0$ at 0.206 (an increase since removing the outliers). As such, that predictor variable is likely to be removed from the model.  
+
+```{r, echo=FALSE}
+#generate a display of the estimates for the dataset
+reg.est2 <- matrix(format(c(9.956, 0.000, 0.018, 0.188, 0.102, 0.116, 0.171, 0.054, 0.158,
+                            0.041, 0.000, 0.014, 0.020, 0.012, 0.020, 0.021, 0.011, 0.022,
+                            241.399, 11.929, 1.265, 9.303, 8.322, 5.770, 8.294, 4.835, 7.144,
+                            0.000, 0.000, 0.206, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000,
+                            9.875, 0.000, -0.010, 0.149, 0.078, 0.076, 0.130, 0.032, 0.115,
+                            10.037, 0.000, 0.046, 0.228, 0.126, 0.155, 0.211, 0.077, 0.202),nsmall=3), ncol=6)
+rownames(reg.est2) <- c("(Intercept)", reg.log2$vars[2:9])
+colnames(reg.est2) <- c("Estimate", "Std Err", "t-value", "p-value", "Lower 95", "Upper 95")
+reg.est2["airconditioningyes",] <- c(0.171,   0.021,    8.294,    format(0.000,nsmall=3),    
+                                    format(0.130,nsmall=3),    0.211)
+kbl (reg.est2, booktabs=T, escape=F, align="c", 
+     caption = "Revised Model Estimates") |>
+  kable_styling(latex_options = c("hold_position", "striped"))
+```
+
+We also want to consider possible collinearity between the predictor variables, to ensure we're not over-emphasizing a particular feature. The tolerance and VIF scores for each of the predictor variables, displayed int he following table, are within acceptable ranges (tolerance > 0.2 and VIF < 5) to indicate no issues with collinearity.   
+
+```{r, echo=FALSE}
+#generate a display of the collinearity measurements
+reg.col <- matrix(format(c(0.799, 0.732, 0.767, 0.689, 0.855, 0.852, 0.849, 0.887,
+                           1.251, 1.365, 1.303, 1.452, 1.169, 1.174, 1.177, 1.128),nsmall=3), ncol=2)
+rownames(reg.col) <- c(reg.log2$vars[2:9])
+colnames(reg.col) <- c('Tolerance', 'VIF')
+kbl (reg.col, booktabs=T, escape=F, align="c", 
+     caption = "Predictor Collinearity") |>
+  kable_styling(latex_options = c("hold_position", "striped"))
+```
+
+Finally, we can conduct a best subset analysis to identify the best options for the final model. From this analysis, shown below, I would select the second model which uses 7 of the 8 predictor variables (removing bedrooms, as indicated by the p-value previously). This model provides a minimal reduction in the Adjusted R^2^ values while providing a reduction on our overall model. With that, we'll re-run our analysis to remove the predictor that does not directly benefit our efforts.   
+
+    
+```{r, echo=FALSE}
+#generate a display of the best subsets
+best.subset <- matrix(c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                               1, 0, 1, 0, 1, 0, 1, 0, 1, 0,
+                               1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                               1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                               1, 1, 1, 1, 0, 0, 1, 1, 0, 0,
+                               1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                               1, 1, 0, 0, 1, 1, 1, 1, 0, 0,
+                               1, 1, 1, 1, 1, 1, 0, 0, 1, 1,
+                               0.682, 0.681, 0.668, 0.667, 0.662, 0.660, 0.651, 0.651, 0.649, 0.646,
+                               8, 7, 7, 6, 7, 6, 7, 6, 6, 5), ncol=10)
+colnames(best.subset) <- c("sqft", "bedrooms", "bathrooms", "stories", "basementyes", "airconditioningyes",
+                           "parking", "prefareayes",    "R2adj",    "X's")
+kbl (best.subset, booktabs=T, escape=F, align="c", 
+     caption = "Best Subsets") |>
+  kable_styling(latex_options = c("hold_position","scale_down", "striped"))
+```
+
+
+```{r, echo=FALSE, fig.show='hide', results='hide'}
+#run standardized analysis removing bedrooms
+reg.log3 <- reg(price.usd.log ~ sqft + bathrooms + stories + 
+             basement + airconditioning + parking + prefarea)
+```
+
+
+Our reduced model produces the following formula: 
+
+$$
+ \begin{split}
+ \begin{aligned}
+     log \: \hat{y} = 9.988108	 &+ 0.000055 \cdot x_{sqft} \\ 
+     &+ 0.194760 \cdot x_{bathrooms} \\ 
+     &+ 0.106906 \cdot x_{stories} \\ 
+     &+ 0.119582 \cdot x_{basementyes} \\ 
+     &+ 0.170174 \cdot x_{airconditioningyes} \\ 
+     &+ 0.055324 \cdot x_{parking} \\ 
+     &+ 0.158174 \cdot x_{prefareayes} \\
+  \end{aligned}
+  \end{split}
+$$
+
+### Prediction Intervals
+
+For the final element of this project, we'll run a further reduced model (due to limitations on using code to predict on more than 6 variables) against the median values for each variable in our dataset with the intent of representing the prediction interval for a given sample. To simplify the model, we will remove the value for basement.   
+
+```{r, echo=FALSE, fig.show='hide'}
+#generate new values for prediction interval based on median values
+new <- cbind(median(d$sqft), median(d$bathrooms), median(d$stories), "yes", median(d$parking), "no")
+colnames(new) <- c("sqft", "bathrooms", "stories", "airconditioning", "parking", "prefarea")
+kbl (new, booktabs=T, escape=F, align="c", 
+     caption = "Median values for new prediction") |>
+  kable_styling(latex_options = c("hold_position"))
+```
+
+```{r new predictions, echo=FALSE, fig.show='hide', results='hide'}
+#run simplified analysis with new data
+r.new <- reg(price.usd.log ~ sqft +	bathrooms	+ stories	+ airconditioning	+ parking + prefarea, X1.new=4600, X2.new=1, 
+             X3.new=2, X4.new=1, X5.new=0, X6.new=0)
+```
+
+```{r, echo=FALSE, fig.show='hide'}
+new.pred <- cbind(format(10.850,nsmall=3), 0.212, 10.434, 11.268)
+colnames(new.pred) <- c("pred", "s pred", "pi lwr", "pi upr")
+kbl (new.pred, booktabs=T, escape=F, align="c", 
+     caption = "Prediction Intervals for Price on New Data, Natural Log") |>
+  kable_styling(latex_options = c("hold_position"))
+```
+
+To calculate our upper and lower prediction intervals, we will use the following formulas:  
+
+- PI lower bound: $log \: \hat{y} - (t.cut \cdot s_p) = 10.850 - (2 \cdot 0.212) = 10.426$
+- PI upper bound: $log \: \hat{y} + (t.cut \cdot s_p) = 10.850 + (2 \cdot 0.212) = 11.274$
+
+Again, though, this is the logarithmic version of the price, so we need to back transform the information to get the actual prediction intervals:  
+
+- PI lower bound: $\hat{y} = exp \: 10.426 \approx 33725$
+- PI upper bound: $\hat{y} = exp \: 11.274 \approx 78747$
+ 
+From this information, we can assert that if the trend from the past extends into the future without any additional changes to the underlying dynamics, 95% of all possible prices for a 4,600sqft, 2 story house with 1 bathroom, airconditioning, and no parking that is not in a preferred area will be priced in the range of 33,725 to 78,747 (USD). Do keep in mind that this is an estimate for a regioon outside the US, we are simply using USD for easy of understanding the scale of the pricing structure. 
+
+## Business Application
+
+This particular analysis is applicable to a multitude of situations for businesses. Real estate companies can use an analysis like this to identify housing trends and assist with setting the selling or purchase price of a house. Mortgage companies and appraisers can use this kind of data to general comparables to ensure a mortgage is not outsized for the given loan. House flippers can use this kind of information to help identify if they're making a purchase that will provide a good return on investment after rennovations. Really, anyone who is in the housing market could benefit from having the ability to generate predictions on housing prices based on relevant factors. 
+
+## Conclusion: Summary & Interpretation
+
+This analysis allowed us a glimpse into the housing market in an unnamed area of India, where the house prices can vary vastly depending on factors not always considered within the US market. In conducting this analysis, we were able to get an idea of the variance within possible house prices, and also the overall volatility of the market due to the wide ranges by which home prices can vary with identical features. One of the main challenges to this dataset was the fact that it wasn't based in the US, and so the financial figures had to be adapted to make it easily interpretable to someone used to using USD. Additionally, not being US-based, it is not applicable to situations in which I would eprsonally find myself as I am not planning on moving to India any time soon.
+
+Additionally, the dataset was relatively small, with only 525 values. To get a better idea of market prices, additional samples would ideally be included. The data provided was also quite open to interpretation, for example what is the definition of a preferred area? IT was also missing key factors, such as the house type and lot area. Overall, while this analysis could be applied to additional situations, it would need some adjustments by using better suited data and further refinement than I had time or space for within this analysis (i.e. I preemptively removed many of the variables for simplicity, but it would be good to include those initially to get a better picture of the factors that actually influence housing prices in India).  
+
+
+\newpage
+
+## Appendix: Code for this report
+
+```{r ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE, tidy=TRUE, tidy.opts=list(width.cutoff=60)}
+```
