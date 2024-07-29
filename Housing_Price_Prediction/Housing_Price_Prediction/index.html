@@ -1,0 +1,3354 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ashley Nilson">
+        <link rel="canonical" href="https://ash-nil.github.io/Housing_Price_Prediction/Housing_Price_Prediction/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Housing Price Prediction - Ashley Nilson</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Ashley Nilson</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Traffic_Analysis/Traffic_Analysis/" class="dropdown-item">Traffic Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../../Fraudulent_Acct_Detection/Fraudulent_Acct_Detection/" class="dropdown-item">Fraudulent Account Detection</a>
+</li>
+                                    
+<li>
+    <a href="../../Game_AB_Testing/Game_AB_Testing/" class="dropdown-item">AB Game Testing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">R</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../EV_Charging_Optimization/EV_Charging_Optimization/" class="dropdown-item">EV Charging Optimization</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Housing Price Prediction</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">SQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates_PR/" class="dropdown-item">Database Updates PR</a>
+</li>
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates/" class="dropdown-item">Database Review</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">HBR Reports</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../HBR_Reports/Asante/" class="dropdown-item">Asante Teaching Hospital Billing</a>
+</li>
+                                    
+<li>
+    <a href="../../HBR_Reports/Danshui/" class="dropdown-item">Danshui Plant Manufacturing</a>
+</li>
+                                    
+<li>
+    <a href="../../HBR_Reports/LondonWater/" class="dropdown-item">London Water Pricing</a>
+</li>
+                                    
+<li>
+    <a href="../../HBR_Reports/PolicePricing/" class="dropdown-item">Police Billing Structure</a>
+</li>
+                                    
+<li>
+    <a href="../../HBR_Reports/TidalCloud/" class="dropdown-item">Tidal Cloud Accounting</a>
+</li>
+                                    
+<li>
+    <a href="../../HBR_Reports/Toliza/" class="dropdown-item">Toliza Museum of Art Admission</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../EV_Charging_Optimization/EV_Charging_Optimization/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../Database_Updates/Database_Updates_PR/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#housing-price-prediction" class="nav-link">Housing Price Prediction</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#variables-of-interest" class="nav-link">Variables of Interest</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#analysis" class="nav-link">Analysis</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#scatterplot" class="nav-link">Scatterplot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#correlation-matrix" class="nav-link">Correlation Matrix</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#estimated-model" class="nav-link">Estimated Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#hypothesis-test" class="nav-link">Hypothesis Test</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#confidence-interval" class="nav-link">Confidence Interval</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#model-fit" class="nav-link">Model Fit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#model-selection" class="nav-link">Model Selection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#prediction-intervals" class="nav-link">Prediction Intervals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#business-application" class="nav-link">Business Application</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#conclusion-summary-interpretation" class="nav-link">Conclusion: Summary &amp; Interpretation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#appendix-code-for-this-report" class="nav-link">Appendix: Code for this report</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="housing-price-prediction">Housing Price Prediction</h1>
+<h2 id="introduction">Introduction</h2>
+<p>For this report, I’ll be working with the <em><a href="https://www.kaggle.com/datasets/harishkumardatalab/housing-price-prediction">Housing Price Prediction
+dataset</a></em>,
+found on <em><a href="https://www.kaggle.com/">Kaggle</a></em>. Each sample in the dataset
+represents a single house in an unnamed sqft of India. As shown below,
+there are no missing values within the dataset and we have a mix of
+categorical and continuous variables. Each sample is numerically labeled
+by its row number.</p>
+<p>To make the calculations easier to understand for a US audience, we’re
+going to transform the price (currently in Rupees) to USD. The current
+exchange rate as of this report is 0.012 USD for every 1 rupee, so that
+will be the calculation used. Additionally, one of the columns (area) is
+in square feet, so we will rename that column for clarity.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Dataset Head
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+1
+</th>
+<th style="text-align:center;">
+2
+</th>
+<th style="text-align:center;">
+3
+</th>
+<th style="text-align:center;">
+4
+</th>
+<th style="text-align:center;">
+5
+</th>
+<th style="text-align:center;">
+6
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+price
+</td>
+<td style="text-align:center;">
+13300000
+</td>
+<td style="text-align:center;">
+12250000
+</td>
+<td style="text-align:center;">
+12250000
+</td>
+<td style="text-align:center;">
+12215000
+</td>
+<td style="text-align:center;">
+11410000
+</td>
+<td style="text-align:center;">
+10850000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sqft
+</td>
+<td style="text-align:center;">
+7420
+</td>
+<td style="text-align:center;">
+8960
+</td>
+<td style="text-align:center;">
+9960
+</td>
+<td style="text-align:center;">
+7500
+</td>
+<td style="text-align:center;">
+7420
+</td>
+<td style="text-align:center;">
+7500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bedrooms
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bathrooms
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stories
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mainroad
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+guestroom
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+no
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+basement
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hotwaterheating
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+no
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+airconditioning
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+parking
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+prefarea
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+yes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+furnishingstatus
+</td>
+<td style="text-align:center;">
+furnished
+</td>
+<td style="text-align:center;">
+furnished
+</td>
+<td style="text-align:center;">
+semi-furnished
+</td>
+<td style="text-align:center;">
+furnished
+</td>
+<td style="text-align:center;">
+furnished
+</td>
+<td style="text-align:center;">
+semi-furnished
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+price.usd
+</td>
+<td style="text-align:center;">
+159600
+</td>
+<td style="text-align:center;">
+147000
+</td>
+<td style="text-align:center;">
+147000
+</td>
+<td style="text-align:center;">
+146580
+</td>
+<td style="text-align:center;">
+136920
+</td>
+<td style="text-align:center;">
+130200
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Each variable represents the following house features:</p>
+<p><strong>Integers</strong></p>
+<ul>
+<li><em>price</em>: The price of the house in rupees.</li>
+<li><em>price.usd</em>: The price of the house in USD.</li>
+<li><em>sqft</em>: The total sqft of the house in square feet.</li>
+<li><em>bedrooms</em>: The number of bedrooms in the house.</li>
+<li><em>bathrooms</em>: The number of bathrooms in the house.</li>
+<li><em>stories</em>: The number of stories in the house.</li>
+<li><em>parking</em>: The number of parking spaces available within the house.</li>
+</ul>
+<p><strong>Categorical</strong></p>
+<ul>
+<li><em>mainroad</em>: Whether the house is connected to the main road
+    (Yes/No).</li>
+<li><em>guestroom</em>: Whether the house has a guest room (Yes/No).</li>
+<li><em>basement</em>: Whether the house has a basement (Yes/No).</li>
+<li><em>hotwaterheating</em>: Whether the house has a hot water heating system
+    (Yes/No).</li>
+<li><em>airconditioning</em>: Whether the house has an air conditioning system
+    (Yes/No).</li>
+<li><em>prefarea</em>: Whether the house is located in a preferred sqft
+    (Yes/No).</li>
+<li><em>furnishingstatus</em>: The furnishing status of the house (Fully
+    Furnished, Semi-Furnished, Unfurnished).</li>
+</ul>
+<h3 id="variables-of-interest">Variables of Interest</h3>
+<p>For this report, we will work with a single target variable: price.usd.</p>
+<p>Since the full dataset has a total of 13 variables (including our
+targets), we will proactively reduce the number of variables for the
+sake of simplicity in this project. With that, the variables we will
+include (including our target) are price.usd, sqft, bedrooms, bathrooms,
+stories, parking, basement, airconditioning, and prefarea.</p>
+<h2 id="analysis">Analysis</h2>
+<p>The intention of our analysis is to generate a model for predicting the
+price (in USD) of a given home. The target variable is <em>price.usd</em> and
+the predictor variables are:</p>
+<ul>
+<li>sqft (continuous)</li>
+<li>bedrooms (continuous)</li>
+<li>bathrooms (continuous)</li>
+<li>stories (continuous)</li>
+<li>basementyes (binary dummy variable)</li>
+<li>airconditioningyes (binary dummy variable)</li>
+<li>parking (continuous)</li>
+<li>prefareayes (binary dummy variable)</li>
+</ul>
+<p>The dummy variables for basement, airconditioning, and prefarea were
+automatically generated using the lessR regression analysis instruction;
+the “no” selections were dropped so the variables were updated to
+include “yes” at the end. A 0 in these fields would indicate “no” while
+a 1 would indicate “yes” for these variables.</p>
+<h3 id="scatterplot">Scatterplot</h3>
+<p>As we begin our work, we’ll want to review some basic information on the
+regression analysis to ensure we’re working with predictors that
+correlate to the target variable, but not to each other.</p>
+<p>The first step in that process is to review the scatterplots for each
+predictor alongside the target (price.usd). As an example, we’ll
+generate two plots for two predictors: sqft found in and bedrooms. The
+first set of plots, shown in @ref(fig:lm.scatter), uses the best-fitting
+least squares line while the other set of plots, shown in
+@ref(fig:exp.scatter), uses the best-fitting exponential curve.</p>
+<p><img alt="regression model" src="../Housing_Price_Prediction_files/figure-markdown_strict/lm_plots-1.png" /></p>
+<p><img alt="regression model" src="../Housing_Price_Prediction_files/figure-markdown_strict/lm_plots-2.png" /></p>
+<p><img alt="regression model" src="../Housing_Price_Prediction_files/figure-markdown_strict/exp_plots-1.png" /></p>
+<p><img alt="regression model" src="../Housing_Price_Prediction_files/figure-markdown_strict/exp_plots-2.png" /></p>
+</p>
+<p>Each plot does appear to fit the data, though the exponential curve has
+slightly better metrics with R<sup>2</sup> when reviewing the variables
+on an individual basis:</p>
+<p><em>Area</em>:</p>
+<ul>
+<li>Least Squares Line: Fit: MSE = 359,716,100; R<sup>2</sup> = 0.287</li>
+<li>Exponential Curve: MSE = 0.098; R<sup>2</sup> = 0.295</li>
+</ul>
+<p><em>Bedrooms</em>:</p>
+<ul>
+<li>Least Squares Line: MSE = 436,925,507; R<sup>2</sup> = 0.134</li>
+<li>Exponential Curve: MSE = 0.120; R<sup>2</sup> = 0.137</li>
+</ul>
+<p>With that, for the sake of this project, we’re going to conduct a
+logistic regression for the target variable prior to continuing our
+analysis. To do so, we’re making a logarithmic transformation on the
+target variable, and will rerun our regression analysis using the
+transformed variable.</p>
+<h3 id="correlation-matrix">Correlation Matrix</h3>
+<p>At this point, we’re going to review our Correlation Coefficient output
+from the regression analysis.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Correlation Coefficients
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+price.usd.log
+</th>
+<th style="text-align:center;">
+sqft
+</th>
+<th style="text-align:center;">
+bedrooms
+</th>
+<th style="text-align:center;">
+bathrooms
+</th>
+<th style="text-align:center;">
+stories
+</th>
+<th style="text-align:center;">
+basementyes
+</th>
+<th style="text-align:center;">
+airconditioningyes
+</th>
+<th style="text-align:center;">
+parking
+</th>
+<th style="text-align:center;">
+prefareayes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+price.usd.log
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+0.54
+</td>
+<td style="text-align:center;">
+0.37
+</td>
+<td style="text-align:center;">
+0.49
+</td>
+<td style="text-align:center;">
+0.42
+</td>
+<td style="text-align:center;">
+0.22
+</td>
+<td style="text-align:center;">
+0.46
+</td>
+<td style="text-align:center;">
+0.37
+</td>
+<td style="text-align:center;">
+0.34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sqft
+</td>
+<td style="text-align:center;">
+0.54
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+0.15
+</td>
+<td style="text-align:center;">
+0.19
+</td>
+<td style="text-align:center;">
+0.08
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+0.22
+</td>
+<td style="text-align:center;">
+0.35
+</td>
+<td style="text-align:center;">
+0.23
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bedrooms
+</td>
+<td style="text-align:center;">
+0.37
+</td>
+<td style="text-align:center;">
+0.15
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+0.37
+</td>
+<td style="text-align:center;">
+0.41
+</td>
+<td style="text-align:center;">
+0.10
+</td>
+<td style="text-align:center;">
+0.16
+</td>
+<td style="text-align:center;">
+0.14
+</td>
+<td style="text-align:center;">
+0.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bathrooms
+</td>
+<td style="text-align:center;">
+0.49
+</td>
+<td style="text-align:center;">
+0.19
+</td>
+<td style="text-align:center;">
+0.37
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+0.33
+</td>
+<td style="text-align:center;">
+0.10
+</td>
+<td style="text-align:center;">
+0.19
+</td>
+<td style="text-align:center;">
+0.18
+</td>
+<td style="text-align:center;">
+0.06
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stories
+</td>
+<td style="text-align:center;">
+0.42
+</td>
+<td style="text-align:center;">
+0.08
+</td>
+<td style="text-align:center;">
+0.41
+</td>
+<td style="text-align:center;">
+0.33
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+-0.17
+</td>
+<td style="text-align:center;">
+0.29
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+0.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+basementyes
+</td>
+<td style="text-align:center;">
+0.22
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+0.10
+</td>
+<td style="text-align:center;">
+0.10
+</td>
+<td style="text-align:center;">
+-0.17
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+0.23
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+airconditioningyes
+</td>
+<td style="text-align:center;">
+0.46
+</td>
+<td style="text-align:center;">
+0.22
+</td>
+<td style="text-align:center;">
+0.16
+</td>
+<td style="text-align:center;">
+0.19
+</td>
+<td style="text-align:center;">
+0.29
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+0.16
+</td>
+<td style="text-align:center;">
+0.12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+parking
+</td>
+<td style="text-align:center;">
+0.37
+</td>
+<td style="text-align:center;">
+0.35
+</td>
+<td style="text-align:center;">
+0.14
+</td>
+<td style="text-align:center;">
+0.18
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+0.16
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+0.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+prefareayes
+</td>
+<td style="text-align:center;">
+0.34
+</td>
+<td style="text-align:center;">
+0.23
+</td>
+<td style="text-align:center;">
+0.08
+</td>
+<td style="text-align:center;">
+0.06
+</td>
+<td style="text-align:center;">
+0.04
+</td>
+<td style="text-align:center;">
+0.23
+</td>
+<td style="text-align:center;">
+0.12
+</td>
+<td style="text-align:center;">
+0.09
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>From the information provided, we can determine that the predictor
+variables do relate to the target variable, to differing degrees. Sqft
+(the house’s area), bathrooms (count of bathrooms in the house),
+airconditioningyes (if the house has air conditioning) and stories (the
+number of floors) have the highest correlation scores with reference to
+our target (price.usd). The lowest score is basementyes (if the house
+has a basement), at 0.22.</p>
+<p>Collinearity between predictor variables does not appear to be a problem
+in this dataset given that the highest correlation coefficient between
+two predictor variables is 0.41 with most of the scores well below that
+threshold.</p>
+<p>As such, based on this cursory review, to predict the price.usd of a
+given house the final model would likely include sqft, bathrooms,
+airconditioningyesm and stories. Some of the other variables be included
+as well, however the actual selection will be dependent on how the
+interactions between variables are adjusted with further model
+adjustments.</p>
+<h3 id="estimated-model">Estimated Model</h3>
+<p>The estimates from our final model are included in the table below. It
+is important to note that while sqft shows as having a 0.000 estimated
+slope coefficient to three decimal points, the actual slope coefficient
+is 0.000056. Although this may seem small, in the scale of our analysis
+it is actually quite impactful (as will be shown in our hypothesis
+test).</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Initial Model Estimates
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Estimate
+</th>
+<th style="text-align:center;">
+Std Err
+</th>
+<th style="text-align:center;">
+t-value
+</th>
+<th style="text-align:center;">
+p-value
+</th>
+<th style="text-align:center;">
+Lower 95
+</th>
+<th style="text-align:center;">
+Upper 95
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+9.956
+</td>
+<td style="text-align:center;">
+0.041
+</td>
+<td style="text-align:center;">
+241.399
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+9.875
+</td>
+<td style="text-align:center;">
+10.037
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sqft
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+11.929
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bedrooms
+</td>
+<td style="text-align:center;">
+0.018
+</td>
+<td style="text-align:center;">
+0.014
+</td>
+<td style="text-align:center;">
+1.265
+</td>
+<td style="text-align:center;">
+0.206
+</td>
+<td style="text-align:center;">
+-0.010
+</td>
+<td style="text-align:center;">
+0.046
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bathrooms
+</td>
+<td style="text-align:center;">
+0.188
+</td>
+<td style="text-align:center;">
+0.020
+</td>
+<td style="text-align:center;">
+9.303
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.149
+</td>
+<td style="text-align:center;">
+0.228
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stories
+</td>
+<td style="text-align:center;">
+0.102
+</td>
+<td style="text-align:center;">
+0.012
+</td>
+<td style="text-align:center;">
+8.322
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.078
+</td>
+<td style="text-align:center;">
+0.126
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+basementyes
+</td>
+<td style="text-align:center;">
+0.116
+</td>
+<td style="text-align:center;">
+0.020
+</td>
+<td style="text-align:center;">
+5.770
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.076
+</td>
+<td style="text-align:center;">
+0.155
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+airconditioningyes
+</td>
+<td style="text-align:center;">
+0.168
+</td>
+<td style="text-align:center;">
+0.022
+</td>
+<td style="text-align:center;">
+7.605
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.125
+</td>
+<td style="text-align:center;">
+0.212
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+parking
+</td>
+<td style="text-align:center;">
+0.054
+</td>
+<td style="text-align:center;">
+0.011
+</td>
+<td style="text-align:center;">
+4.835
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.032
+</td>
+<td style="text-align:center;">
+0.077
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+prefareayes
+</td>
+<td style="text-align:center;">
+0.158
+</td>
+<td style="text-align:center;">
+0.022
+</td>
+<td style="text-align:center;">
+7.144
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.115
+</td>
+<td style="text-align:center;">
+0.202
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>From the information shown above, we can generate an the following
+regression model. For the model, we are using 6 decimal points rather
+than 3, to better illustrate the model.</p>
+<p><img alt="regression model" src="../Housing_Price_Prediction_files/figure-markdown_strict/reg_model.png" /></p>
+<p>This model uses the intercept and the sample slope coefficients for each
+predictor variable, which will be multiplied by provided values to
+generate the natural logarithm of the estimated price.usd. To get an
+actual price.usd prediction, we will need to take the result and provide
+its inverse (the exponential function). Each sample slope coefficient is
+an indication of how much the (natural log) price.usd of a house
+approximately changes within our sample data with a one-unit change in
+the specified predictor variable, when the other predictor variables
+held constant (i.e. no change in their values).</p>
+<p>As an example, the sample slope coefficient of 0.000056 for
+<em>b</em><sub><em>s</em><em>q</em><em>f</em><em>t</em></sub> indicates, <em>for these sample data only when
+all other variables are held constant</em>, every unit (square foot)
+increase in sqft produces, on average, a 0.000056 increase in the
+natural log of the house’s price in USD.</p>
+<p>To provide an example of how the estimated model applies to an actual
+house, we’ll work with the second row in the dataset, house<sub>2</sub>.
+That house has the following details:</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Second row of dataset
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+price.usd
+</th>
+<th style="text-align:center;">
+price.usd.log
+</th>
+<th style="text-align:center;">
+sqft
+</th>
+<th style="text-align:center;">
+bedrooms
+</th>
+<th style="text-align:center;">
+bathrooms
+</th>
+<th style="text-align:center;">
+stories
+</th>
+<th style="text-align:center;">
+basement
+</th>
+<th style="text-align:center;">
+airconditioning
+</th>
+<th style="text-align:center;">
+parking
+</th>
+<th style="text-align:center;">
+prefarea
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:center;">
+147000
+</td>
+<td style="text-align:center;">
+11.89819
+</td>
+<td style="text-align:center;">
+8960
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+no
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+no
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>The manually calculated estimation for this house’s price.usd is:</p>
+<p><img alt="regression model" src="../Housing_Price_Prediction_files/figure-markdown_strict/manual_calc.png" /></p>
+<p>The result of this calculation is <em>l</em><em>o</em><em>g</em> <em>ŷ</em> = 11.99592. When we take
+the inverse of the log for that value, the estimated house price in USD
+is approximately 162,092. Do note that the log of price.USD provided in
+the readout for the house is more accurate, as it is not rounded.
+However, we’re including these calculations as representations of the
+process.</p>
+<p>Since this is just an estimate, there will of course be a residual
+(difference between the fitted value and the actual value). The residual
+can be calculated with the formula
+<em>e</em><sub><em>i</em></sub> = <em>Y</em><sub><em>i</em></sub> − <em>Ŷ</em> = 147000 − 162092 =  − 15092,
+which tells us that when given the predictor variable values for
+house<sub>2</sub>, our model generates a fitted value that is 15,092
+more than the actual value for this house in USD.</p>
+<h3 id="hypothesis-test">Hypothesis Test</h3>
+<p>The core of the hypothesis test is to determine if there is a relation
+between each predictor variable and our target variable (price.usd).
+What’s being tested is the null hypothesis, that <em>β</em><sub><em>i</em></sub> = 0
+and therefore in the population, a change in predictor<sub>i</sub> for a
+house <em>does not</em> lead to consistent increases or decreases in the price
+of a house, when all other predictor variables are held constant.</p>
+<p>The alternative to the null hypothes is <em>β</em><sub><em>i</em></sub> ≠ 0 and
+therefore in the population, a change in predictor<sub>i</sub> for a
+house <em>does</em> lead to consistent increases or decreases in the price of a
+house, when all other predictor variables are held constant.</p>
+<p>Two key values in this test are the <em>t-value</em> and the <em>p-value</em>. The
+<em>t-value</em> is the number of estimated standard errors <em>β</em><sub><em>i</em></sub>
+is from the null hypothesized slope (0). The <em>p-value</em> is the
+probability of obtaining an estimated slope coefficient
+<em>β</em><sub><em>i</em></sub> with a given <em>t-value</em>; the cutoff for the p-value is
+generally <em>α</em> = 0.05 so if the p-value is above that cutoff we <em>fail to
+reject</em> the null hypothesis.</p>
+<p>For this, we will provide examples using two of the predictor variables:
+sqft and bedrooms. We will provide the null hypothesis for each, the
+alternative, and calculations that lead to <em>reject</em> or <em>failing to
+reject</em> the null hypothesis.</p>
+<h4 id="hypothesis-test-for-area">Hypothesis Test for Area</h4>
+<ul>
+<li>Null hypothesis: <em>β</em><sub><em>s</em><em>q</em><em>f</em><em>t</em></sub> = 0</li>
+<li>Alternative: <em>β</em><sub><em>s</em><em>q</em><em>f</em><em>t</em></sub> ≠ 0</li>
+<li>t-value:
+    $t_{sqft} = \frac{b_{sqft} - 0}{s_{sqft}} = \frac{0.000056 - 0}{0.000005} = 11.2$</li>
+<li>p-value: 0.000 to three decimal points</li>
+</ul>
+<p><strong>Decision</strong>: If the null hypothesis that <em>β</em><sub><em>s</em><em>q</em><em>f</em><em>t</em></sub> = 0
+is true, obtaining a value for b<sub>sqft</sub> more than eleven
+standard errors from 0 is very unlikely, with a probability of 0.000 to
+three decimal digits. As such, we <em>reject</em> the null hypothesis for
+<em>β</em><sub><em>s</em><em>q</em><em>f</em><em>t</em></sub>.</p>
+<p><strong>Executive Summary</strong>: Our calculations from the sample dataset indicate
+there is a reasonable relationship between the sqft of a house and the
+price of the house. When the sqft of a house increases, with all other
+predictor variables unchanged, the price of the house will generally
+also increase (this can be applied to either the USD or rupee value for
+the home).</p>
+<h4 id="hypothesis-test-for-bedrooms">Hypothesis Test for Bedrooms</h4>
+<ul>
+<li>Null hypothesis: <em>β</em><sub><em>b</em><em>e</em><em>d</em><em>r</em><em>o</em><em>o</em><em>m</em><em>s</em></sub> = 0</li>
+<li>Alternative: <em>β</em><sub><em>b</em><em>e</em><em>d</em><em>r</em><em>o</em><em>o</em><em>m</em><em>s</em></sub> ≠ 0</li>
+<li>t-value:
+    $t_{bedrooms} = \frac{b_{bedrooms} - 0}{s_{bedrooms}} = \frac{0.026280 - 0}{0.014961} = 1.757$</li>
+<li>p-value: 0.080 to three decimal points</li>
+</ul>
+<p><strong>Decision</strong>: If the null hypothesis that
+<em>β</em><sub><em>b</em><em>e</em><em>d</em><em>r</em><em>o</em><em>o</em><em>m</em><em>s</em></sub> = 0 is true, obtaining a value
+for b<sub>sqft</sub> less than two standard errors from 0 is highly
+likely, with a probability of 0.080 to three decimal digits. As such, we
+<em>fail to reject</em> the null hypothesis for
+<em>β</em><sub><em>b</em><em>e</em><em>d</em><em>r</em><em>o</em><em>o</em><em>m</em><em>s</em></sub>.</p>
+<p><strong>Executive Summary</strong>: Our calculations from the sample dataset indicate
+there is not a reasonable relationship between the number of bedrooms
+listed for a house and the price of the house. When the number of
+bedrooms of a house increases, with all other predictor variables
+unchanged, there is no reliable impact on the price of the house (this
+can be applied to either the USD or rupee value for the home).</p>
+<h3 id="confidence-interval">Confidence Interval</h3>
+<p>The confidence interval for the slope coefficient b<sub>i</sub> provides
+an estimated range for the value of the population slope coefficient,
+<em>β</em><sub><em>i</em></sub>. Knowing that in a normal distribution, approximately
+95% of values will fall within approximately 2 standard deviations of
+the mean, the confidence interval uses the estimated slope coefficient
+b<sub>i</sub> and it’s standard deviation to determine upper and lower
+bounds for the population slope coefficient <em>β</em><sub><em>i</em></sub>. As with
+prior sections, we will work with sqft and bedrooms.</p>
+<h4 id="confidence-interval-for-area">Confidence Interval for Area</h4>
+<ul>
+<li>Sample Slope Coefficient: <em>b</em><sub><em>s</em><em>q</em><em>f</em><em>t</em></sub> = 0.000056</li>
+<li>Standard Error: <em>s</em><sub><em>b</em> − <em>s</em><em>q</em><em>f</em><em>t</em></sub> = 0.000005</li>
+<li>Margin of Error:
+    <em>b</em><sub><em>s</em><em>q</em><em>f</em><em>t</em></sub> ± 2 ⋅ <em>s</em><sub><em>b</em> − <em>s</em><em>q</em><em>f</em><em>t</em></sub> = 0.000056 ± 2 ⋅ 0.000005</li>
+<li>Lower Bound: 0.000056 − 2 ⋅ 0.000005 = 0.000056 − 0.00001 = 0.000046</li>
+<li>Upper Bound: 0.000056 + 2 ⋅ 0.000005 = 0.000056 + 0.00001 = 0.000066</li>
+</ul>
+<p><strong>Executive Summary</strong>: Based on our calculations with the provided
+dataset we can estimate that when the sqft of a house increases by 1
+square foot, and no changes are made to other predictor variables, the
+price of the house will increase within an expected range for about 95%
+of houses within the main population.</p>
+<p><strong>Consistancy</strong>: The range of values in the confidence interval are all
+positive values, not including 0, which is consistent with our rejection
+of the null hypothesis and our resulting determination that
+<em>b</em><sub><em>s</em><em>q</em><em>f</em><em>t</em></sub> ≠ 0.</p>
+<h4 id="confidence-interval-for-bedrooms">Confidence Interval for Bedrooms</h4>
+<ul>
+<li>Sample Slope Coefficient:
+    <em>b</em><sub><em>b</em><em>e</em><em>d</em><em>r</em><em>o</em><em>o</em><em>m</em><em>s</em></sub> = 0.026280</li>
+<li>Standard Error:
+    <em>s</em><sub><em>b</em> − <em>b</em><em>e</em><em>d</em><em>r</em><em>o</em><em>o</em><em>m</em><em>s</em></sub> = 74745.616</li>
+<li>Margin of Error:
+    <em>b</em><sub><em>b</em><em>e</em><em>d</em><em>r</em><em>o</em><em>o</em><em>m</em><em>s</em></sub> ± 2 ⋅ <em>s</em><sub><em>b</em> − <em>b</em><em>e</em><em>d</em><em>r</em><em>o</em><em>o</em><em>m</em><em>s</em></sub> = 0.026280 ± 2 ⋅ 0.014961</li>
+<li>Lower Bound:
+    0.026280 − 2 ⋅ 0.014961 = 0.026280 − 0.029922 =  − 0.003642</li>
+<li>Upper Bound:
+    0.026280 + 2 ⋅ 0.014961 = 0.026280 + 0.029922 = 0.056202</li>
+</ul>
+<p><strong>Executive Summary</strong>: Based on our calculations with the provided
+dataset we are unable to provide a reliable estimation on price.usd
+change for when the number of bedrooms of a house increases and no
+changes are made to other predictor variables.</p>
+<p><strong>Consistancy</strong>: The range of values in the confidence interval are
+include 0 as the lower bound is a negative number and the upper bound is
+positive. This is consistent with our failure to reject the null
+hypothesis and our resulting determination that
+<em>b</em><sub><em>s</em><em>q</em><em>f</em><em>t</em></sub> = 0.</p>
+<h3 id="model-fit">Model Fit</h3>
+<p>For the model fit, there are two main elements we’re considering:
+R<sup>2</sup>, and PRESS R<sup>2</sup>. The values for our model are
+included below:</p>
+<ul>
+<li>R<sup>2</sup>: 0.649</li>
+<li>PRESS R<sup>2</sup>: 0.637</li>
+</ul>
+<p>Best practices for most models needs an R<sup>2</sup> value above .6,
+which these results display. Additionally, PRESS R<sup>2</sup>, which
+tests the model against a simluation of testing data, has a score above
+.6 as well. As such, the model in its current status fits relatively
+well. However, it’s always worth further analysis to continue refining
+the model.</p>
+<h4 id="outliers">Outliers</h4>
+<p>The first thing we’ll consider is outliers. There are 11 potential
+outliers, shown below. We identified these outliers by conducting a
+search for possible outliers that have at least one of the followign
+features: a studentized residual greater than 2.5 or less than -2.5, a
+DFFITS score greater than 0.5, or a Cook’s Distance greater than 0.5.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Potential Outliers
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+sqft
+</th>
+<th style="text-align:center;">
+bedrooms
+</th>
+<th style="text-align:center;">
+bathrooms
+</th>
+<th style="text-align:center;">
+stories
+</th>
+<th style="text-align:center;">
+basementyes
+</th>
+<th style="text-align:center;">
+airconditioningyes
+</th>
+<th style="text-align:center;">
+parking
+</th>
+<th style="text-align:center;">
+prefareayes
+</th>
+<th style="text-align:center;">
+price.usd
+</th>
+<th style="text-align:center;">
+fitted
+</th>
+<th style="text-align:center;">
+resid
+</th>
+<th style="text-align:center;">
+rstdnt
+</th>
+<th style="text-align:center;">
+dffits
+</th>
+<th style="text-align:center;">
+cooks
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+500
+</td>
+<td style="text-align:center;">
+3630
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+10.371
+</td>
+<td style="text-align:center;">
+10.942
+</td>
+<td style="text-align:center;">
+-0.571
+</td>
+<td style="text-align:center;">
+-2.634
+</td>
+<td style="text-align:center;">
+-0.503
+</td>
+<td style="text-align:center;">
+0.028
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+532
+</td>
+<td style="text-align:center;">
+5300
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+10.196
+</td>
+<td style="text-align:center;">
+10.896
+</td>
+<td style="text-align:center;">
+-0.700
+</td>
+<td style="text-align:center;">
+-3.214
+</td>
+<td style="text-align:center;">
+-0.487
+</td>
+<td style="text-align:center;">
+0.026
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+402
+</td>
+<td style="text-align:center;">
+9500
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+10.645
+</td>
+<td style="text-align:center;">
+11.250
+</td>
+<td style="text-align:center;">
+-0.604
+</td>
+<td style="text-align:center;">
+-2.779
+</td>
+<td style="text-align:center;">
+-0.484
+</td>
+<td style="text-align:center;">
+0.026
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:center;">
+3500
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+11.616
+</td>
+<td style="text-align:center;">
+10.910
+</td>
+<td style="text-align:center;">
+0.706
+</td>
+<td style="text-align:center;">
+3.238
+</td>
+<td style="text-align:center;">
+0.448
+</td>
+<td style="text-align:center;">
+0.022
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+541
+</td>
+<td style="text-align:center;">
+3000
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+9.991
+</td>
+<td style="text-align:center;">
+10.679
+</td>
+<td style="text-align:center;">
+-0.688
+</td>
+<td style="text-align:center;">
+-3.154
+</td>
+<td style="text-align:center;">
+-0.446
+</td>
+<td style="text-align:center;">
+0.022
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+537
+</td>
+<td style="text-align:center;">
+3420
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+10.066
+</td>
+<td style="text-align:center;">
+10.639
+</td>
+<td style="text-align:center;">
+-0.573
+</td>
+<td style="text-align:center;">
+-2.632
+</td>
+<td style="text-align:center;">
+-0.441
+</td>
+<td style="text-align:center;">
+0.021
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+21
+</td>
+<td style="text-align:center;">
+4320
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+11.562
+</td>
+<td style="text-align:center;">
+10.885
+</td>
+<td style="text-align:center;">
+0.677
+</td>
+<td style="text-align:center;">
+3.099
+</td>
+<td style="text-align:center;">
+0.401
+</td>
+<td style="text-align:center;">
+0.018
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+510
+</td>
+<td style="text-align:center;">
+3600
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+10.344
+</td>
+<td style="text-align:center;">
+10.929
+</td>
+<td style="text-align:center;">
+-0.585
+</td>
+<td style="text-align:center;">
+-2.679
+</td>
+<td style="text-align:center;">
+-0.399
+</td>
+<td style="text-align:center;">
+0.017
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:center;">
+7420
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+11.827
+</td>
+<td style="text-align:center;">
+11.254
+</td>
+<td style="text-align:center;">
+0.573
+</td>
+<td style="text-align:center;">
+2.624
+</td>
+<td style="text-align:center;">
+0.386
+</td>
+<td style="text-align:center;">
+0.016
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:center;">
+6000
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+11.601
+</td>
+<td style="text-align:center;">
+11.005
+</td>
+<td style="text-align:center;">
+0.595
+</td>
+<td style="text-align:center;">
+2.723
+</td>
+<td style="text-align:center;">
+0.382
+</td>
+<td style="text-align:center;">
+0.016
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28
+</td>
+<td style="text-align:center;">
+8875
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+11.521
+</td>
+<td style="text-align:center;">
+10.850
+</td>
+<td style="text-align:center;">
+0.671
+</td>
+<td style="text-align:center;">
+3.067
+</td>
+<td style="text-align:center;">
+0.367
+</td>
+<td style="text-align:center;">
+0.015
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Although there are some potential outliers that could be kept in the
+model, most are ripe for removal due to their studentized residual
+scores. Additionally, for the size of our dataset, removing 11 values
+will provide a minimal impact on the available data. As such, we’ll
+remove all the potential outliers. To verify the removal, we’ll check
+what row/house 5 (included in the outlier list) is before and after
+removing the outliers.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+5th Row Before and After Outlier Removal
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+price.usd
+</th>
+<th style="text-align:center;">
+price.usd.log
+</th>
+<th style="text-align:center;">
+sqft
+</th>
+<th style="text-align:center;">
+bedrooms
+</th>
+<th style="text-align:center;">
+bathrooms
+</th>
+<th style="text-align:center;">
+stories
+</th>
+<th style="text-align:center;">
+basement
+</th>
+<th style="text-align:center;">
+airconditioning
+</th>
+<th style="text-align:center;">
+parking
+</th>
+<th style="text-align:center;">
+prefarea
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Before
+</td>
+<td style="text-align:center;">
+136920
+</td>
+<td style="text-align:center;">
+11.82715
+</td>
+<td style="text-align:center;">
+7420
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+no
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+After
+</td>
+<td style="text-align:center;">
+130200
+</td>
+<td style="text-align:center;">
+11.77683
+</td>
+<td style="text-align:center;">
+7500
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+yes
+</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="model-selection">Model Selection</h3>
+<p>Now that we’ve reviewed various statistics on the model and also removed
+our outliers, we’ll want to continue reviewing the p-values for each
+predictor variable as that is a good indicator of if the variable would
+be beneficial to the overall model. As shown below, when reviewing the
+p-values for the estimated slope coefficients for each predictor
+variable, the bedrooms (number of bedrooms) has a p-value well above the
+cutoff of <em>α</em> = 0 at 0.206 (an increase since removing the outliers). As
+such, that predictor variable is likely to be removed from the model.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Revised Model Estimates
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Estimate
+</th>
+<th style="text-align:center;">
+Std Err
+</th>
+<th style="text-align:center;">
+t-value
+</th>
+<th style="text-align:center;">
+p-value
+</th>
+<th style="text-align:center;">
+Lower 95
+</th>
+<th style="text-align:center;">
+Upper 95
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+9.956
+</td>
+<td style="text-align:center;">
+0.041
+</td>
+<td style="text-align:center;">
+241.399
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+9.875
+</td>
+<td style="text-align:center;">
+10.037
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sqft
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+11.929
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bedrooms
+</td>
+<td style="text-align:center;">
+0.018
+</td>
+<td style="text-align:center;">
+0.014
+</td>
+<td style="text-align:center;">
+1.265
+</td>
+<td style="text-align:center;">
+0.206
+</td>
+<td style="text-align:center;">
+-0.010
+</td>
+<td style="text-align:center;">
+0.046
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bathrooms
+</td>
+<td style="text-align:center;">
+0.188
+</td>
+<td style="text-align:center;">
+0.020
+</td>
+<td style="text-align:center;">
+9.303
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.149
+</td>
+<td style="text-align:center;">
+0.228
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stories
+</td>
+<td style="text-align:center;">
+0.102
+</td>
+<td style="text-align:center;">
+0.012
+</td>
+<td style="text-align:center;">
+8.322
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.078
+</td>
+<td style="text-align:center;">
+0.126
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+basementyes
+</td>
+<td style="text-align:center;">
+0.116
+</td>
+<td style="text-align:center;">
+0.020
+</td>
+<td style="text-align:center;">
+5.770
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.076
+</td>
+<td style="text-align:center;">
+0.155
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+airconditioningyes
+</td>
+<td style="text-align:center;">
+0.171
+</td>
+<td style="text-align:center;">
+0.021
+</td>
+<td style="text-align:center;">
+8.294
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.130
+</td>
+<td style="text-align:center;">
+0.211
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+parking
+</td>
+<td style="text-align:center;">
+0.054
+</td>
+<td style="text-align:center;">
+0.011
+</td>
+<td style="text-align:center;">
+4.835
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.032
+</td>
+<td style="text-align:center;">
+0.077
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+prefareayes
+</td>
+<td style="text-align:center;">
+0.158
+</td>
+<td style="text-align:center;">
+0.022
+</td>
+<td style="text-align:center;">
+7.144
+</td>
+<td style="text-align:center;">
+0.000
+</td>
+<td style="text-align:center;">
+0.115
+</td>
+<td style="text-align:center;">
+0.202
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>We also want to consider possible collinearity between the predictor
+variables, to ensure we’re not over-emphasizing a particular feature.
+The tolerance and VIF scores for each of the predictor variables,
+displayed int he following table, are within acceptable ranges
+(tolerance &gt; 0.2 and VIF &lt; 5) to indicate no issues with
+collinearity.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Predictor Collinearity
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Tolerance
+</th>
+<th style="text-align:center;">
+VIF
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+sqft
+</td>
+<td style="text-align:center;">
+0.799
+</td>
+<td style="text-align:center;">
+1.251
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bedrooms
+</td>
+<td style="text-align:center;">
+0.732
+</td>
+<td style="text-align:center;">
+1.365
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+bathrooms
+</td>
+<td style="text-align:center;">
+0.767
+</td>
+<td style="text-align:center;">
+1.303
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stories
+</td>
+<td style="text-align:center;">
+0.689
+</td>
+<td style="text-align:center;">
+1.452
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+basementyes
+</td>
+<td style="text-align:center;">
+0.855
+</td>
+<td style="text-align:center;">
+1.169
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+airconditioningyes
+</td>
+<td style="text-align:center;">
+0.852
+</td>
+<td style="text-align:center;">
+1.174
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+parking
+</td>
+<td style="text-align:center;">
+0.849
+</td>
+<td style="text-align:center;">
+1.177
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+prefareayes
+</td>
+<td style="text-align:center;">
+0.887
+</td>
+<td style="text-align:center;">
+1.128
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Finally, we can conduct a best subset analysis to identify the best
+options for the final model. From this analysis, shown below, I would
+select the second model which uses 7 of the 8 predictor variables
+(removing bedrooms, as indicated by the p-value previously). This model
+provides a minimal reduction in the Adjusted R<sup>2</sup> values while
+providing a reduction on our overall model. With that, we’ll re-run our
+analysis to remove the predictor that does not directly benefit our
+efforts.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Best Subsets
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+sqft
+</th>
+<th style="text-align:center;">
+bedrooms
+</th>
+<th style="text-align:center;">
+bathrooms
+</th>
+<th style="text-align:center;">
+stories
+</th>
+<th style="text-align:center;">
+basementyes
+</th>
+<th style="text-align:center;">
+airconditioningyes
+</th>
+<th style="text-align:center;">
+parking
+</th>
+<th style="text-align:center;">
+prefareayes
+</th>
+<th style="text-align:center;">
+R2adj
+</th>
+<th style="text-align:center;">
+X’s
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.682
+</td>
+<td style="text-align:center;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.681
+</td>
+<td style="text-align:center;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.668
+</td>
+<td style="text-align:center;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.667
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.662
+</td>
+<td style="text-align:center;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.660
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.651
+</td>
+<td style="text-align:center;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.651
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.649
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.646
+</td>
+<td style="text-align:center;">
+5
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>Our reduced model produces the following formula:</p>
+<p><img alt="regression model" src="../Housing_Price_Prediction_files/figure-markdown_strict/reduced_model.png" /></p>
+<h3 id="prediction-intervals">Prediction Intervals</h3>
+<p>For the final element of this project, we’ll run a further reduced model
+(due to limitations on using code to predict on more than 6 variables)
+against the median values for each variable in our dataset with the
+intent of representing the prediction interval for a given sample. To
+simplify the model, we will remove the value for basement.</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Median values for new prediction
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+sqft
+</th>
+<th style="text-align:center;">
+bathrooms
+</th>
+<th style="text-align:center;">
+stories
+</th>
+<th style="text-align:center;">
+airconditioning
+</th>
+<th style="text-align:center;">
+parking
+</th>
+<th style="text-align:center;">
+prefarea
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+4600
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+yes
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+no
+</td>
+</tr>
+</tbody>
+</table>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Prediction Intervals for Price on New Data, Natural Log
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+pred
+</th>
+<th style="text-align:center;">
+s pred
+</th>
+<th style="text-align:center;">
+pi lwr
+</th>
+<th style="text-align:center;">
+pi upr
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+10.850
+</td>
+<td style="text-align:center;">
+0.212
+</td>
+<td style="text-align:center;">
+10.434
+</td>
+<td style="text-align:center;">
+11.268
+</td>
+</tr>
+</tbody>
+</table>
+
+<p>To calculate our upper and lower prediction intervals, we will use the
+following formulas:</p>
+<ul>
+<li>PI lower bound:
+    <em>l</em><em>o</em><em>g</em> <em>ŷ</em> − (<em>t</em>.<em>c</em><em>u</em><em>t</em>⋅<em>s</em><sub><em>p</em></sub>) = 10.850 − (2⋅0.212) = 10.426</li>
+<li>PI upper bound:
+    <em>l</em><em>o</em><em>g</em> <em>ŷ</em> + (<em>t</em>.<em>c</em><em>u</em><em>t</em>⋅<em>s</em><sub><em>p</em></sub>) = 10.850 + (2⋅0.212) = 11.274</li>
+</ul>
+<p>Again, though, this is the logarithmic version of the price, so we need
+to back transform the information to get the actual prediction
+intervals:</p>
+<ul>
+<li>PI lower bound: <em>ŷ</em> = <em>e</em><em>x</em><em>p</em> 10.426 ≈ 33725</li>
+<li>PI upper bound: <em>ŷ</em> = <em>e</em><em>x</em><em>p</em> 11.274 ≈ 78747</li>
+</ul>
+<p>From this information, we can assert that if the trend from the past
+extends into the future without any additional changes to the underlying
+dynamics, 95% of all possible prices for a 4,600sqft, 2 story house with
+1 bathroom, airconditioning, and no parking that is not in a preferred
+area will be priced in the range of 33,725 to 78,747 (USD). Do keep in
+mind that this is an estimate for a regioon outside the US, we are
+simply using USD for easy of understanding the scale of the pricing
+structure.</p>
+<h2 id="business-application">Business Application</h2>
+<p>This particular analysis is applicable to a multitude of situations for
+businesses. Real estate companies can use an analysis like this to
+identify housing trends and assist with setting the selling or purchase
+price of a house. Mortgage companies and appraisers can use this kind of
+data to general comparables to ensure a mortgage is not outsized for the
+given loan. House flippers can use this kind of information to help
+identify if they’re making a purchase that will provide a good return on
+investment after rennovations. Really, anyone who is in the housing
+market could benefit from having the ability to generate predictions on
+housing prices based on relevant factors.</p>
+<h2 id="conclusion-summary-interpretation">Conclusion: Summary &amp; Interpretation</h2>
+<p>This analysis allowed us a glimpse into the housing market in an unnamed
+area of India, where the house prices can vary vastly depending on
+factors not always considered within the US market. In conducting this
+analysis, we were able to get an idea of the variance within possible
+house prices, and also the overall volatility of the market due to the
+wide ranges by which home prices can vary with identical features. One
+of the main challenges to this dataset was the fact that it wasn’t based
+in the US, and so the financial figures had to be adapted to make it
+easily interpretable to someone used to using USD. Additionally, not
+being US-based, it is not applicable to situations in which I would
+eprsonally find myself as I am not planning on moving to India any time
+soon.</p>
+<p>Additionally, the dataset was relatively small, with only 525 values. To
+get a better idea of market prices, additional samples would ideally be
+included. The data provided was also quite open to interpretation, for
+example what is the definition of a preferred area? IT was also missing
+key factors, such as the house type and lot area. Overall, while this
+analysis could be applied to additional situations, it would need some
+adjustments by using better suited data and further refinement than I
+had time or space for within this analysis (i.e. I preemptively removed
+many of the variables for simplicity, but it would be good to include
+those initially to get a better picture of the factors that actually
+influence housing prices in India).</p>
+<h2 id="appendix-code-for-this-report">Appendix: Code for this report</h2>
+<pre><code># call needed packages
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+library(lessR)
+library(dplyr)
+library(tidyr)
+library(rlang)
+library(stringr)
+library(glmnet)
+library(kableExtra)
+library(formatR)
+# read in dataset, display details
+d &lt;- Read("data/HOUSING-details.csv")
+d$price.usd &lt;- 0.012 * (d$price)
+colnames(d)[2] &lt;- "sqft"
+details(d)
+# display dataset head
+kbl(t(head(d)), booktabs = T, escape = F, align = "c", caption = "Dataset Head") |&gt;
+    kable_styling(latex_options = c("hold_position", "scale_down",
+        "striped"))
+# conduct regression analysis
+reg &lt;- reg(price.usd ~ sqft + bedrooms + bathrooms + stories +
+    basement + airconditioning + parking + prefarea)
+# generate least squares scatterplots on single predictor
+# variables
+Plot(sqft, price.usd, fit = "lm")
+Plot(bedrooms, price.usd, fit = "lm")
+# generate exponential curve scatterplots on single
+# predictor variables
+Plot(sqft, price.usd, fit = "exp")
+Plot(bedrooms, price.usd, fit = "exp")
+# logarithmic transform price.usd
+d$price.usd.log &lt;- log(d$price.usd)
+
+# verify change
+details(d)
+# run new analysis with log transformed target
+reg.log &lt;- reg(price.usd.log ~ sqft + bedrooms + bathrooms +
+    stories + basement + airconditioning + parking + prefarea)
+# generate a display of the correlation coefficients
+reg.cor &lt;- matrix(c(1, 0.54, 0.37, 0.49, 0.42, 0.22, 0.46, 0.37,
+    0.34, 0.54, 1, 0.15, 0.19, 0.08, 0.05, 0.22, 0.35, 0.23,
+    0.37, 0.15, 1, 0.37, 0.41, 0.1, 0.16, 0.14, 0.08, 0.49, 0.19,
+    0.37, 1, 0.33, 0.1, 0.19, 0.18, 0.06, 0.42, 0.08, 0.41, 0.33,
+    1, -0.17, 0.29, 0.05, 0.04, 0.22, 0.05, 0.1, 0.1, -0.17,
+    1, 0.05, 0.05, 0.23, 0.46, 0.22, 0.16, 0.19, 0.29, 0.05,
+    1, 0.16, 0.12, 0.37, 0.35, 0.14, 0.18, 0.05, 0.05, 0.16,
+    1, 0.09, 0.34, 0.23, 0.08, 0.06, 0.04, 0.23, 0.12, 0.09,
+    1), nrow = 9)
+rownames(reg.cor) &lt;- c(reg.log$vars)
+colnames(reg.cor) &lt;- c(reg.log$vars)
+kbl(reg.cor, booktabs = T, escape = F, align = "c", caption = "Correlation Coefficients") |&gt;
+    kable_styling(latex_options = c("hold_position", "scale_down",
+        "striped"))
+
+# generate a display of the estimates for the dataset
+reg.est &lt;- matrix(format(c(9.956, 0, 0.018, 0.188, 0.102, 0.116,
+    0.171, 0.054, 0.158, 0.041, 0, 0.014, 0.02, 0.012, 0.02,
+    0.021, 0.011, 0.022, 241.399, 11.929, 1.265, 9.303, 8.322,
+    5.77, 8.294, 4.835, 7.144, 0, 0, 0.206, 0, 0, 0, 0, 0, 0,
+    9.875, 0, -0.01, 0.149, 0.078, 0.076, 0.13, 0.032, 0.115,
+    10.037, 0, 0.046, 0.228, 0.126, 0.155, 0.211, 0.077, 0.202),
+    nsmall = 3), nrow = 9)
+rownames(reg.est) &lt;- c("(Intercept)", reg.log$vars[2:9])
+colnames(reg.est) &lt;- c("Estimate", "Std Err", "t-value", "p-value",
+    "Lower 95", "Upper 95")
+reg.est["airconditioningyes", ] &lt;- c(0.168, 0.022, 7.605, format(0,
+    nsmall = 3), 0.125, 0.212)
+kbl(reg.est, booktabs = T, escape = F, align = "c", caption = "Initial Model Estimates") |&gt;
+    kable_styling(latex_options = c("hold_position", "striped"))
+
+kbl(d[2, c("price.usd", "price.usd.log", "sqft", "bedrooms",
+    "bathrooms", "stories", "basement", "airconditioning", "parking",
+    "prefarea")], booktabs = T, escape = F, align = "c", caption = "Second row of dataset") |&gt;
+    kable_styling(latex_options = c("hold_position", "scale_down"))
+# generate a display of the potential outliers
+outliers &lt;- matrix(reg.log$out_residuals[6:25], nrow = 20)
+outliers &lt;- str_split_fixed(outliers[, 1], "\\s+", 16)
+columns &lt;- c(c(reg.log$vars[2:9]), "price.usd", "fitted", "resid",
+    "rstdnt", "dffits", "cooks")
+rows &lt;- outliers[, 2]
+outliers &lt;- matrix(round(as.numeric(outliers[, -c(1:2)]), 3),
+    ncol = 14, dimnames = (list(rows, columns)))
+outliers &lt;- subset(outliers, outliers[, "rstdnt"] &gt; 2.5 | outliers[,
+    "rstdnt"] &lt; (-2.5) | outliers[, "dffits"] &gt; 0.5 | outliers[,
+    "cooks"] &gt; 0.5)
+kbl(outliers, booktabs = T, escape = F, align = "c", caption = "Potential Outliers") |&gt;
+    kable_styling(latex_options = c("hold_position", "scale_down",
+        "striped"))
+# row 5 before removal
+before &lt;- d[5, c("price.usd", "price.usd.log", "sqft", "bedrooms",
+    "bathrooms", "stories", "basement", "airconditioning", "parking",
+    "prefarea")]
+
+# remove outliers from dataset
+d &lt;- d[-c(500, 532, 402, 14, 541, 537, 21, 510, 5, 16, 28), ]
+
+after &lt;- d[5, c("price.usd", "price.usd.log", "sqft", "bedrooms",
+    "bathrooms", "stories", "basement", "airconditioning", "parking",
+    "prefarea")]
+# display outlier removal
+removed &lt;- rbind(before, after)
+rownames(removed) &lt;- c("Before", "After")
+kbl(removed, booktabs = T, escape = F, align = "c", caption = "5th Row Before and After Outlier Removal") |&gt;
+    kable_styling(latex_options = c("hold_position", "scale_down"))
+# run standardized analysis after removing outliers
+reg.log2 &lt;- reg(price.usd.log ~ sqft + bedrooms + bathrooms +
+    stories + basement + airconditioning + parking + prefarea)
+# generate a display of the estimates for the dataset
+reg.est2 &lt;- matrix(format(c(9.956, 0, 0.018, 0.188, 0.102, 0.116,
+    0.171, 0.054, 0.158, 0.041, 0, 0.014, 0.02, 0.012, 0.02,
+    0.021, 0.011, 0.022, 241.399, 11.929, 1.265, 9.303, 8.322,
+    5.77, 8.294, 4.835, 7.144, 0, 0, 0.206, 0, 0, 0, 0, 0, 0,
+    9.875, 0, -0.01, 0.149, 0.078, 0.076, 0.13, 0.032, 0.115,
+    10.037, 0, 0.046, 0.228, 0.126, 0.155, 0.211, 0.077, 0.202),
+    nsmall = 3), ncol = 6)
+rownames(reg.est2) &lt;- c("(Intercept)", reg.log2$vars[2:9])
+colnames(reg.est2) &lt;- c("Estimate", "Std Err", "t-value", "p-value",
+    "Lower 95", "Upper 95")
+reg.est2["airconditioningyes", ] &lt;- c(0.171, 0.021, 8.294, format(0,
+    nsmall = 3), format(0.13, nsmall = 3), 0.211)
+kbl(reg.est2, booktabs = T, escape = F, align = "c", caption = "Revised Model Estimates") |&gt;
+    kable_styling(latex_options = c("hold_position", "striped"))
+# generate a display of the collinearity measurements
+reg.col &lt;- matrix(format(c(0.799, 0.732, 0.767, 0.689, 0.855,
+    0.852, 0.849, 0.887, 1.251, 1.365, 1.303, 1.452, 1.169, 1.174,
+    1.177, 1.128), nsmall = 3), ncol = 2)
+rownames(reg.col) &lt;- c(reg.log2$vars[2:9])
+colnames(reg.col) &lt;- c("Tolerance", "VIF")
+kbl(reg.col, booktabs = T, escape = F, align = "c", caption = "Predictor Collinearity") |&gt;
+    kable_styling(latex_options = c("hold_position", "striped"))
+# generate a display of the best subsets
+best.subset &lt;- matrix(c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1,
+    0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1,
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0,
+    1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0.682, 0.681, 0.668, 0.667,
+    0.662, 0.66, 0.651, 0.651, 0.649, 0.646, 8, 7, 7, 6, 7, 6,
+    7, 6, 6, 5), ncol = 10)
+colnames(best.subset) &lt;- c("sqft", "bedrooms", "bathrooms", "stories",
+    "basementyes", "airconditioningyes", "parking", "prefareayes",
+    "R2adj", "X's")
+kbl(best.subset, booktabs = T, escape = F, align = "c", caption = "Best Subsets") |&gt;
+    kable_styling(latex_options = c("hold_position", "scale_down",
+        "striped"))
+# run standardized analysis removing bedrooms
+reg.log3 &lt;- reg(price.usd.log ~ sqft + bathrooms + stories +
+    basement + airconditioning + parking + prefarea)
+# generate new values for prediction interval based on
+# median values
+new &lt;- cbind(median(d$sqft), median(d$bathrooms), median(d$stories),
+    "yes", median(d$parking), "no")
+colnames(new) &lt;- c("sqft", "bathrooms", "stories", "airconditioning",
+    "parking", "prefarea")
+kbl(new, booktabs = T, escape = F, align = "c", caption = "Median values for new prediction") |&gt;
+    kable_styling(latex_options = c("hold_position"))
+# run simplified analysis with new data
+r.new &lt;- reg(price.usd.log ~ sqft + bathrooms + stories + airconditioning +
+    parking + prefarea, X1.new = 4600, X2.new = 1, X3.new = 2,
+    X4.new = 1, X5.new = 0, X6.new = 0)
+new.pred &lt;- cbind(format(10.85, nsmall = 3), 0.212, 10.434, 11.268)
+colnames(new.pred) &lt;- c("pred", "s pred", "pi lwr", "pi upr")
+kbl(new.pred, booktabs = T, escape = F, align = "c", caption = "Prediction Intervals for Price on New Data, Natural Log") |&gt;
+    kable_styling(latex_options = c("hold_position"))
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

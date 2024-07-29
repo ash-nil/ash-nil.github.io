@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ashley Nilson">
+        <link rel="canonical" href="https://ash-nil.github.io/HBR_Reports/LondonWater/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>London Water Pricing - Ashley Nilson</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Ashley Nilson</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Traffic_Analysis/Traffic_Analysis/" class="dropdown-item">Traffic Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../../Fraudulent_Acct_Detection/Fraudulent_Acct_Detection/" class="dropdown-item">Fraudulent Account Detection</a>
+</li>
+                                    
+<li>
+    <a href="../../Game_AB_Testing/Game_AB_Testing/" class="dropdown-item">AB Game Testing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">R</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../EV_Charging_Optimization/EV_Charging_Optimization/" class="dropdown-item">EV Charging Optimization</a>
+</li>
+                                    
+<li>
+    <a href="../../Housing_Price_Prediction/Housing_Price_Prediction/" class="dropdown-item">Housing Price Prediction</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">SQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates_PR/" class="dropdown-item">Database Updates PR</a>
+</li>
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates/" class="dropdown-item">Database Review</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">HBR Reports</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Asante/" class="dropdown-item">Asante Teaching Hospital Billing</a>
+</li>
+                                    
+<li>
+    <a href="../Danshui/" class="dropdown-item">Danshui Plant Manufacturing</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">London Water Pricing</a>
+</li>
+                                    
+<li>
+    <a href="../PolicePricing/" class="dropdown-item">Police Billing Structure</a>
+</li>
+                                    
+<li>
+    <a href="../TidalCloud/" class="dropdown-item">Tidal Cloud Accounting</a>
+</li>
+                                    
+<li>
+    <a href="../Toliza/" class="dropdown-item">Toliza Museum of Art Admission</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Danshui/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../PolicePricing/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#problem-at-hand" class="nav-link">Problem at Hand</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#analysis-summary" class="nav-link">Analysis Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#recommended-next-steps" class="nav-link">Recommended Next Steps</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-1-london-waters-current-water-rate-structure" class="nav-link">Exhibit 1 -- London Water's Current Water Rate Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#width65in-height36951388888888888in" class="nav-link">{width="6.5in" height="3.6951388888888888in"}</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_1" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-2-london-waters-new-water-rate-structure" class="nav-link">Exhibit 2 -- London Water's New Water Rate Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_2" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_3" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-3-prospective-of-metered-residential-water-usage-rates" class="nav-link">Exhibit 3 -- Prospective of Metered Residential Water Usage Rates</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_4" class="nav-link"></a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-4-stormwater-processing-fees" class="nav-link">Exhibit 4 -- Stormwater Processing Fees</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-5-institutional-vs-residential-land-area-use" class="nav-link">Exhibit 5 -- Institutional vs Residential Land Area Use</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="problem-at-hand">Problem at Hand</h2>
+<p>The water management system for London, Ontario has gone through
+multiple administrative and regulatory changes over the last few
+decades, causing increases in expenses for purely bureaucratic purposes
+-- though in the case of the regulatory changes these expenses are
+welcomed for public safety. These changes, though, are in addition to
+the natural expenses that arise with a city that has seen a drastic
+increase in growth over the years and has aging pipelines that need to
+be planned for replacement in the coming decades. Add that to a pricing
+structure that hasn't been reviewed in some time and London Water's
+billing method is due for some adjustments. The business is not
+sustainable as is; the pricing structure needs to be adjusted to ensure
+future financial stability that accounts for needed upgrades and
+expansions on the water system, while also encouraging reduced water
+usage both for environmental reasons and to help reduce the strain on
+the water system.</p>
+<p>However, it is not as easy as simply increasing rates across the board.
+There are three main categories of water use: water intake, wastewater
+processing, and stormwater management. The first, and least expensive to
+manage, is easy to account for using water meters. However, there is
+nuance to the last two -- which also happen to be the most expensive to
+manage. Wastewater processing is not as easy as "water in equals water
+out". Rather, there are multiple businesses, providing economic value to
+the city, that use water in their product. These include companies like
+breweries, so water intake is vastly higher than their wastewater
+production. Additionally, there are concerns around the equitability of
+the stormwater billing structure due to the limitations of the current
+system.</p>
+<h2 id="analysis-summary">Analysis Summary</h2>
+<p>The existing water rate structure, shown in Exhibit 1, differentiates
+rates between residential customers (R1-R3) and business customers
+(industrial, commercial, and institutional -- ICI1-ICI3). Using this
+payment structure, with the exception of ICI1 which is an extreme
+outlier, businesses that are using the same amount of water as
+residential customers are paying less per cubic meter of water
+non-business customers. While the likely intent of reduced rates for
+businesses is to support industries that rely on water for their final
+product, such as breweries, a business using the same amount of water as
+a residential customer is most likely not using water in their final
+product. As such, residential customers are directly subsidizing the
+water expenses for businesses in the area.</p>
+<p>Exhibit 2, though, shows the proposed new water rate which does not
+differentiate between business and residential customers. Rather, the
+new rate breaks metered water usage into eight groups with unique rates
+intended to meet particular goals based on the amount of water being
+used. The first two groups, Block 1 and 2, are for customers using the
+least amount of water and are intended to provide consumers with a
+built-in discount for reducing their water consumption. From there,
+Block 3 and 4 increase rates to account for the added strain on the
+water system by residential and business customers for whom water intake
+is assumed to be similar to wastewater output. Starting with group 5 and
+beyond, the cubic meter rate reduces and continues to reduce to both
+account for and encourage the development of businesses that use water
+for their sales product.</p>
+<p>For the residential side, customers who are on the higher end of water
+usage will see an increase in their water expenses. However, that is
+intentional and meant to encourage a reduction in water use over time.
+As seen in Exhibit 3, the prospective of metered residential water usage
+rates, under the new billing system the average residential customer
+would be included in Block 3 for 2011-2013, while the former system had
+the average customer in RS1 for 2011 and 2012, then RS2 for 2013. With
+the new billing system in place, the total metered fees for residential
+customers would increase, bringing in an additional 6-8 million in
+revenue provided water usage doesn't change.</p>
+<h2 id="recommended-next-steps">Recommended Next Steps</h2>
+<p>By adjusting the metered water rates to no longer differentiate between
+residential and business customers, London Water will be able to both
+bring in additional revenue and provide a more equitable experience to
+its customer base while still adjusting for business enterprises that
+use water as part of their final product. However, while a new customer
+billing layout is being introduced alongside the new metered fee system,
+the flat rate fees are as yet unchanged. The new billing system for
+metered charges directly addresses water intake and wastewater
+processing, however the inequity in expenses related to stormwater
+processing still needs to be addressed. This is the next step that must
+be taken in the review of London Water's billing system.</p>
+<p>Under the current system, as seen in exhibit 4, the smallest cutoff for
+stormwater charges is 0.4 hectares, or 1 acre. As London, Ontario is a
+fairly dense urban area, the average residential lot is well below that
+cutoff. For example, exhibit 5 demonstrates how a single institutional
+business customer uses over 60 times the land mass of 8 residential
+customers (shown in the circled oval), yet the group of residential
+customers pay more the same amount for stormwater runoff than the
+institutional customer. In full transparency, the business customers are
+underpaying for their stormwater fees. By adding nuance to the billing
+structure to account for variable lot sizes, London Water will be able
+to build more equity into their billing structure while also recouping
+lost expenses for processing stormwater runoff for businesses that use
+larger areas of land. This is the next London Water needs to take in
+building a sustainable billing system.</p>
+<h3 id="exhibit-1-london-waters-current-water-rate-structure">Exhibit 1 -- London Water's Current Water Rate Structure</h3>
+<h3 id="width65in-height36951388888888888in"><img alt="" src="../extracted_images/media/image1.png" />{width="6.5in" height="3.6951388888888888in"}</h3>
+<h3 id="_1"></h3>
+<h3 id="exhibit-2-london-waters-new-water-rate-structure">Exhibit 2 -- London Water's New Water Rate Structure</h3>
+<p><img alt="" src="../extracted_images/media/image2.png" />{width="6.5in"
+height="3.839583333333333in"}</p>
+<h3 id="_2"></h3>
+<h3 id="_3"></h3>
+<h3 id="exhibit-3-prospective-of-metered-residential-water-usage-rates">Exhibit 3 -- Prospective of Metered Residential Water Usage Rates</h3>
+<hr />
+<p><strong>2011</strong>                    <strong>2012</strong>                   <strong>2013</strong>    </p>
+<hr />
+<p>Total Residential    18,527,265                  18,488,769                 23,584,012 <br />
+  Water Usage for the     m^3^                        m^3^                       m^3^    <br />
+  Year                                                                                     </p>
+<p>Total Number of        99,641                      100,801                    102,421  <br />
+  Residential                                                                            <br />
+  Customers                                                                                </p>
+<p>Average Monthly      15.50 m^3^                  15.28 m^3^                 19.19 m^3^ <br />
+  Usage per                                                                              <br />
+  Residential                                                                            <br />
+  Customer                                                                                 </p>
+<p>Average Water Rate:   <em>\$ 2.06</em>   \$ 38,166,166   <em>\$ 2.06</em>        \$        <em>\$ 2.06</em>        \$
+  New                                                            38,086,864                 48,583,065</p>
+<p>Average Water Rate:   <em>\$ 1.61</em>   \$ 29,828,897   <em>\$ 1.61</em>        \$        <em>\$ 1.78</em>        \$
+  Old                                                            29,766,918                 41,979,541</p>
+<p><strong>Revenue               </strong>\$                        <strong>\$                       </strong>\$    <br />
+  Increase<strong>           8,337,269</strong>                 8,319,946<strong>                6,603,523</strong>  </p>
+<hr />
+<h3 id="_4"></h3>
+<h3 id="exhibit-4-stormwater-processing-fees">Exhibit 4 -- Stormwater Processing Fees</h3>
+<hr />
+<p><strong>Customer Type</strong>                              <strong>Rate</strong>       <strong>Unit</strong></p>
+<hr />
+<p>Residential \&lt; 0.4 hectares                    \$ 13.78       monthly</p>
+<p>Institutional \&lt; 0.4 hectares                  \$ 13.66       monthly</p>
+<p>Commercial/Industrial \&lt; 0.4 hectares          \$ 14.78       monthly</p>
+<p>Commercial/Institutional/Residential &gt; 0.4    \$ 75.12     per hectare
+  hectares                                                    </p>
+<p>Industrial &gt; 0.4 hectares                     \$ 112.68    per hectare</p>
+<hr />
+<p>* 0.4 hectares \~ 1 acre</p>
+<h3 id="exhibit-5-institutional-vs-residential-land-area-use">Exhibit 5 -- Institutional vs Residential Land Area Use</h3>
+<p><img alt="" src="../extracted_images/media/image3.png" />{width="4.916083770778653in"
+height="3.1923031496062992in"}</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

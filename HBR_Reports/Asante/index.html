@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ashley Nilson">
+        <link rel="canonical" href="https://ash-nil.github.io/HBR_Reports/Asante/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Asante Teaching Hospital Billing - Ashley Nilson</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Ashley Nilson</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Traffic_Analysis/Traffic_Analysis/" class="dropdown-item">Traffic Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../../Fraudulent_Acct_Detection/Fraudulent_Acct_Detection/" class="dropdown-item">Fraudulent Account Detection</a>
+</li>
+                                    
+<li>
+    <a href="../../Game_AB_Testing/Game_AB_Testing/" class="dropdown-item">AB Game Testing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">R</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../EV_Charging_Optimization/EV_Charging_Optimization/" class="dropdown-item">EV Charging Optimization</a>
+</li>
+                                    
+<li>
+    <a href="../../Housing_Price_Prediction/Housing_Price_Prediction/" class="dropdown-item">Housing Price Prediction</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">SQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates_PR/" class="dropdown-item">Database Updates PR</a>
+</li>
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates/" class="dropdown-item">Database Review</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">HBR Reports</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Asante Teaching Hospital Billing</a>
+</li>
+                                    
+<li>
+    <a href="../Danshui/" class="dropdown-item">Danshui Plant Manufacturing</a>
+</li>
+                                    
+<li>
+    <a href="../LondonWater/" class="dropdown-item">London Water Pricing</a>
+</li>
+                                    
+<li>
+    <a href="../PolicePricing/" class="dropdown-item">Police Billing Structure</a>
+</li>
+                                    
+<li>
+    <a href="../TidalCloud/" class="dropdown-item">Tidal Cloud Accounting</a>
+</li>
+                                    
+<li>
+    <a href="../Toliza/" class="dropdown-item">Toliza Museum of Art Admission</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../Database_Updates/Database_Updates/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Danshui/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#challenges" class="nav-link">Challenges</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#problems-for-asante-hospital" class="nav-link">Problems for Asante Hospital</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#problems-with-patient-billing" class="nav-link">Problems with patient billing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#recommendations" class="nav-link">Recommendations</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#pooling-cost-drivers" class="nav-link">Pooling cost drivers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#staff-salaries-calculated-using-abc" class="nav-link">Staff salaries calculated using ABC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#recommendation-summary" class="nav-link">Recommendation summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#exhibits" class="nav-link">Exhibits</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-1-selected-hospital-information" class="nav-link">Exhibit 1 -- Selected hospital information</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-21-pooled-annual-maternity-ward-overhead" class="nav-link">Exhibit 2.1 -- Pooled annual maternity ward overhead</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-22-cost-drivers-overhead" class="nav-link">Exhibit 2.2 -- Cost drivers (overhead)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-31-employee-availability-in-minutes" class="nav-link">Exhibit 3.1 -- Employee availability (in minutes)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-32-employee-annual-salaries" class="nav-link">Exhibit 3.2 -- Employee annual salaries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-33-cost-drivers-employee-salaries" class="nav-link">Exhibit 3.3 -- Cost drivers (employee salaries)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-41-maternity-staff-time-per-delivery-in-minutes" class="nav-link">Exhibit 4.1 -- Maternity staff time per delivery (in minutes)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-42-maternity-staff-costs-per-delivery" class="nav-link">Exhibit 4.2 -- Maternity staff costs per delivery</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="challenges">Challenges</h2>
+<h3 id="problems-for-asante-hospital">Problems for Asante Hospital</h3>
+<p>Asante Teaching Hospital is a not-for-profit hospital in an area where
+for-profit hospitals thrive. As a not-for-profit hospital, Asante does
+not have the opportunity to seek out investors or invest surplus funds
+as a means of managing unexpected expenses. Rather, the hospital is
+reliant on insurance payouts, patient out of pocket payments, and
+financial support from a private foundation. Along with the challenges
+associated with bringing in funding, Asante is a premier hospital that
+provides a superior level of care. To ensure that level of care can be
+maintained, the hospital uses a meticulous billing process that is
+challenging for the hospital to compile, problematic for insurance
+companies who prefer bundled pricing, and stressful for patients.</p>
+<h2 id="problems-with-patient-billing">Problems with patient billing</h2>
+<p>People like to have a feeling of control and know what to expect. This
+is particularly true when being discharged from a hospital after a
+stressful medical procedure, such as giving birth. As such, having to
+wait for hours after discharge to get and pay for a lengthy and detailed
+hospital bill, while not knowing the whole time what will be contained
+on it, is both overwhelming and frustrating. However, that is exactly
+what patients of Asante Teaching Hospital experience. Rather than using
+a normal costing method, where a patient could both be provided with
+anticipated expenses before admission and be discharged quickly, Asante
+uses actual costing and creates a thorough bill containing every line
+item and expense unique to a particular patient after their stay is
+complete. This process is not sustainable or helpful to either patients
+or the hospital itself.</p>
+<h2 id="recommendations">Recommendations</h2>
+<h3 id="pooling-cost-drivers">Pooling cost drivers</h3>
+<p>As there are standard expected annual expenses for the maternity ward,
+those expenses can be broken up into two main pools: Building-Based
+Expenses and Patient-Based Expenses (exhibit 2.1). The Building-Based
+expenses will not adjust according to the number of patients using the
+space (eg. building insurance is the same month by month), however
+Patient-Based Expenses may change depending on how many patients are in
+the hospital (eg. more laundry is washed the more patients there are).
+In the selected hospital information in Exhibit 1, there are two
+potential cost drivers associated with each of those expenses: the
+number of patients using the ward and the number of square feet in the
+ward.</p>
+<p>Regarding the number of patients, we also want to take into account
+their stay length, which averages to 3 days for this hospital. From
+this, we have two activity rates as shown in exhibit 2.2. The first is
+the rate of R1,042.04 per square foot used by the patient (so patients
+with larger, private rooms can be billed accordingly). The second is the
+base cost per patient per day of their stay, which is R52.28. These
+expenses do not change depending on the type of labor and delivery, so
+can remain static no matter the medical interventions needed; the only
+things needed to calculate these costs are the size of the room/part of
+the room used and the number of days a patient stays.</p>
+<h3 id="staff-salaries-calculated-using-abc">Staff salaries calculated using ABC</h3>
+<p>Regarding staff salaries, we need to breakdown how many minutes each
+staff member is actually available to provide care, which is shown in
+exhibit 3.1. This shows the anticipated number of days in their standard
+workweek, broken out into the total number of minutes they are paid for
+(including personal time, sick time, holiday, and training). We then
+remove those expenses to determine a final set of available care minutes
+for both residents and all other staff. It is important to note that
+personal, sick, holiday, and training time has an addition of 23% to the
+time, to account for taxes and benefit expenses.</p>
+<p>Using that information, we can compare staff care availability to their
+annual salary in exhibit 3.2 to see the cost of each employee's time on
+a per-minute basis, based on employee type. With that information, we
+can compare employee's minute-by-minute expenses to how many minutes
+each employee type spends working on different delivery types (levels
+1-3). When totaled, this then provides the anticipated employee expense
+for each of the three delivery types. This does not change whether the
+patient has more or less space, or stays more or fewer days. As such,
+this can be a direct line item depending on the delivery type.</p>
+<h3 id="recommendation-summary">Recommendation summary</h3>
+<p>With the pooled overhead expenses and ABC costing for employee salaries
+per delivery type, billing will be simpler since the accounting
+department will only need to determine the delivery type, number of
+stays stayed, and square footage used. However, these are all baseline
+anticipated expenses and do not account for an employee that needs
+additional sick days, hallway and office space, when a delivery requires
+more employee time than needed, or other unanticipated expenses. As
+such, we recommend using this as a base costing method with an
+additional 20% addition to account for these unanticipated expenses in
+order to assure the maternity ward remains self-sufficient.</p>
+<h2 id="exhibits">Exhibits</h2>
+<h3 id="exhibit-1-selected-hospital-information">Exhibit 1 -- Selected hospital information</h3>
+<hr />
+<p><strong>Selected Hospital Information</strong>                           </p>
+<hr />
+<pre><code>          *Statistic*             *Level 1* *Level 2*      *Level 3*
+
+Average days in maternity ward    3         3              4
+
+ Total natural birth patients     4,160     240            390
+
+ Total maternity ward patients    11,975
+
+   total maternity ward sqft      30,294
+
+      total hospital sqft         455,000
+</code></pre>
+<hr />
+<h3 id="exhibit-21-pooled-annual-maternity-ward-overhead">Exhibit 2.1 -- Pooled annual maternity ward overhead</h3>
+<hr />
+<p><strong>Pooled Annual Maternity Ward     <br />
+  Overhead</strong>                           </p>
+<hr />
+<p><em>Overhead Item</em>                      <em>Total</em></p>
+<p>Building-based Costs                 </p>
+<p>Equipment Depreciation               R 363,672</p>
+<p>Insurance                            R 233,991</p>
+<p>Utilities                            R 7,454,026</p>
+<p>Rent                                 R 16,195,458</p>
+<p>Groundskeeping                       R 898,940</p>
+<p>Security                             R 302,076</p>
+<p>Information Tech                     R 6,119,349</p>
+<p><em>Subtotal - Building</em>                <em>R 31,567,512</em></p>
+<p>Patient-based Costs                  </p>
+<p>Marketing                            R 105,412</p>
+<p>General/Admin                        R 314,622</p>
+<p>Housekeeping                         R 206,241</p>
+<p>Laundry                              R 395,295</p>
+<p>Dining Hall                          R 856,684</p>
+<p><em>Subtotal - Patient</em>                 <em>R 1,878,254</em></p>
+<p><strong>Total</strong>                            <strong>R 33,445,766</strong></p>
+<hr />
+<h3 id="exhibit-22-cost-drivers-overhead">Exhibit 2.2 -- Cost drivers (overhead)</h3>
+<hr />
+<p><strong>Cost Drivers - Overhead</strong>                       </p>
+<hr />
+<p><em>Cost Driver</em>                 <em>Activity Rate</em>     <em>Unit</em></p>
+<p>Building-Based Costs          R 1,042.04          sqft used</p>
+<p>Patient-based Costs           R 52.28             patient per day</p>
+<hr />
+<h3 id="exhibit-31-employee-availability-in-minutes">Exhibit 3.1 -- Employee availability (in minutes)</h3>
+<hr />
+<pre><code>**Employee Availability (in                       
+         minutes)**
+</code></pre>
+<hr />
+<pre><code>          Resident             Resident           All others
+
+     Daily worked time         960.00             504.00
+
+   Annual payout of time       249,600.00         131,040.00
+
+  Annual personal leave\*      9,446.40           4,959.36
+
+    Annual sick leave\*        7,084.80           3,719.52
+
+   Annual holiday time\*       14,169.60          7,439.04
+
+  Total annual training\*      7,675.20           7,675.20
+
+  **Total available time**     **211,224.00**     **107,246.88**
+
+  \*with 23% addition for                         
+       benefits/taxes
+</code></pre>
+<hr />
+<h3 id="exhibit-32-employee-annual-salaries">Exhibit 3.2 -- Employee annual salaries</h3>
+<hr />
+<p><strong>Annual Salaries for                       <br />
+  Maternity Ward Staff by                     <br />
+  Position</strong>                                    </p>
+<hr />
+<p><em>Position</em>               <em>Salary</em>             <em>Note</em></p>
+<p>OBGYN                    R 35,403,451         Total for team of 3</p>
+<p>Paediatrician            R 23,477,139         Total for team of 4</p>
+<p>Midwife/Nurse            R 114,557            </p>
+<p>Resident                 R 231,841            </p>
+<p>Registration Clerk       R 9,092              </p>
+<p>Practical Nurse          R 7,122              </p>
+<hr />
+<h3 id="exhibit-33-cost-drivers-employee-salaries">Exhibit 3.3 -- Cost drivers (employee salaries)</h3>
+<hr />
+<p><strong>Cost Drivers - Employee                      <br />
+  Salaries</strong>                                       </p>
+<hr />
+<p><em>Cost Driver</em>              <em>Activity Rate</em>       <em>Unit</em></p>
+<p>OBGYN                      R 110.04              minute worked</p>
+<p>Paediatrician              R 54.73               minute worked</p>
+<p>Midwife/Nurse              R 1.07                minute worked</p>
+<p>Resident                   R 1.10                minute worked</p>
+<p>Registration Clerk         R 0.08                minute worked</p>
+<p>Practical Nurse            R 0.07                minute worked</p>
+<hr />
+<h3 id="exhibit-41-maternity-staff-time-per-delivery-in-minutes">Exhibit 4.1 -- Maternity staff time per delivery (in minutes)</h3>
+<hr />
+<p><strong>Breakdown of                                         <br />
+  Maternity Staff Time                                   <br />
+  Per Delivery                                           <br />
+  (Minutes)</strong>                                              </p>
+<hr />
+<p><em>Position</em>            <em>Level 1</em>       <em>Level 2</em>          <em>Level 3</em></p>
+<p>OBGYN                 30              37                 80</p>
+<p>Paediatrician         43              55                 71</p>
+<p>Midwife/Nurse         1,422           1,422              1,600</p>
+<p>Resident              225             240                412</p>
+<p>Registration Clerk    43              43                 60</p>
+<p>Practical Nurse       99              99                 110</p>
+<hr />
+<h3 id="exhibit-42-maternity-staff-costs-per-delivery">Exhibit 4.2 -- Maternity staff costs per delivery</h3>
+<hr />
+<p><strong>Maternity Staff Costs                                 <br />
+  Per Delivery</strong>                                            </p>
+<hr />
+<p><em>Position</em>                <em>Level 1</em>      <em>Level 2</em>        <em>Level 3</em></p>
+<p>OBGYN                     R 3,301.12     R 4,071.38       R 8,802.98</p>
+<p>Paediatrician             R 2,353.25     R 3,009.98       R 3,885.61</p>
+<p>Midwife/Nurse             R 1,518.93     R 1,518.93       R 1,709.06</p>
+<p>Resident                  R 246.96       R 263.43         R 452.21</p>
+<p>Registration Clerk        R 3.65         R 3.65           R 5.09</p>
+<p>Practical Nurse           R 6.57         R 6.57           R 7.30</p>
+<p><strong>Total per delivery      </strong>R 7,430.48<strong> </strong>R 8,873.93<strong>   </strong>R
+  type<strong>                                                    14,862.25</strong></p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

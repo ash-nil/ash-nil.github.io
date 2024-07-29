@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ashley Nilson">
+        <link rel="canonical" href="https://ash-nil.github.io/HBR_Reports/PolicePricing/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Police Billing Structure - Ashley Nilson</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Ashley Nilson</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Traffic_Analysis/Traffic_Analysis/" class="dropdown-item">Traffic Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../../Fraudulent_Acct_Detection/Fraudulent_Acct_Detection/" class="dropdown-item">Fraudulent Account Detection</a>
+</li>
+                                    
+<li>
+    <a href="../../Game_AB_Testing/Game_AB_Testing/" class="dropdown-item">AB Game Testing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">R</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../EV_Charging_Optimization/EV_Charging_Optimization/" class="dropdown-item">EV Charging Optimization</a>
+</li>
+                                    
+<li>
+    <a href="../../Housing_Price_Prediction/Housing_Price_Prediction/" class="dropdown-item">Housing Price Prediction</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">SQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates_PR/" class="dropdown-item">Database Updates PR</a>
+</li>
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates/" class="dropdown-item">Database Review</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">HBR Reports</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Asante/" class="dropdown-item">Asante Teaching Hospital Billing</a>
+</li>
+                                    
+<li>
+    <a href="../Danshui/" class="dropdown-item">Danshui Plant Manufacturing</a>
+</li>
+                                    
+<li>
+    <a href="../LondonWater/" class="dropdown-item">London Water Pricing</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Police Billing Structure</a>
+</li>
+                                    
+<li>
+    <a href="../TidalCloud/" class="dropdown-item">Tidal Cloud Accounting</a>
+</li>
+                                    
+<li>
+    <a href="../Toliza/" class="dropdown-item">Toliza Museum of Art Admission</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../LondonWater/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../TidalCloud/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#new-billing-model-impact" class="nav-link">New Billing Model Impact</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#single-cost-driver-impact" class="nav-link">Single Cost Driver Impact</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#summary-recommendation" class="nav-link">Summary &amp; Recommendation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#exhibits" class="nav-link">Exhibits</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-1-cost-drivers-for-the-new-billing-model" class="nav-link">Exhibit 1 -- Cost Drivers for the New Billing Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-2-per-municipality-service-costs-for-the-new-billing-model" class="nav-link">Exhibit 2 -- Per-Municipality Service Costs for the New Billing Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-3-municipality-details-former-contract" class="nav-link">Exhibit 3 -- Municipality Details &amp; Former Contract</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-4-2015-calls-for-service-totals" class="nav-link">Exhibit 4 -- 2015 Calls for Service Totals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-5-single-cost-driver-model" class="nav-link">Exhibit 5 -- Single Cost Driver Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-6-summary-base-service-and-calls-for-service" class="nav-link">Exhibit 6 -- Summary Base Service and Calls for Service</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exhibit-7-single-cost-driver-model" class="nav-link">Exhibit 7 -- Single Cost Driver Model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="new-billing-model-impact">New Billing Model Impact</h2>
+<p>The new billing model uses two cost drivers: base policing services and
+the calls for service. As shown in exhibit 1, the base policing services
+are calculated at a rate of \$195.96 per property within a given
+municipality, while the calls for service are calculated at \$83.97 per
+hour of weighted time spent on calls for service over the preceding four
+years. These numbers are generated for 2015, and will be updated
+annually using the most recent calculations for calls for service and
+property counts.</p>
+<p>Using this model, the Alder, Balsam, and Cedar municipalities will all
+see a change in their billing rates, shown in exhibit 2. Alder and Cedar
+will both see an increase for 2015, with Cedar's fees increasing by
+almost 50% and Alder just shy of 20%. Balsam, on the other hand, will
+see a decrease of just over 25% in their billing rate. This is logical
+since Alder, Balsam, and Cedar were each using a billing rate from
+different years: 2011, 2013, and 2009 respectively, as shown in exhibit
+3. Additionally, the former billing model used a single cost driver
+based on the number of properties in a given municipality for billing
+purposes. However, the number of properties do not correlate directly to
+the number of service call hours used. For example, in the preceding
+four years, the percentage of total weighed time for service calls that
+Alder used was nearly double the percentage of properties they have to
+the total service area, as shown in exhibits 3 and 4.</p>
+<h2 id="single-cost-driver-impact">Single Cost Driver Impact</h2>
+<p>When considering proposed single cost driver options, we can use
+property counts, calls for service, population, household income, or
+property value as the cost drivers. The applicable rates for each cost
+driver is shown in exhibit 5. The cost drivers were determined by
+dividing the combined expense totals for base services and calls for
+service (exhibit 6) by the applicable municipality information provided
+(exhibit 3). The resulting calculations for the Adler, Balsam, and Cedar
+municipalities are available in exhibit 7, including the difference in
+cost for each between the new two driver model and the former model. It
+is important to note that the first option, calculating based on
+properties, is the same as the current model and so if no changes were
+made this would be the model used.</p>
+<p>For each of the proposed single cost driver options, there will be an
+impact on each municipalities expenses. For Alder, calculating by either
+population or calls for service would increase their expenses when
+compared to either the current model or the proposed new model, while
+all other options would be a reduction in expenses. Balsam would see a
+reduction in expenses for any of the single cost drivers when compared
+to the current plan, but would see a less than 10% change (either
+positive or negative) when comparing to the proposed new plan. Lastly,
+Cedar would see an increase in expenses for any of the options when
+compared to the current model, by as much as 67%. The new model, though,
+has variable differences to single cost driver options.</p>
+<h2 id="summary-recommendation">Summary &amp; Recommendation</h2>
+<p>The large variance in how different billing models impact different
+municipalities lays in the fact that each municipality is unique. It's
+important to account not just for a single cost driver, such as
+population, but to also note how much time and effort each municipality
+requires of OPP. There are not direct correlations between a single
+factor and the needs of a municipality for OPP. As such, it is fairest
+to use the two-driver model where the base services are calculated using
+population while using historical calls for service to anticipate future
+call for service needs. While some municipalities may be up and coming
+and will require fewer calls for service or less time on each service
+call, using the preceding four years to calculate anticipated needs
+provides an ongoing method of updating the calculation on a year-by-year
+basis. If there is an extreme change in CFS needs one year, that will
+reflect in the following year's expenses. This is a flexible calculation
+that provides room for growth and changing municipality needs, which is
+not accounted for in a single cost driver model.</p>
+<h2 id="exhibits">Exhibits</h2>
+<h3 id="exhibit-1-cost-drivers-for-the-new-billing-model">Exhibit 1 -- Cost Drivers for the New Billing Model</h3>
+<hr />
+<p>Cost Driver                      Activity Rate Unit</p>
+<hr />
+<p>Base Policing Services           \$ 195.96     property</p>
+<p>Calls for Service                \$ 83.97      hour of weighted time</p>
+<hr />
+<h3 id="exhibit-2-per-municipality-service-costs-for-the-new-billing-model">Exhibit 2 -- Per-Municipality Service Costs for the New Billing Model</h3>
+<hr />
+<p>Service Costs         Alder                        Balsam                 Cedar</p>
+<hr />
+<p>Base Policing                 \$927,262.28         \$3,059,064.14         \$147,358.67
+  Services                                                                  </p>
+<p>Calls for Service             \$1,189,202.80       \$1,810,373.07         \$ 113,573.42</p>
+<p><strong>Total</strong>                     <strong>\$2,116,465.08</strong>   <strong>\$4,869,437.21</strong>     <strong>\$
+                                                                            260,932.09</strong></p>
+<p>Former Contract               \$1,724,246.16       \$6,121,541.43         \$ 130,712.64
+  Expense                                                                   </p>
+<p><strong>Difference from             </strong>\$392,218.92<strong>     </strong>\$(1,252,104.22)<strong>   </strong>\$
+  former contract<strong>                                                         130,219.45</strong></p>
+<p><em>Percentage change</em>           <em>18.53%</em>             <em>-25.71%</em>              <em>49.91%</em></p>
+<hr />
+<h3 id="exhibit-3-municipality-details-former-contract">Exhibit 3 -- Municipality Details &amp; Former Contract</h3>
+<hr />
+<p>Category         Alder           Balsam            Cedar           All Areas</p>
+<hr />
+<p>Region           East            Central           North West      n/a</p>
+<p>Population       14,220          27,221            2,370           2,146,789</p>
+<p>Area (km^2^)     17.24           22.37             12.90           1,035.57</p>
+<p>Pop. Density     824.83          1,216.85          183.72          2.07
+  (km^2^)                                                            </p>
+<p>Households       4,430           15,082            671             1,069,951</p>
+<p>Commercial Prop. 302             529               81              58,847</p>
+<p>Total Properties 4,732           15,611            752             1,128,798</p>
+<p>Avg. Household   \$ 49,769       \$ 82,179         \$ 62,465       \$ 78,160
+  Income                                                             </p>
+<p>Avg. Household   3.21            1.80              3.53            2.01
+  Size                                                               </p>
+<p>Total Property   \$891,836,576   \$3,695,312,326   \$280,010,747   \$276,024,606,014
+  Assessment                                                         </p>
+<p>Average Property \$ 188,469      \$ 236,712        \$ 372,355      \$ 244,530
+  Assessment                                                         </p>
+<p>Year of Prev.    2011            2013              2009            n/a
+  Contract                                                           </p>
+<p>Cost per         \$ 364.38       \$ 392.13         \$ 173.82       n/a
+  Property per                                                     <br />
+  Previous                                                         <br />
+  Contract                                                           </p>
+<hr />
+<h3 id="exhibit-4-2015-calls-for-service-totals">Exhibit 4 -- 2015 Calls for Service Totals</h3>
+<hr />
+<p>Calls for service    Avg. Calls     Total Weighted Time    \% of weighted
+  totals                                                               time</p>
+<hr />
+<p>Alder                3,215          14,162                          0.86%</p>
+<p>Balsam               5,348          21,559                          1.31%</p>
+<p>Cedar                340            1,353                           0.08%</p>
+<p><strong>ALL SERVICE        </strong>399,243<strong>    </strong>1,644,880.28<strong>  <br />
+  AREAS</strong>                                                 </p>
+<hr />
+<h3 id="exhibit-5-single-cost-driver-model">Exhibit 5 -- Single Cost Driver Model</h3>
+<hr />
+<p>Cost Driver             Activity Rate          Unit</p>
+<hr />
+<p>Properties              \$ 318.32              property</p>
+<p>CFS                     \$ 900.00              call</p>
+<p>Population              \$ 167.37              resident</p>
+<p>Household Income        \$ 0.004297            dollar of household
+                                                 income</p>
+<p>Property Value          \$ 0.001302            dollar of property
+                                                 assessment</p>
+<hr />
+<h3 id="exhibit-6-summary-base-service-and-calls-for-service">Exhibit 6 -- Summary Base Service and Calls for Service</h3>
+<hr />
+<p>Category             FTE\'s     Base Service        Calls for Service   Total (all areas)</p>
+<hr />
+<p>Total uniform        2,237.47   \$173,098,725       \$107,444,219       \$280,542,944
+  salaries &amp; benefits                                                     </p>
+<p>Total detachment     192.32     \$8,932,506         \$5,928,200         \$14,860,706
+  civilian salaries &amp;                                                   <br />
+  benefits                                                                </p>
+<p>Total support staff             \$16,279,664        \$10,285,817        \$26,565,481
+  salaries &amp; benefits                                                   <br />
+  costs                                                                   </p>
+<p><strong>Total salaries &amp;   ** **      </strong>\$198,310,895<strong>   </strong>\$123,658,236<strong>   </strong>\$321,969,131<strong>
+  benefits</strong>                                                              </p>
+<p>Total other direct              \$22,883,486        \$14,464,157        \$37,347,643
+  operating expenses                                                      </p>
+<p><strong>Total municipal    ** **      </strong>\$221,194,381<strong>   </strong>\$138,122,393<strong>   </strong>\$359,316,774<strong>
+  base &amp; calls for                                                      <br />
+  service cost</strong>                                                          </p>
+<p>Total OPP-policed               1,128,798                             <br />
+  municipal properties                                                    </p>
+<p><strong>Base service cost  ** **      \$195.96                                 
+  per property</strong>                                                          </p>
+<hr />
+<h3 id="exhibit-7-single-cost-driver-model">Exhibit 7 -- Single Cost Driver Model</h3>
+<hr />
+<p>Cost Driver      Dollar Amounts                                               Percentage             <br />
+                                                                                Change                   </p>
+<hr />
+<pre><code>               *Alder*              *Balsam*             *Cedar*            *Alder*      *Balsam*    *Cedar*
+</code></pre>
+<p><strong>Properties</strong>   <strong>\$1,506,280.99</strong>   <strong>\$4,969,263.02</strong>   <strong>\$239,375.17</strong>   ** **        ** **       ** **</p>
+<p>Difference from  \$(610,184.09)       \$99,825.81          \$(21,556.92)      -40.51%      2.01%       -9.01%
+  new billing                                                                                          <br />
+  model                                                                                                  </p>
+<p><em>Difference from </em>\$(217,965.17)<em>     </em>\$(1,152,278.41)<em>   </em>\$108,662.53<em>     </em>-14.47%<em>    </em>-23.19%<em>   </em>45.39%<em>
+  former contract</em>                                                                                       </p>
+<p><strong>Calls for      </strong>\$2,893,484.49<strong>   </strong>\$4,813,174.20<strong>   </strong>\$305,998.36<strong>   ** **        ** **       ** **
+  Service</strong>                                                                                              </p>
+<p>Difference from  \$777,019.41         \$(56,263.01)        \$45,066.27        26.85%       -1.17%      14.73%
+  new billing                                                                                          <br />
+  model                                                                                                  </p>
+<p><em>Difference from </em>\$1,169,238.33<em>     </em>\$(1,308,367.23)<em>   </em>\$175,285.72<em>     </em>40.41%<em>     </em>-27.18%<em>   </em>57.28%<em>
+  former contract</em>                                                                                       </p>
+<p><strong>Population</strong>   <strong>\$2,380,059.02</strong>   <strong>\$4,556,089.07</strong>   <strong>\$396,676.50</strong>   ** **        ** **       ** **</p>
+<p>Difference from  \$263,593.94         \$(313,348.14)       \$135,744.41       11.08%       -6.88%      34.22%
+  new billing                                                                                          <br />
+  model                                                                                                  </p>
+<p><em>Difference from </em>\$655,812.86<em>       </em>\$(1,565,452.36)<em>   </em>\$265,963.86<em>     </em>27.55%<em>     </em>-34.36%<em>   </em>67.05%<em>
+  former contract</em>                                                                                       </p>
+<p><strong>Household      </strong>\$ 947,309.06<strong>    </strong>\$ 5,325,358.39<strong>  </strong>\$ 180,089.47<strong>  ** **        ** **       ** **
+  Income</strong>                                                                                               </p>
+<p>Difference from  \$(1,169,156.02)     \$455,921.18         \$(80,842.62)      -123.42%     8.56%       -44.89%
+  new billing                                                                                          <br />
+  model                                                                                                  </p>
+<p><em>Difference from </em>\$(776,937.10)<em>     </em>\$ (796,183.04)<em>    </em>\$49,376.83<em>      </em>-82.02%<em>    </em>-14.95%<em>   </em>27.42%<em>
+  former contract</em>                                                                                       </p>
+<p><strong>Property       </strong>\$1,160,953.89<strong>   </strong>\$4,810,396.16<strong>   </strong>\$364,505.76<strong>   ** **        ** **       ** **
+  Value</strong>                                                                                                </p>
+<p>Difference from  \$(955,511.19)       \$(59,041.06)        \$103,573.67       -82.30%      -1.23%      28.41%
+  new billing                                                                                          <br />
+  model                                                                                                  </p>
+<p><em>Difference from </em>\$(563,292.27)<em>     </em>\$(1,311,145.27)<em>   </em>\$233,793.12<em>     </em>-48.52%<em>    </em>-27.26%<em>   </em>64.14%<em>
+  former contract</em>                                                                                       </p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
