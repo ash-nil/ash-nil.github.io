@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ashley Nilson">
+        <link rel="canonical" href="https://ash-nil.github.io/HBR_Reports/TidalCloud/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Tidal Cloud Accounting - Ashley Nilson</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Ashley Nilson</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Python</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Traffic_Analysis/Traffic_Analysis/" class="dropdown-item">Traffic Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../../Fraudulent_Acct_Detection/Fraudulent_Acct_Detection/" class="dropdown-item">Fraudulent Account Detection</a>
+</li>
+                                    
+<li>
+    <a href="../../Game_AB_Testing/Game_AB_Testing/" class="dropdown-item">AB Game Testing</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">R</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../EV_Charging_Optimization/EV_Charging_Optimization/" class="dropdown-item">EV Charging Optimization</a>
+</li>
+                                    
+<li>
+    <a href="../../Housing_Price_Prediction/Housing_Price_Prediction/" class="dropdown-item">Housing Price Prediction</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">SQL</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates_PR/" class="dropdown-item">Database Updates PR</a>
+</li>
+                                    
+<li>
+    <a href="../../Database_Updates/Database_Updates/" class="dropdown-item">Database Review</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">HBR Reports</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Asante/" class="dropdown-item">Asante Teaching Hospital Billing</a>
+</li>
+                                    
+<li>
+    <a href="../Danshui/" class="dropdown-item">Danshui Plant Manufacturing</a>
+</li>
+                                    
+<li>
+    <a href="../LondonWater/" class="dropdown-item">London Water Pricing</a>
+</li>
+                                    
+<li>
+    <a href="../PolicePricing/" class="dropdown-item">Police Billing Structure</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Tidal Cloud Accounting</a>
+</li>
+                                    
+<li>
+    <a href="../Toliza/" class="dropdown-item">Toliza Museum of Art Admission</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../PolicePricing/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Toliza/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><strong>Implementing ABC at Tidal Cloud Inc</strong></p>
+<p>Tidal Cloud Inc (Tidal) is a hosting provider that offers both managed
+hosting using physical servers as well as cloud-based hosting with two
+unique service offerings: public cloud and private cloud (Marea Cloud).
+Public cloud uses shared cloud servers to manage data, while Marea Cloud
+offers private servers for each client, a benefit for clients that need
+to ensure the privacy and security of their data. This company is facing
+pressure from its investors to increase profit margins as a means to
+start creating an exit strategy for the company. The end goal is to
+demonstrate the best profitability they can, to make the most out of
+selling the company. To help with this process Tidal began heavily
+investing in cloud infrastructure as that technology became increasingly
+popular, but their competitors are lowering prices on public cloud
+services at a time when Tidal's profit margins on those services are
+already tight. However, they've been able to increase pricing on their
+private cloud hosting service, Marea Cloud, without a drop in customer
+base. The managed hosting service is essentially in a "set it and forget
+it" status, where their customer base is stable provided nothing goes
+wrong, and they're not looking to increase that service due to concerns
+around resiliency.</p>
+<p>According to Tidal's existing simple cost system, which allocates a
+percentage of indirect budget expenses to each service according to the
+number of virtual servers in use at the end of each month per service,
+while also accounting for direct costs in the form of equipment leasing.
+Under that cost system, the company is operating at a 2% profit margin,
+managed hosting operating at a 3% profit margin, public hosting
+operating at a loss with -5.6% and Marea Cloud having the best profit
+margin of 13.7% (see Appendix I). There are two main issues with this
+simplified costing method, though. First, the managed services don't
+actually use virtual servers and so their operating expenses have to be
+assumed. Second, allocation of budget is based on virtual machines, but
+in the public cloud service, virtual machines may be shared while in the
+private model they are always individual to the company. As such,
+allocating based on virtual machine does not account for actual
+expenses.</p>
+<p>By using Activity Based Costing, Tidal would be able to identify true
+operating costs for each service and get a more accurate picture of
+their profit margins for each service. Appendix II shows what the
+activity rate is for each cost driver accounted for within the
+previously mass-allocated indirect costs, as well as the source data for
+those rates which shows how many "units" of each cost driver the
+different products used. When multiplying the activity rates by the
+units of each rate used per product, you get the ABC method of costing,
+shown in Appendix III. Using this method, the profit margins look very
+different, with managed hosting operating at a 14.03% profit margin,
+public cloud operating with a 5.3% profit margin, and Marea Cloud
+operating at a loss of 11.36%. Using this information, Tidal can make
+more informed business decisions since what was previously shown as
+their primary profit driver, Marea Cloud, is actually their loss leader.</p>
+<p><strong>Appendix I</strong></p>
+<hr />
+<pre><code> **Product
+</code></pre>
+<p>Profitability                                             <br />
+  for Month Ended                                            <br />
+  June 30, 2016**                                              </p>
+<hr />
+<pre><code>                **Company**     **Managed      **Public       **Marea
+                                Hosting**       Cloud**       Cloud**
+
+  *Sales*       *\$950,000*    *\$191,900*    *\$469,300*   *\$ 288,800*
+
+ Equipment      \$(237,500)    \$(47,500)     \$(114,000)   \$ (76,000)
+  Leasing
+
+ Allocated      \$(693,500)    \$(138,700)    \$(381,425)   \$ (173,375)
+</code></pre>
+<p>Indirect Costs                                              </p>
+<p>Operating profit   \$19,000        \$5,700      \$(26,125)      \$39,425
+    before SG&amp;A                                                </p>
+<pre><code>  **Profit       **2.0%**       **3.0%**       **-5.6%**     **13.7%**
+  Margin**
+</code></pre>
+<hr />
+<p>**\
+**</p>
+<p><strong>Appendix II</strong></p>
+<hr />
+<p>** **                    <strong>Activity Rate</strong>     <strong>Unit</strong></p>
+<hr />
+<p>Provide Computing        \$6.33                VM
+  Resources                                      </p>
+<p>Process Payments         \$0.02                Dollar Earned</p>
+<p>Onboard New Customers    \$72.44               Hour</p>
+<p>Support Existing         \$103.61              Help Ticket
+  Customers                                      </p>
+<p>Build &amp; Improve Products \$54.15               Code Commit</p>
+<p>Advertise &amp; Promote      \$855.00              Percent of Spending</p>
+<hr />
+<hr />
+<pre><code>                                          **Budgeted                           
+                                          Quantity of                          
+                                           Activity                            
+                                           Driver**
+</code></pre>
+<hr />
+<p><strong>Core          </strong>Budgeted<strong>   </strong>Activity   <strong>Company</strong>   <strong>Managed   </strong>Public     <strong>Marea
+  Activities</strong>                  Driver (per                 Hosting<strong>    Cloud</strong>     Cloud<strong>
+                                  month)</strong>                                         </p>
+<p>Provide          \$228,000     Number of      36,000        7,200      19,800       9,000
+  Computing                     VMs at month                                     <br />
+  Resources                         end                                            </p>
+<p>Process           \$19,000      \$ Sales     \$950,000    \$191,900   \$469,300   \$288,800
+  Payments                                                                         </p>
+<p>Onboard New       \$86,925    Hours spent      1,200         60          420         720
+  Customers                      onboarding                                      <br />
+                                  new VMs                                          </p>
+<p>Support          \$165,775    Help tickets     1,600         480         640         480
+  Existing                       addressed                                       <br />
+  Customers                                                                        </p>
+<p>Build &amp;          \$108,300     Number of       2,000         100         800        1,100
+  Improve                       code commits                                     <br />
+  Products                                                                         </p>
+<p>Advertise &amp;       \$85,500      Targeted        100          10          65          25
+  Promote                         ratio of                                       <br />
+                                  spending                                         </p>
+<hr />
+<p>**\
+**</p>
+<p><strong>Appendix III</strong></p>
+<hr />
+<p><strong>Cost         </strong>Managed       <strong>Public Cloud</strong> <strong>Marea Cloud</strong>  <strong>Company</strong>
+  Drivers<strong>      Hosting</strong>                                         </p>
+<hr />
+<p>Equipment      \$(47,500)      \$(114,000)      \$(76,000)       \$(237,500)
+  Leasing                                                        <br />
+  (Direct)                                                         </p>
+<p>Provide        \$ (45,600.00)  \$(125,400.00)   \$(57,000.00)    \$(228,000)
+  Computing                                                      <br />
+  Resources                                                        </p>
+<p>Process        \$(3,838.00)    \$(9,386.00)     \$(5,776.00)     \$(19,000)
+  Payments                                                         </p>
+<p>Onboard New    \$(4,346.25)    \$(30,423.75)    \$(52,155.00)    \$(86,925)
+  Customers                                                        </p>
+<p>Support        \$(49,732.50)   \$(66,310.00)    \$(49,732.50)    \$(165,775)
+  Existing                                                       <br />
+  Customers                                                        </p>
+<p>Build &amp;        \$(5,415.00)    \$(43,320.00)    \$(59,565.00)    \$(108,300)
+  Improve                                                        <br />
+  Products                                                         </p>
+<p>Advertise &amp;    \$(8,550.00)    \$(55,575.00)    \$(21,375.00)    \$(85,500)
+  Promote                                                          </p>
+<p><em>Total</em>        \$(164,982)     \$(444,415)      \$(321,604)      \$(931,000)</p>
+<p>** **          <strong>Managed       </strong>Public Cloud<strong> </strong>Marea Cloud<strong>  </strong>Company<strong>
+                 Hosting</strong>                                         </p>
+<p>Sales          \$191,900       \$469,300        \$288,800        <strong>\$950,000</strong></p>
+<p><strong>Operating    </strong>\$26,918<strong>    </strong>\$24,885<strong>     </strong>\$(32,804)<strong>   </strong>\$19,000<strong>
+  profit</strong>                                                         </p>
+<p>Profit margin  14.03%          5.30%            -11.36%          <strong>2.00%</strong></p>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
