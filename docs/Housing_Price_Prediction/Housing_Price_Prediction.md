@@ -1,3 +1,5 @@
+# Housing Price Prediction
+
 ## Introduction
 
 For this report, I’ll be working with the *[Housing Price Prediction
@@ -439,14 +441,14 @@ first set of plots, shown in @ref(fig:lm.scatter), uses the best-fitting
 least squares line while the other set of plots, shown in
 @ref(fig:exp.scatter), uses the best-fitting exponential curve.
 
-<img src="Housing_Price_Prediction_files/figure-markdown_strict/unnamed-chunk-3-1.png" alt="Sqft Feet and Bedrooms Scatterplots, Least Squares" width="50%" /><img src="Housing_Price_Prediction_files/figure-markdown_strict/unnamed-chunk-3-2.png" alt="Sqft Feet and Bedrooms Scatterplots, Least Squares" width="50%" />
-<p class="caption">
-Sqft Feet and Bedrooms Scatterplots, Least Squares
-</p>
+![regression model](Housing_Price_Prediction_files/figure-markdown_strict/lm_plots-1.png)
 
-<img src="Housing_Price_Prediction_files/figure-markdown_strict/unnamed-chunk-4-1.png" alt="Sqft and Bedrooms Scatterplots, Exponential Curve" width="50%" /><img src="Housing_Price_Prediction_files/figure-markdown_strict/unnamed-chunk-4-2.png" alt="Sqft and Bedrooms Scatterplots, Exponential Curve" width="50%" />
-<p class="caption">
-Sqft and Bedrooms Scatterplots, Exponential Curve
+![regression model](Housing_Price_Prediction_files/figure-markdown_strict/lm_plots-2.png)
+
+![regression model](Housing_Price_Prediction_files/figure-markdown_strict/exp_plots-1.png)
+
+![regression model](Housing_Price_Prediction_files/figure-markdown_strict/exp_plots-2.png)
+
 </p>
 
 Each plot does appear to fit the data, though the exponential curve has
@@ -1075,20 +1077,8 @@ From the information shown above, we can generate an the following
 regression model. For the model, we are using 6 decimal points rather
 than 3, to better illustrate the model.
 
-$$
- \begin{split}
- \begin{aligned}
-     log \\ \hat{y} = 9.933829   &+ 0.000056 \cdot x\_{sqft} \\ 
-     &+ 0.026280 \cdot x\_{bedrooms} \\
-     &+ 0.172082 \cdot x\_{bathrooms} \\ 
-     &+ 0.104458 \cdot x\_{stories} \\ 
-     &+ 0.126682 \cdot x\_{basementyes} \\ 
-     &+ 0.168142 \cdot x\_{airconditioningyes} \\ 
-     &+ 0.060303 \cdot x\_{parking} \\ 
-     &+ 0.139599 \cdot x\_{prefareayes} \\
-  \end{aligned}
-  \end{split}
-$$
+![regression model](Housing_Price_Prediction_files/figure-markdown_strict/reg_model.png)
+
 This model uses the intercept and the sample slope coefficients for each
 predictor variable, which will be multiplied by provided values to
 generate the natural logarithm of the estimated price.usd. To get an
@@ -1189,20 +1179,8 @@ no
 </table>
 
 The manually calculated estimation for this house’s price.usd is:
-$$
- \begin{split}
- \begin{aligned}
-     log \\ \hat{y} = 14.356678  &+ 0.000056 \cdot 8960 \\ 
-     &+ 0.026280 \cdot 4 \\
-     &+ 0.172082 \cdot 4 \\ 
-     &+ 0.104458 \cdot 4 \\ 
-     &+ 0.126682 \cdot 0 \\ 
-     &+ 0.168142 \cdot 1 \\ 
-     &+ 0.060303 \cdot 3 \\ 
-     &+ 0.139599 \cdot 0\\
-  \end{aligned}
-  \end{split}
-$$
+
+![regression model](Housing_Price_Prediction_files/figure-markdown_strict/manual_calc.png)
 
 The result of this calculation is *l**o**g* *ŷ* = 11.99592. When we take
 the inverse of the log for that value, the estimated house price in USD
@@ -2801,19 +2779,7 @@ X’s
 
 Our reduced model produces the following formula:
 
-$$
- \begin{split}
- \begin{aligned}
-     log \\ \hat{y} = 9.988108   &+ 0.000055 \cdot x\_{sqft} \\ 
-     &+ 0.194760 \cdot x\_{bathrooms} \\ 
-     &+ 0.106906 \cdot x\_{stories} \\ 
-     &+ 0.119582 \cdot x\_{basementyes} \\ 
-     &+ 0.170174 \cdot x\_{airconditioningyes} \\ 
-     &+ 0.055324 \cdot x\_{parking} \\ 
-     &+ 0.158174 \cdot x\_{prefareayes} \\
-  \end{aligned}
-  \end{split}
-$$
+![regression model](Housing_Price_Prediction_files/figure-markdown_strict/reduced_model.png)
 
 ### Prediction Intervals
 

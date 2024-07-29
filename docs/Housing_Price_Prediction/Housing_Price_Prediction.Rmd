@@ -100,13 +100,13 @@ As we begin our work, we'll want to review some basic information on the regress
 
 The first step in that process is to review the scatterplots for each predictor alongside the target (price.usd). As an example, we'll generate two plots for two predictors: sqft  found in and bedrooms. The first set of plots, shown in \@ref(fig:lm.scatter), uses the best-fitting least squares line while the other set of plots, shown in \@ref(fig:exp.scatter), uses the best-fitting exponential curve.   
 
-```{r, results='hide', echo=FALSE, fig.show="hold", out.width="50%", fig.cap="Sqft Feet and Bedrooms Scatterplots, Least Squares"}
+```{r lm plots, results='hide', echo=FALSE, fig.show="hold", out.width="50%", fig.cap="Sqft Feet and Bedrooms Scatterplots, Least Squares"}
 #generate least squares scatterplots on single predictor variables
 Plot(sqft, price.usd, fit="lm")
 Plot(bedrooms, price.usd, fit="lm")
 ```
 
-```{r, results='hide', echo=FALSE, fig.show="hold", out.width="50%", fig.cap="Sqft and Bedrooms Scatterplots, Exponential Curve"}
+```{r exp plots, results='hide', echo=FALSE, fig.show="hold", out.width="50%", fig.cap="Sqft and Bedrooms Scatterplots, Exponential Curve"}
 #generate exponential curve scatterplots on single predictor variables
 Plot(sqft, price.usd, fit="exp")
 Plot(bedrooms, price.usd, fit="exp")

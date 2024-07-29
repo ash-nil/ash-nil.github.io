@@ -4,6 +4,7 @@ theme:
   color_mode: auto
   nav_style: dark
   user_color_mode_toggle: true
+  navigation_depth: 3
   locale: en
 
 # site info
@@ -20,10 +21,10 @@ nav:
   - "Fraudulent Account Detection": Fraudulent_Acct_Detection/Fraudulent_Acct_Detection.md
   - "AB Game Testing": Game_AB_Testing/Game_AB_Testing.md
 - R: 
-  - "EV Charging Optimization": EV_Charging_Optimization.Rmd
-  - "Housing Price Prediction": Housing_Price_Prediction.Rmd
+  - "EV Charging Optimization": EV_Charging_Optimization/EV_Charging_Optimization.md
+  - "Housing Price Prediction": Housing_Price_Prediction/Housing_Price_Prediction.md
 - SQL: 
-  - "Temporal Database Updates PR": Database_Updates_PR.txt
+  - "Temporal Database Updates PR": Database_Updates_PR.md
   - "Temporal Database Review": Database_Updates.sql
 - HBR Reports:
   - "Asante Teaching Hospital Billing (PDF)": docs/HBR_Reports/Asante.pdf

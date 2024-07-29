@@ -1,6 +1,6 @@
-# Introduction
+# EV Charging Optimization at Portland State University
 
-### Problem Overview:
+## Problem Overview:
 
 Portland State University is an urban commuter university. With over
 20,000 students enrolled, 61% from the Portland area, and over 5,000
@@ -115,7 +115,7 @@ Services, and the available data:
     focus on an optimized plan to meet existing demand in the
     underutilized parking structure 3.
 
-# Methodology
+### Methodology
 
 At a high level, the project methodology included a literature review,
 interview, data analysis, and finally model implementation using demand
@@ -124,7 +124,7 @@ reviewed during the literature review process for key project
 considerations. Data and PSU specific insights were extracted from the
 interview process and used to inform model direction.
 
-# Data Analysis
+## Data Analysis
 
 ### Data Background:
 
@@ -423,7 +423,7 @@ other days of the week, we observed that Saturday has the highest number
 of occurrences.
 
   
-\# Installation Optimization Model
+## Installation Optimization Model
 
 To ensure we meet business needs as identified by our interview with
 PSU’s Transportation and Parking department, our initial optimization
@@ -450,7 +450,7 @@ services, and so generated estimates based on our understanding of
 construction expenses and from conversations with individuals who have
 had other work completed by PSU in the past.
 
-## Model Formulation:
+### Model Formulation:
 
 Our model’s objective is to minimize costs, which are the sum of
 installation and purchase costs. Our first constraint is that we must
@@ -496,28 +496,8 @@ time limit. Outside of the constraints that set limitations on variables
     limitation based on an estimated percent of available space in the
     parking garage for a given week during the term.
 
-$$
- \begin{split}
- \begin{aligned}
-    \text{min  } &\sum\_{t=1}^n C^{Ti}\_t+C^{Tp}\_t &\text{\[Objective: minimum cost\]}\\
-    \text{s.t.  } &\sum\_{t=1}^n x\_t = D &\text{\[Must make demand\]} \\
-                  &W^P\_t, \\ W^I\_t \in \\0,1\\\\ \forall \\t&\text{\[Binary decisions\]} \\
-                  &x\_t\\y\_t\\z\_t \in \\0,1,2\cdots\\\\ \forall \\t&\text{\[Establish integer variables\]} \\
-                  &C^{Ti}\_t\\C^{Tp}\_t \ge 0 \\ \forall \\t&\text{\[Lower bounds for continuous variables\]} \\
-                  &y\_t - 5W^P\_t \ge 0  &\text{\[Discount for buying 5\]} \\
-                  &C^{Tp}\_t = y\_t \cdot C^P - W^P\_t \cdot C^P &\text{\[Charger purchase cost per week\]} \\                  
-                  &x\_1 \le B^S  &\text{\[Starting charger inventory\]} \\
-                  &z\_t \le L^S \\\forall\\t &\text{\[Limit charger inventory capacity\]} \\
-                  &z\_1 = B^S + y\_1 - x\_1  &\text{\[Charger inventory ending week 1\]} \\
-                  &z\_t = z\_{t-1} + y\_t - x\_t \\\forall\\t&gt;1 &\text{\[Charger inventory ending week 2+\]} \\
-                  &x\_t \le z\_{t-1} \\\forall\\t&gt;1  &\text{\[Avail. chargers for installation each week\]} \\
-                  &x\_t \cdot W^A \le L^A\_t   \\\forall\\t &\text{\[Construction limited to avail. spaces in lot\]} \\
-                  &x\_t \le L^I \\\forall\\t &\text{\[Weekly install limit\]} \\
-                  &x\_t - L^I \cdot W^I\_t \le 0 \\\forall\\t &\text{\[Force base install charge\]} \\
-                  &C^{Ti}\_t = x\_t \cdot C^I + W^I\_t \cdot B^I \\\forall\\t &\text{\[Labor cost per week\]} 
-  \end{aligned}
-  \end{split}
-$$
+![Model Formulation](EV_Charging_Optimization_files/model_formulation.png)
+
 **Variables Reference:**
 
 -   Charger Tracking:
@@ -542,7 +522,7 @@ $$
     -   W<sup>P</sup><sub>t</sub> = Discount binary for week t
     -   W<sup>A</sup> = Weight of spaces to be used
 
-## Model Implementation:
+### Model Implementation:
 
 For our implementation, we are setting external variables based on
 calculated (from the Blink), provided (from the PSU interview), or
@@ -594,7 +574,7 @@ All other inputs are estimates.
 
     model_res <- solve_model(model, with_ROI(solver = "glpk"))
 
-## Model Solution:
+### Model Solution:
 
 The solution for this model has four installation weeks, with each week
 using the full limit of possible installations (3). This minimizes the
@@ -933,7 +913,7 @@ Stored Chargers
     </tbody>
     </table>
 
-## Alternative Location:
+## Alternative Solution:
 
 We wanted to posit an alternative solution to moving all charging demand
 to Parking Structure 3, though. That parking structure has severe
@@ -1318,7 +1298,7 @@ Stored Chargers
     </tbody>
     </table>
 
-# Discussion
+## Discussion
 
 At first blush, the alternative location appears to be a worse choice
 due to the added limitations on construction space. After all, based on
@@ -1363,7 +1343,7 @@ those lots would allow the university to continue to focus on general
 parking in the main lots and potentially re-purpose some of the smaller
 lots to support the growing base of EV drivers.
 
-# References
+## References
 
 -   “2023 Biennial Zero-Emission Vehicle Report.” 2023, September.
     <https://www.oregon.gov/energy/Dataand-Reports/Documents/2023-Biennial-Zero-Emission-Vehicle-Report.pdf>.

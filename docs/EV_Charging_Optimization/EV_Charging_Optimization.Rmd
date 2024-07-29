@@ -3,7 +3,7 @@ title: "EV Charging Station Optimization Project"
 author: "Bryan Hernandez,  Morgan Mahon, Ashley Nilson, and Sujitha Raj Rajagopal"
 date: "`r Sys.Date()`"
 output: md_document
-keep-md: true
+always_allow_html: true
 wrap: sentence
 editor_options: 
   markdown: 
@@ -501,7 +501,9 @@ $$
                   &C^{Ti}_t = x_t \cdot C^I + W^I_t \cdot B^I \;\forall\;t &\text{[Labor cost per week]} 
   \end{aligned}
   \end{split}
-$$ **Variables Reference:**
+$$ 
+
+**Variables Reference:**
 
 -   Charger Tracking:
     -   D = Total chargers to install

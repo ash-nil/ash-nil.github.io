@@ -1,16 +1,9 @@
-```python
-import pandas as pd
-import numpy as np
-from scipy.stats import ttest_ind
-import seaborn as sns
-import matplotlib.pyplot as plt
-import plotly.express as px
-```
+# AB Game Testing
+
+This project is an analysis on the impact of player retention when a key component to an online game is altered. The available data  When a player installed the game, they were randomly assigned to either gate_30 or gate_40, identifying at which level the first game gate is presented.
 
 ## Context
-This dataset includes A/B test results of Cookie Cats to examine what happens when the first gate in the game was moved from level 30 to level 40. When a player installed the game, he or she was randomly assigned to either gate_30 or gate_40.
 
-## Content
 The data we have is from 90,189 players that installed the game while the AB-test was running. The variables are:
 
 * userid: A unique number that identifies each player.
@@ -19,7 +12,16 @@ The data we have is from 90,189 players that installed the game while the AB-tes
 * retention_1: Did the player come back and play 1 day after installing?
 * retention_7: Did the player come back and play 7 days after installing?
 
-When a player installed the game, he or she was randomly assigned to either.
+## Data Exploration
+
+```python
+import pandas as pd
+import numpy as np
+from scipy.stats import ttest_ind
+import seaborn as sns
+import matplotlib.pyplot as plt
+import plotly.express as px
+```
 
 
 ```python
@@ -158,7 +160,7 @@ above_500, below_500
     (856, 89329)
 
 
-
+## Data Wrangling
 
 ```python
 d.drop(d[d['sum_gamerounds'] > 500].index, inplace=True)
@@ -202,7 +204,7 @@ Gate40_Day1 = d[d['version'] == 'gate_40']['retention_1'].tolist()
 Gate30_Day7 = d[d['version'] == 'gate_30']['retention_7'].tolist()
 Gate40_Day7 = d[d['version'] == 'gate_40']['retention_7'].tolist()
 ```
-
+## Hypoithesis Testing
 
 ```python
 # Performing the t-test
@@ -241,7 +243,7 @@ print(f"p = {p:.3f}")
     t = 3.246
     p = 0.001
 
-
+## Visualizing the Results
 
 ```python
 Gate30 = d[d['version'] == 'gate_30']
