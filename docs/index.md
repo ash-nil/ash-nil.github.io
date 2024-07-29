@@ -14,7 +14,7 @@ This repository is a small sample of some work I've done both in my free time as
 
 - **Tools:** R, RMarkdown, lessR, ggplot, Kable, ROI, OMPR, dplyr
 - **Methods:** Data exploration, outlier identification & removal, data visualization, model formulation & optimization
-- **Summary:** Using sanitized data provided by Portland State University's Transportation & Parking department, my team and I created an optimization model for installing new EV chargers on campus to meet current and future demands, including an alternative solution that may have greater benefit. My role involved formulating and implementing both optimization models.  
+- **Summary:** Using sanitized data provided by Portland State University's Transportation & Parking department, my team and I created an optimization model for installing new EV chargers on campus to meet current and future demands, including an alternative solution that may have greater benefit. My role involved formulating and implementing both optimization models as well as variable development.  
 
 ## Individual Projects
 
