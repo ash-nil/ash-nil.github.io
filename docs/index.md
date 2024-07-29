@@ -1,17 +1,49 @@
-# Welcome to MkDocs
+# Sample Work
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This repository is a small sample of some work I've done both in my free time as as part of my MS in Data Science. 
+ 
+## Collaborative Projects
 
-## Commands
+**[Traffic Analysis]()**
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- **Tools:** Python, Jupyter Notebook, Pandas, NumPy, Matplotlib, Seaborn, SKLearn
+- **Methods:** Data exploration, merging multiple data sources, data visualization, subsetting, feature engineering, automated multivariate feature selection, correlation matrixes, test/training splits, grid search, confusion matrixes, hyperparameter tuning, decision tree analysis, logistic regression, k-nearest neighbors, stacked ensemble, model scoring. 
+- **Summary:** Using publicly available traffic data from the city of Portland, OR, my partners and I developed an analysis of key predictors for speeding behavior in the Portland Metro area. My role focused on the data exploration, data source merging, and final model generation. 
 
-## Project layout
+**[EV Charging Optimization]()**
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- **Tools:** R, RMarkdown, lessR, ggplot, Kable, ROI, OMPR, dplyr
+- **Methods:** Data exploration, outlier identification & removal, data visualization, model formulation & optimization
+- **Summary:** Using sanitized data provided by Portland State University's Transportation & Parking department, my team and I created an optimization model for installing new EV chargers on campus to meet current and future demands, including an alternative solution that may have greater benefit. My role involved formulating and implementing both optimization models.  
+
+## Individual Projects
+
+**[Fraudulent Account Detection]()**
+
+- **Tools:** Python, Jupyter Notebook, Pandas, NumPy, Matplotlib, Seaborn, SKLearn
+- **Methods:** Data exploration, merging multiple data sources, feature engineering, VIF, multivariate feature selection, correlation matrixes, test/training split, hyperparameter tuning, data scaling, k-nearest-neighbors, model scoring.   
+- **Summary:** Using data provided from StrataScratch, I developed a model to predict fraudulently created banking accounts.
+
+**[AB Testing Game Changes]()**
+
+- **Tools:** Python, Jupyter Notebook, Pandas, NumPy, Matplotlib, Seaborn, SciPy, Plotly
+- **Methods:** Data exploration, outlier management, statistical testing/t-test, data visualization
+- **Summary:** Using publicly available data I analyzed the impact on player retention of changing a key componant to an online game. 
+
+**[Temporal Database Updates]()**
+
+- **Tools:** MySQL
+- **Methods:** Stored procedures, temporal database updates
+- **Summary:** A small example of managing updates to a customer database to maintain records while aging out inactive accounts. 
+
+**[Housing Price Prediction]()**
+
+- **Tools:** R, RMarkdown, lessR, dplyr, tidyr, stringr, glmnet, Kable
+- **Methods:** Data exploration, data visualization, correlation matrixes, logistic regression, hypothesis testing, confidence intervals, model fit, colllinearity evaluation, prediction intervals. 
+- **Summary:** Using data from Kaggle, I conducted a modely statistical analysis of housing features & prices to generate a model that predicts a house's price based on the selected features. 
+
+## HBR Accounting Reports
+
+- **Tools:** Word, Excel
+- **Methods:** Activity based costing, single cost drivers, billing models, pooled cost drivers, salary calculations
+- **Summary:** You'll have to download these if you want to review them. However, here are a few examples of some accounting reports generated from Harvard Business Review documents. I'm mostly including this for more of an example of my writing style than anything else.  
