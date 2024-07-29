@@ -1,3 +1,15 @@
+# Database Updates - Stored Procedure
+
+This is a stored procedure used to make updates to a database of customers. The procedure will complete the following tasks:
+
+- Verify new information is relevant
+- Delete rows for customers who no longer have accounts
+- Update existing customer rows that have been modified
+- Add in new customer rows
+
+## Setup
+
+```sql
 CREATE DEFINER=`nilson`@`localhost` PROCEDURE `Customer.PrCustomerChurn`()
 BEGIN
 
@@ -15,7 +27,7 @@ SELECT COUNT(*)
 INTO VarTargetRowCount
 FROM Customer.CustomerChurn;
 
--- **set threshold ar 20% of target row count**
+-- **set threshold at 20% of target row count**
 SELECT CAST((VarTargetRowCount * .2) AS UNSIGNED INTEGER)
 INTO VarThresholdNbr; 
 
@@ -24,7 +36,11 @@ IF VarSourceRowCount < VarThresholdNbr THEN
 SELECT -129
 INTO VarTinyIntVal;
 END IF;
+```
 
+## Remove deleted rows
+
+```sql
 -- **disable safe updates**
 SET SQL_SAFE_UPDATES = 0; 
 
@@ -44,7 +60,11 @@ WHERE EXISTS
 		) AS SrcTbl
 	WHERE TrgtTbl.CustomerId = SrcTbl.CustomerId
 	);
+```
 
+## Update customers rows as needed
+
+```sql
 -- **update rows in target that changed in source**
 UPDATE Customer.CustomerChurn AS TrgtTbl
 INNER JOIN Customer.CustomerChurn_Stage AS SrcTbl
@@ -67,7 +87,10 @@ WHERE (
 	   OR COALESCE(TrgtTbl.Balance,'*') <> COALESCE(SrcTbl.Balance,'*')
 	   OR COALESCE(TrgtTbl.Exited,'*') <> COALESCE(SrcTbl.Exited,'*')
 	   );
+```
+## Add new rows
 
+```sql
 -- **insert new rows from source that aren't in target**
 INSERT INTO  Customer.CustomerChurn
 	(
@@ -115,3 +138,4 @@ ON  SrcTbl.CustomerId = ChgdNew.CustomerId;
 SET SQL_SAFE_UPDATES = 1; 
 
 END
+```

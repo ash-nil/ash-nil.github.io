@@ -24,12 +24,12 @@ nav:
   - "EV Charging Optimization": EV_Charging_Optimization/EV_Charging_Optimization.md
   - "Housing Price Prediction": Housing_Price_Prediction/Housing_Price_Prediction.md
 - SQL: 
-  - "Temporal Database Updates PR": Database_Updates_PR.md
-  - "Temporal Database Review": Database_Updates.sql
+  - "Database Updates PR": Database_Updates/Database_Updates_PR.md
+  - "Database Review": Database_Updates/Database_Updates.md
 - HBR Reports:
-  - "Asante Teaching Hospital Billing (PDF)": docs/HBR_Reports/Asante.pdf
-  - "Danushi Plant Manufacturing (PDF)": docs/HBR_Reports/Danshui.pdf
-  - "London Water Pricing (PDF)": docs/HBR_Reports/LondonWater.pdf
-  - "Police Billing Structure (PDF)": docs/HBR_Reports/PolicePricing.pdf
-  - "Tidal Cloud Accounting (PDF)": docs/HBR_Reports/TidalCloud.pdf
-  - "Toliza Museum of Art Admission (PDF)": docs/HBR_Reports/Toliza.pdf
+  - "Asante Teaching Hospital Billing": HBR_Reports/Asante.md
+  - "Danshui Plant Manufacturing": HBR_Reports/Danshui.md
+  - "London Water Pricing": HBR_Reports/LondonWater.md
+  - "Police Billing Structure": HBR_Reports/PolicePricing.md
+  - "Tidal Cloud Accounting": HBR_Reports/TidalCloud.md
+  - "Toliza Museum of Art Admission": HBR_Reports/Toliza.md

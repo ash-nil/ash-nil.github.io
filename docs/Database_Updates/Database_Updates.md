@@ -1,3 +1,7 @@
+# Database Updates - General
+
+## Establish database & tables
+```sql
 -- setup database
 CREATE DATABASE Customer;
 SHOW DATABASES;
@@ -38,7 +42,10 @@ SELECT COUNT(*) FROM Customer.CustomerChurn_Stage;
 -- get last rows from stage
 SELECT * FROM Customer.CustomerChurn_Stage
 ORDER BY CustomerID DESC LIMIT 3;
+```
 
+## Run stored procedure & compare
+```sql
 -- call procedure
 CALL `Customer`.`Customer.PrCustomerChurn`();
 
@@ -67,7 +74,10 @@ SELECT * FROM Customer.CustomerChurn_Stage;
 SELECT COUNT(*) FROM Customer.CustomerChurn_Stage;
 SELECT * FROM Customer.CustomerChurn_Stage
 ORDER BY CustomerID DESC LIMIT 3;
+```
 
+## Rerun stored procedure
+```sql
 -- rerun PR
 CALL `Customer`.`Customer.PrCustomerChurn`();
 
@@ -107,3 +117,4 @@ LEFT JOIN Customer.CustomerChurn_Version1
 ON CustomerChurn.CustomerId = CustomerChurn_Version1.CustomerId
 WHERE CustomerChurn_Version1.CustomerId IS NULL
 ORDER BY CustomerChurn.CustomerId;
+```
