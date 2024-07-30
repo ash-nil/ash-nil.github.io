@@ -1,4 +1,4 @@
-# Database Updates - General
+# Database Updates - Validation
 
 ## Establish database & tables
 ```sql

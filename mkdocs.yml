@@ -24,8 +24,8 @@ nav:
   - "EV Charging Optimization": EV_Charging_Optimization/EV_Charging_Optimization.md
   - "Housing Price Prediction": Housing_Price_Prediction/Housing_Price_Prediction.md
 - SQL: 
-  - "Database Updates PR": Database_Updates/Database_Updates_PR.md
-  - "Database Review": Database_Updates/Database_Updates.md
+  - "Database Updates-PR": Database_Updates/Database_Updates_PR.md
+  - "Database Updates-Validation": Database_Updates/Database_Updates.md
 - HBR Reports:
   - "Asante Teaching Hospital Billing": HBR_Reports/Asante.md
   - "Danshui Plant Manufacturing": HBR_Reports/Danshui.md

@@ -1,6 +1,4 @@
----
-title: London Water
----
+# London Water
 
 ## Problem at Hand
 
@@ -102,71 +100,40 @@ lost expenses for processing stormwater runoff for businesses that use
 larger areas of land. This is the next London Water needs to take in
 building a sustainable billing system.
 
-### Exhibit 1 -- London Water's Current Water Rate Structure
+## Exhibits
 
-### ![](./extracted_images/media/image1.png){width="6.5in" height="3.6951388888888888in"}
+### Exhibit 1: London Water's Current Water Rate Structure
 
-### 
+![](./extracted_images/media/image1.png)
 
-### Exhibit 2 -- London Water's New Water Rate Structure
+### Exhibit 2: London Water's New Water Rate Structure
 
-![](./extracted_images/media/image2.png){width="6.5in"
-height="3.839583333333333in"}
+![](./extracted_images/media/image2.png)
 
-### 
+### Exhibit 3: Prospective of Metered Residential Water Usage Rates
 
-### 
+| | **2011**       |           **2012**      |         **2013**    | 
+| -------------------|  ------------- | ------------- | ------------- |
+| Total Residential Water Usage for the Year  |   18,527,265 m<sup>3</sup>   |                 18,488,769 m<sup>3</sup>       |            23,584,012 m<sup>3</sup>   |  
+| Total Number of Residential Customers    |     99,641      |                  100,801         |             102,421    |  
+| Average Monthly Usage per Residential Customer    |   15.50 m<sup>3</sup>    |               15.28 m<sup>3</sup>     |              19.19 m<sup>3</sup>  |                                                                                 
+| Average Water Rate: New  |  *$ 2.06* |   *$ 2.06*    |     *$ 2.06*      |  
+| Average Water Rate: Old  |  *$ 1.61*  |   *$ 1.61*  |      *$ 1.78*      |  
+| Revenue: New Rate |  $ 38,166,166 |     $ 38,086,864     |     $ 48,583,065| 
+| Revenue: Old Rate  |   $ 29,828,897   |      $ 29,766,918       |   $ 41,979,541| 
+| **Revenue Increase**        |       **$ 8,337,269**          |             **$ 8,319,946**        |               **$ 6,603,523**     |                              
 
-### Exhibit 3 -- Prospective of Metered Residential Water Usage Rates
+### Exhibit 4: Stormwater Processing Fees
 
-  -----------------------------------------------------------------------------------------------------
-                        **2011**                    **2012**                   **2013**    
-  ------------------- ------------- ------------- ------------- ------------ ------------- ------------
-  Total Residential    18,527,265                  18,488,769                 23,584,012   
-  Water Usage for the     m^3^                        m^3^                       m^3^      
-  Year                                                                                     
+|**Customer Type**                 |             **Rate**     |  **Unit**|
+|------------------------------------------- |--------------- |------------|
+|Residential < 0.4 hectares                  |  $ 13.78   |    monthly|
+|Institutional < 0.4 hectares               |   $ 13.66   |    monthly|
+|Commercial/Industrial < 0.4 hectares        |  $ 14.78    |   monthly|
+|Commercial/Institutional/Residential > 0.4 hectares   | $ 75.12   |  per hectare|
+|Industrial > 0.4 hectares              |       $ 112.68  |  per hectare|
+*0.4 hectares ~ 1 acre*
 
-  Total Number of        99,641                      100,801                    102,421    
-  Residential                                                                              
-  Customers                                                                                
+### Exhibit 5: Institutional vs Residential Land Area Use
 
-  Average Monthly      15.50 m^3^                  15.28 m^3^                 19.19 m^3^   
-  Usage per                                                                                
-  Residential                                                                              
-  Customer                                                                                 
-
-  Average Water Rate:   *\$ 2.06*   \$ 38,166,166   *\$ 2.06*        \$        *\$ 2.06*        \$
-  New                                                            38,086,864                 48,583,065
-
-  Average Water Rate:   *\$ 1.61*   \$ 29,828,897   *\$ 1.61*        \$        *\$ 1.78*        \$
-  Old                                                            29,766,918                 41,979,541
-
-  **Revenue               **\$                        **\$                       **\$      
-  Increase**           8,337,269**                 8,319,946**                6,603,523**  
-  -----------------------------------------------------------------------------------------------------
-
-### 
-
-### Exhibit 4 -- Stormwater Processing Fees
-
-  ------------------------------------------------------------------------
-  **Customer Type**                              **Rate**       **Unit**
-  ------------------------------------------- --------------- ------------
-  Residential \< 0.4 hectares                    \$ 13.78       monthly
-
-  Institutional \< 0.4 hectares                  \$ 13.66       monthly
-
-  Commercial/Industrial \< 0.4 hectares          \$ 14.78       monthly
-
-  Commercial/Institutional/Residential \> 0.4    \$ 75.12     per hectare
-  hectares                                                    
-
-  Industrial \> 0.4 hectares                     \$ 112.68    per hectare
-  ------------------------------------------------------------------------
-
-\* 0.4 hectares \~ 1 acre
-
-### Exhibit 5 -- Institutional vs Residential Land Area Use
-
-![](./extracted_images/media/image3.png){width="4.916083770778653in"
-height="3.1923031496062992in"}
+![](./extracted_images/media/image3.png)

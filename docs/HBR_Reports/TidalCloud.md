@@ -1,4 +1,6 @@
-**Implementing ABC at Tidal Cloud Inc**
+# Implementing ABC at Tidal Cloud Inc
+
+## Background
 
 Tidal Cloud Inc (Tidal) is a hosting provider that offers both managed
 hosting using physical servers as well as cloud-based hosting with two
@@ -36,6 +38,8 @@ private model they are always individual to the company. As such,
 allocating based on virtual machine does not account for actual
 expenses.
 
+## Recommendation
+
 By using Activity Based Costing, Tidal would be able to identify true
 operating costs for each service and get a more accurate picture of
 their profit margins for each service. Appendix II shows what the
@@ -51,134 +55,61 @@ operating at a loss of 11.36%. Using this information, Tidal can make
 more informed business decisions since what was previously shown as
 their primary profit driver, Marea Cloud, is actually their loss leader.
 
-**Appendix I**
+## Appendices
 
-  ---------------------------------------------------------------------------
-     **Product                                                 
-   Profitability                                               
-  for Month Ended                                              
-  June 30, 2016**                                              
-  ---------------- ------------- --------------- ------------- --------------
-                    **Company**     **Managed      **Public       **Marea
-                                    Hosting**       Cloud**       Cloud**
+### Appendix I: Simple Cost System
 
-      *Sales*       *\$950,000*    *\$191,900*    *\$469,300*   *\$ 288,800*
+*Product Profitability for Month Ended June 30, 2016*
 
-     Equipment      \$(237,500)    \$(47,500)     \$(114,000)   \$ (76,000)
-      Leasing                                                  
+|  | **Company**   | **Managed Hosting** | **Public Cloud** | **Marea Cloud** |
+|---|---|---|---|---|
+| *Sales*    |   *$950,000*  |  *$191,900*  | *$469,300*  | *$288,800* |
+| Equipment Leasing   |   $(237,500)  |  $(47,500)   |  $(114,000)  | $(76,000)   |                                          
+| Allocated Indirect Costs    |  $(693,500)  |  $(138,700)  |  $(381,425) |  $(173,375)  |                                         
+| Operating profit before SG&A |  $19,000   |     $5,700   |   $(26,125)   |   $39,425 |
+| **Profit Margin**    |   **2.0%**    |   **3.0%**    |   **(5.6%)**  |   **13.7%** |                                             
 
-     Allocated      \$(693,500)    \$(138,700)    \$(381,425)   \$ (173,375)
-   Indirect Costs                                              
+### Appendix II: Activity Rates & Cost Drivers
 
-  Operating profit   \$19,000        \$5,700      \$(26,125)      \$39,425
-    before SG&A                                                
+**Activity Rates**
 
-      **Profit       **2.0%**       **3.0%**       **-5.6%**     **13.7%**
-      Margin**                                                 
-  ---------------------------------------------------------------------------
+|  | **Activity Rate**  |   **Unit** |
+|---|---|---|
+|Provide Computing Resources    |    $6.33        |        VM       |                              
+|Process Payments    |     $0.02         |       Dollar Earned |
+|Onboard New Customers  |  $72.44     |          Hour |
+|Support Existing Customers     |    $103.61        |      Help Ticket  |                                    
+|Build & Improve Products | $54.15         |      Code Commit |
+Advertise & Promote    |  $855.00       |       Percent of Spending |
 
-**\
-**
+**Budgeted Quantity of Activity Driver**                            
 
-**Appendix II**
+| **Core Activities**     |     **Budgeted** |  **Activity Driver (per month)** |  **Company**  | **Managed Hosting** |  **Public Cloud**   |  **Marea Cloud** |
+|---|---|---|---|---|---|---|
+|  Provide Computing Resources     |    $228,000  |   Number of VMs at month end    |  36,000    |    7,200  |    19,800    |   9,000|
+|  Process Payments     |     $19,000   |   $ Sales   |  $950,000  |  $191,900  | $469,300 |  $288,800|
+|  Onboard New Customers    |   $86,925  |  Hours spent onboarding new VMs   |   1,200      |   60      |    420      |   720|
+|  Support Existing Customers      |    $165,775  |  Help tickets addressed  |   1,600       |  480       |  640       |  480|
+|  Build & Improve Products     |     $108,300   |  Number of code commits  |    2,000    |     100    |     800     |   1,100|
+|  Advertise & Promote   |   $85,500    |  Targeted ratio of spending   |    100      |    10       |   65      |    25|
 
-  -----------------------------------------------------------------------
-  ** **                    **Activity Rate**     **Unit**
-  ------------------------ --------------------- ------------------------
-  Provide Computing        \$6.33                VM
-  Resources                                      
+### Appendix III: Activity Based Costing
 
-  Process Payments         \$0.02                Dollar Earned
-
-  Onboard New Customers    \$72.44               Hour
-
-  Support Existing         \$103.61              Help Ticket
-  Customers                                      
-
-  Build & Improve Products \$54.15               Code Commit
-
-  Advertise & Promote      \$855.00              Percent of Spending
-  -----------------------------------------------------------------------
-
-  --------------------------------------------------------------------------------------------
-                                              **Budgeted                           
-                                              Quantity of                          
-                                               Activity                            
-                                               Driver**                            
-  -------------- -------------- ------------ ------------- ----------- ----------- -----------
-  **Core          **Budgeted**   **Activity   **Company**   **Managed   **Public     **Marea
-  Activities**                  Driver (per                 Hosting**    Cloud**     Cloud**
-                                  month)**                                         
-
-  Provide          \$228,000     Number of      36,000        7,200      19,800       9,000
-  Computing                     VMs at month                                       
-  Resources                         end                                            
-
-  Process           \$19,000      \$ Sales     \$950,000    \$191,900   \$469,300   \$288,800
-  Payments                                                                         
-
-  Onboard New       \$86,925    Hours spent      1,200         60          420         720
-  Customers                      onboarding                                        
-                                  new VMs                                          
-
-  Support          \$165,775    Help tickets     1,600         480         640         480
-  Existing                       addressed                                         
-  Customers                                                                        
-
-  Build &          \$108,300     Number of       2,000         100         800        1,100
-  Improve                       code commits                                       
-  Products                                                                         
-
-  Advertise &       \$85,500      Targeted        100          10          65          25
-  Promote                         ratio of                                         
-                                  spending                                         
-  --------------------------------------------------------------------------------------------
-
-**\
-**
-
-**Appendix III**
-
-  --------------------------------------------------------------------------------
-  **Cost         **Managed       **Public Cloud** **Marea Cloud**  **Company**
-  Drivers**      Hosting**                                         
-  -------------- --------------- ---------------- ---------------- ---------------
-  Equipment      \$(47,500)      \$(114,000)      \$(76,000)       \$(237,500)
-  Leasing                                                          
-  (Direct)                                                         
-
-  Provide        \$ (45,600.00)  \$(125,400.00)   \$(57,000.00)    \$(228,000)
-  Computing                                                        
-  Resources                                                        
-
-  Process        \$(3,838.00)    \$(9,386.00)     \$(5,776.00)     \$(19,000)
-  Payments                                                         
-
-  Onboard New    \$(4,346.25)    \$(30,423.75)    \$(52,155.00)    \$(86,925)
-  Customers                                                        
-
-  Support        \$(49,732.50)   \$(66,310.00)    \$(49,732.50)    \$(165,775)
-  Existing                                                         
-  Customers                                                        
-
-  Build &        \$(5,415.00)    \$(43,320.00)    \$(59,565.00)    \$(108,300)
-  Improve                                                          
-  Products                                                         
-
-  Advertise &    \$(8,550.00)    \$(55,575.00)    \$(21,375.00)    \$(85,500)
-  Promote                                                          
-
-  *Total*        \$(164,982)     \$(444,415)      \$(321,604)      \$(931,000)
+| **Cost Drivers**      |   **Managed Hosting**    |  **Public Cloud**| **Marea Cloud** | **Company**|                                   
+|-------------- |---------------| ---------------- |---------------- |---------------|
+|Equipment Leasing (Direct)    |  $(47,500)   |   $(114,000)   |   $(76,000)   |    $(237,500)|
+|Provide Computing Resources    |   $ (45,600.00)|  $(125,400.00)  | $(57,000.00) |   $(228,000)|
+|Process Payments     |  $(3,838.00)  |  $(9,386.00)    | $(5,776.00)    | $(19,000)|
+| Onboard New Customers |  $(4,346.25) |   $(30,423.75)  |  $(52,155.00)   | $(86,925)|                                                       
+|Support Existing Customers    |   $(49,732.50)  | $(66,310.00)  |  $(49,732.50)  |  $(165,775)|
+|Build & Improve Products     |  $(5,415.00)  |  $(43,320.00) |   $(59,565.00)  |  $(108,300)|                                                        
+|Advertise & Promote |  $(8,550.00)   | $(55,575.00)  |  $(21,375.00)  |  $(85,500)|                                                      
+|*Total*      |  $(164,982)   |  $(444,415)    |  $(321,604)   |   $(931,000)|
 
                                                                    
 
-  ** **          **Managed       **Public Cloud** **Marea Cloud**  **Company**
-                 Hosting**                                         
-
-  Sales          \$191,900       \$469,300        \$288,800        **\$950,000**
-
-  **Operating    **\$26,918**    **\$24,885**     **\$(32,804)**   **\$19,000**
-  profit**                                                         
-
-  Profit margin  14.03%          5.30%            -11.36%          **2.00%**
-  --------------------------------------------------------------------------------
+| |          **Managed Hosting**    |   **Public Cloud**| **Marea Cloud** | **Company**     |                          
+|---|---|---|---|---|
+|Sales     |     $191,900     |  $469,300      |  $288,800    |    **$950,000**|
+|**Operating Profit**  |  **$26,918**   | **$24,885**    | **$(32,804)**  | **$19,000**      |                                               
+|Profit margin | 14.03%     |     5.30%    |        (11.36%)    |      **2.00%**|

@@ -1,7 +1,4 @@
----
-subtitle: Activity Based Costing
-title: Asante Teaching Hospital
----
+# Asante Teaching Hospital
 
 ## Challenges
 
@@ -19,7 +16,7 @@ maintained, the hospital uses a meticulous billing process that is
 challenging for the hospital to compile, problematic for insurance
 companies who prefer bundled pricing, and stressful for patients.
 
-## Problems with patient billing
+### Problems with patient billing
 
 People like to have a feeling of control and know what to expect. This
 is particularly true when being discharged from a hospital after a
@@ -99,191 +96,103 @@ order to assure the maternity ward remains self-sufficient.
 
 ## Exhibits
 
-### Exhibit 1 -- Selected hospital information
-
-  ------------------------------------------------------------------------
-   **Selected Hospital Information**                           
-  ----------------------------------- --------- -------------- -----------
-              *Statistic*             *Level 1* *Level 2*      *Level 3*
-
-    Average days in maternity ward    3         3              4
-
-     Total natural birth patients     4,160     240            390
-
-     Total maternity ward patients    11,975                   
-
-       total maternity ward sqft      30,294                   
-
-          total hospital sqft         455,000                  
-  ------------------------------------------------------------------------
-
-### Exhibit 2.1 -- Pooled annual maternity ward overhead
-
-  -----------------------------------------------------------------------
-  **Pooled Annual Maternity Ward       
-  Overhead**                           
-  ------------------------------------ ----------------------------------
-  *Overhead Item*                      *Total*
-
-  Building-based Costs                 
-
-  Equipment Depreciation               R 363,672
-
-  Insurance                            R 233,991
-
-  Utilities                            R 7,454,026
-
-  Rent                                 R 16,195,458
-
-  Groundskeeping                       R 898,940
-
-  Security                             R 302,076
-
-  Information Tech                     R 6,119,349
-
-  *Subtotal - Building*                *R 31,567,512*
-
-  Patient-based Costs                  
-
-  Marketing                            R 105,412
-
-  General/Admin                        R 314,622
-
-  Housekeeping                         R 206,241
-
-  Laundry                              R 395,295
-
-  Dining Hall                          R 856,684
-
-  *Subtotal - Patient*                 *R 1,878,254*
-
-  **Total**                            **R 33,445,766**
-  -----------------------------------------------------------------------
-
-### Exhibit 2.2 -- Cost drivers (overhead)
-
-  -----------------------------------------------------------------------
-  **Cost Drivers - Overhead**                       
-  ----------------------------- ------------------- ---------------------
-  *Cost Driver*                 *Activity Rate*     *Unit*
-
-  Building-Based Costs          R 1,042.04          sqft used
-
-  Patient-based Costs           R 52.28             patient per day
-  -----------------------------------------------------------------------
-
-### Exhibit 3.1 -- Employee availability (in minutes) 
-
-  ------------------------------------------------------------------------
-    **Employee Availability (in                       
-             minutes)**                               
-  -------------------------------- ------------------ --------------------
-              Resident             Resident           All others
-
-         Daily worked time         960.00             504.00
-
-       Annual payout of time       249,600.00         131,040.00
-
-      Annual personal leave\*      9,446.40           4,959.36
-
-        Annual sick leave\*        7,084.80           3,719.52
-
-       Annual holiday time\*       14,169.60          7,439.04
-
-      Total annual training\*      7,675.20           7,675.20
-
-      **Total available time**     **211,224.00**     **107,246.88**
-
-      \*with 23% addition for                         
-           benefits/taxes                             
-  ------------------------------------------------------------------------
-
-### Exhibit 3.2 -- Employee annual salaries
-
-  ------------------------------------------------------------------------
-  **Annual Salaries for                         
-  Maternity Ward Staff by                       
-  Position**                                    
-  ------------------------ -------------------- --------------------------
-  *Position*               *Salary*             *Note*
-
-  OBGYN                    R 35,403,451         Total for team of 3
-
-  Paediatrician            R 23,477,139         Total for team of 4
-
-  Midwife/Nurse            R 114,557            
-
-  Resident                 R 231,841            
-
-  Registration Clerk       R 9,092              
-
-  Practical Nurse          R 7,122              
-  ------------------------------------------------------------------------
-
-### Exhibit 3.3 -- Cost drivers (employee salaries)
-
-  ------------------------------------------------------------------------
-  **Cost Drivers - Employee                        
-  Salaries**                                       
-  -------------------------- --------------------- -----------------------
-  *Cost Driver*              *Activity Rate*       *Unit*
-
-  OBGYN                      R 110.04              minute worked
-
-  Paediatrician              R 54.73               minute worked
-
-  Midwife/Nurse              R 1.07                minute worked
-
-  Resident                   R 1.10                minute worked
-
-  Registration Clerk         R 0.08                minute worked
-
-  Practical Nurse            R 0.07                minute worked
-  ------------------------------------------------------------------------
-
-### Exhibit 4.1 -- Maternity staff time per delivery (in minutes)
-
-  ------------------------------------------------------------------------
-  **Breakdown of                                           
-  Maternity Staff Time                                     
-  Per Delivery                                             
-  (Minutes)**                                              
-  --------------------- --------------- ------------------ ---------------
-  *Position*            *Level 1*       *Level 2*          *Level 3*
-
-  OBGYN                 30              37                 80
-
-  Paediatrician         43              55                 71
-
-  Midwife/Nurse         1,422           1,422              1,600
-
-  Resident              225             240                412
-
-  Registration Clerk    43              43                 60
-
-  Practical Nurse       99              99                 110
-  ------------------------------------------------------------------------
-
-### Exhibit 4.2 -- Maternity staff costs per delivery
-
-  ------------------------------------------------------------------------
-  **Maternity Staff Costs                                   
-  Per Delivery**                                            
-  ------------------------- -------------- ---------------- --------------
-  *Position*                *Level 1*      *Level 2*        *Level 3*
-
-  OBGYN                     R 3,301.12     R 4,071.38       R 8,802.98
-
-  Paediatrician             R 2,353.25     R 3,009.98       R 3,885.61
-
-  Midwife/Nurse             R 1,518.93     R 1,518.93       R 1,709.06
-
-  Resident                  R 246.96       R 263.43         R 452.21
-
-  Registration Clerk        R 3.65         R 3.65           R 5.09
-
-  Practical Nurse           R 6.57         R 6.57           R 7.30
-
-  **Total per delivery      **R 7,430.48** **R 8,873.93**   **R
-  type**                                                    14,862.25**
-  ------------------------------------------------------------------------
+### Exhibit 1: Selected hospital information
+
+| *Statistic*    |          *Level 1* | *Level 2*    |   *Level 3*| 
+| ---| ---| ---| ---| 
+| Average days in maternity ward  |   3     |     3      |         4| 
+| Total natural birth patients  |    4,160  |    240   |          390| 
+
+| Unit| Amount| 
+| ---| ---| 
+| Total maternity ward patients   |  11,975  |                  
+| Total maternity ward sqft    |   30,294  |                  
+| Total hospital sqft       |   455,000   |                
+
+### Exhibit 2.1: Pooled annual maternity ward overhead
+
+| *Overhead Item*            |           *Total*| 
+| ---| ---| 
+| Building-based Costs     | |             
+| Equipment Depreciation |               R 363,672| 
+| Insurance          |                   R 233,991| 
+| Utilities        |                     R 7,454,026| 
+| Rent                               |   R 16,195,458| 
+| Groundskeeping                   |     R 898,940| 
+| Security                       |       R 302,076| 
+| Information Tech             |         R 6,119,349| 
+| *Subtotal - Building*      |           *R 31,567,512*| 
+| Patient-based Costs      |      |        
+| Marketing              |               R 105,412| 
+| General/Admin        |                 R 314,622| 
+| Housekeeping                     |     R 206,241| 
+| Laundry                        |       R 395,295| 
+| Dining Hall                  |         R 856,684| 
+| *Subtotal - Patient*       |           *R 1,878,254*| 
+| | | 
+| **Total**              |               **R 33,445,766**| 
+
+### Exhibit 2.2: Cost drivers (overhead)
+
+|  *Cost Driver*        |          *Activity Rate*   |   *Unit*| 
+| ---| ---| ---| 
+| Building-Based Costs       |    R 1,042.04       |    sqft used| 
+| Patient-based Costs       |     R 52.28         |     patient per day| 
+
+### Exhibit 3.1: Employee availability (in minutes) 
+
+|          |    Resident      |      All others| 
+| ---| ---| ---| 
+| Daily worked time     |     960.00      |        504.00| 
+| Annual payout of time   |     249,600.00     |     131,040.00| 
+| Annual personal leave*   |    9,446.40     |       4,959.36| 
+| Annual sick leave*    |     7,084.80      |      3,719.52| 
+| Annual holiday time*    |    14,169.60     |      7,439.04| 
+| Total annual training*   |    7,675.20      |      7,675.20| 
+| **Total available time**   |   **211,224.00**    |  **107,246.88**| 
+*with 23% addition for benefits/taxes*                           
+
+### Exhibit 3.2: Employee annual salaries
+
+| *Position*         |       *Salary*     |         *Note*| 
+| ---| ---| ---| 
+| OBGYN                 |    R 35,403,451      |    Total for team of 3| 
+| Paediatrician         |    R 23,477,139     |     Total for team of 4| 
+| Midwife/Nurse         |    R 114,557     | |        
+| Resident            |      R 231,841    | |         
+| Registration Clerk    |    R 9,092    | |           
+| Practical Nurse       |    R 7,122    | |           
+
+### Exhibit 3.3: Cost drivers (employee salaries)
+
+| *Cost Driver*         |      *Activity Rate*  |      *Unit*| 
+| ---| ---| ---| 
+| OBGYN            |           R 110.04        |       minute worked| 
+| Paediatrician    |           R 54.73        |        minute worked| 
+| Midwife/Nurse     |          R 1.07        |         minute worked| 
+| Resident          |          R 1.10        |         minute worked| 
+| Registration Clerk   |       R 0.08         |        minute worked| 
+| Practical Nurse       |      R 0.07         |        minute worked| 
+
+### Exhibit 4.1: Maternity staff time per delivery (in minutes)
+
+| *Position*       |      *Level 1*  |      *Level 2*       |    *Level 3*| 
+| ---| ---| ---| ---| 
+| OBGYN         |         30        |       37      |            80| 
+| Paediatrician  |        43        |       55      |            71| 
+| Midwife/Nurse   |       1,422     |       1,422     |          1,600| 
+| Resident      |         225     |         240       |          412| 
+| Registration Clerk |    43     |          43        |          60| 
+| Practical Nurse   |     99     |          99        |          110| 
+
+### Exhibit 4.2: Maternity staff costs per delivery
+
+| *Position*       |          *Level 1*    |   *Level 2*   |      *Level 3*| 
+| ---| ---| ---| ---| 
+| OBGYN            |          R 3,301.12  |    R 4,071.38   |     R 8,802.98| 
+| Paediatrician     |         R 2,353.25 |     R 3,009.98    |    R 3,885.61| 
+| Midwife/Nurse    |          R 1,518.93  |    R 1,518.93   |     R 1,709.06| 
+| Resident         |          R 246.96  |      R 263.43    |      R 452.21| 
+| Registration Clerk   |      R 3.65    |      R 3.65      |      R 5.09| 
+| Practical Nurse     |       R 6.57    |      R 6.57      |      R 7.30| 
+| **Total per delivery type**    |   **R 7,430.48**|  **R 8,873.93** |   **R 14,862.25**| 
