@@ -26,7 +26,7 @@ nav:
 - SQL: 
   - "Database Updates-PR": Database_Updates/Database_Updates_PR.md
   - "Database Updates-Validation": Database_Updates/Database_Updates.md
-- HBR Reports:
+- Accounting Reports:
   - "Asante Teaching Hospital Billing": HBR_Reports/Asante.md
   - "Danshui Plant Manufacturing": HBR_Reports/Danshui.md
   - "London Water Pricing": HBR_Reports/LondonWater.md

@@ -42,7 +42,7 @@ This repository is a small sample of some work I've done both in my free time as
 - **Methods:** Data exploration, data visualization, correlation matrixes, logistic regression, hypothesis testing, confidence intervals, model fit, colllinearity evaluation, prediction intervals. 
 - **Summary:** Using data from Kaggle, I conducted a modely statistical analysis of housing features & prices to generate a model that predicts a house's price based on the selected features. 
 
-## HBR Accounting Reports
+## HBR Accounting Report Analyses
 
 - **Tools:** Word, Excel
 - **Methods:** Activity based costing, single cost drivers, billing models, pooled cost drivers, salary calculations
