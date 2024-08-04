@@ -16,16 +16,16 @@ site_description: >-
 
 # navigation
 nav:
-- Python: 
-  - "Traffic Analysis": Traffic_Analysis/Traffic_Analysis.md
-  - "Fraudulent Account Detection": Fraudulent_Acct_Detection/Fraudulent_Acct_Detection.md
-  - "AB Game Testing": Game_AB_Testing/Game_AB_Testing.md
-- R: 
-  - "EV Charging Optimization": EV_Charging_Optimization/EV_Charging_Optimization.md
-  - "Housing Price Prediction": Housing_Price_Prediction/Housing_Price_Prediction.md
-- SQL: 
-  - "Database Updates-PR": Database_Updates/Database_Updates_PR.md
-  - "Database Updates-Validation": Database_Updates/Database_Updates.md
+- Current Project: 
+  - "Marketing Campaign Results (Python)": Marketing_Campaign_Results/analysis_pt1.md
+- Past Projects: 
+  - "Traffic Analysis (Python)": Traffic_Analysis/Traffic_Analysis.md
+  - "Fraudulent Account Detection (Python)": Fraudulent_Acct_Detection/Fraudulent_Acct_Detection.md
+  - "AB Game Testing (Python)": Game_AB_Testing/Game_AB_Testing.md
+  - "EV Charging Optimization (R)": EV_Charging_Optimization/EV_Charging_Optimization.md
+  - "Housing Price Prediction (R)": Housing_Price_Prediction/Housing_Price_Prediction.md
+  - "Database Updates-PR (SQL)": Database_Updates/Database_Updates_PR.md
+  - "Database Updates-Validation (SQL)": Database_Updates/Database_Updates.md
 - Accounting Reports:
   - "Asante Teaching Hospital Billing": HBR_Reports/Asante.md
   - "Danshui Plant Manufacturing": HBR_Reports/Danshui.md

@@ -18,6 +18,12 @@ This repository is a small sample of some work I've done both in my free time as
 
 ## Individual Projects
 
+**[Marketing Campaign Results](Marketing_Campaign_Results/analysis_pt1.md)**
+
+- **Tools:** Python, Jupyter Notebook, Pandas, NumPy, Plotly
+- **Methods:** Data exploration, merging multiple data sources, feature engineering, data visualization.   
+- **Summary:** Using data provided from StrataScratch, I completed an initial analysis on a marketing campaigns efficacy including the impact of the campaign on different customer segments.
+
 **[Fraudulent Account Detection](Fraudulent_Acct_Detection/Fraudulent_Acct_Detection.md)**
 
 - **Tools:** Python, Jupyter Notebook, Pandas, NumPy, Matplotlib, Seaborn, SKLearn
