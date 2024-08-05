@@ -268,7 +268,7 @@
 </ul>
 <h3 id="data-overview">Data Overview</h3>
 <p>There are three datasets provided for the analysis; each is already cleaned and prepared:  </p>
-<p><strong>client_data.csv: Fictional clients</strong></p>
+<p><br><strong>client_data.csv: Fictional clients</strong></p>
 <table>
 <thead>
 <tr>
@@ -295,7 +295,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>deposit_data.csv: Client deposit behavior</strong></p>
+<p><br><strong>deposit_data.csv: Client deposit behavior</strong></p>
 <table>
 <thead>
 <tr>
@@ -326,7 +326,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>calendar_data.csv: Calendar reference table</strong></p>
+<p><br><strong>calendar_data.csv: Calendar reference table</strong></p>
 <table>
 <thead>
 <tr>
@@ -605,7 +605,7 @@ df.head()
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
@@ -808,10 +808,7 @@ fig1.update_layout(
 fig1.show()
 
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig1.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig1.png" /></p>
 <pre><code class="language-python"># overview of client age
 df['client_age'].describe()
 </code></pre>
@@ -844,12 +841,8 @@ fig2.update_layout(
     plot_bgcolor='#F5F5F5'
 )
 fig2.show()
-
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig2.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig2.png" />     </p>
 <pre><code class="language-python"># histogram for client age groups &lt; 1000
 fig3 = px.histogram(df.sort_values(by=['age_group']), x='age_group',
 color='age_group',
@@ -882,10 +875,7 @@ fig3.update_layout(
 )
 fig3.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig3.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig3.png" />     </p>
 <pre><code class="language-python"># bar graph of deposit cadences
 fig4 = px.histogram(df.sort_values(by=['deposit_cadence']), x='deposit_cadence',
     color='deposit_cadence',
@@ -913,10 +903,7 @@ fig4.update_layout(
 )
 fig4.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig4.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig4.png" />     </p>
 <pre><code class="language-python"># bar graph of geo regions
 fig5 = px.histogram(df.sort_values(by=['client_geographical_region']), x='client_geographical_region',
     color='client_geographical_region',
@@ -945,10 +932,7 @@ fig5.update_layout(
 )
 fig5.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig5.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig5.png" />     </p>
 <pre><code class="language-python"># bar graph of residence types
 fig6 = px.histogram(df.sort_values(by=['client_residence_status']), x='client_residence_status',
     color='client_residence_status',
@@ -975,10 +959,7 @@ fig6.update_layout(
 )
 fig6.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig6.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig6.png" />     </p>
 <h2 id="initial-analysis">Initial Analysis</h2>
 <p>The analyses are primarily temporal line graphs broken out by month. As such, in each line there is a single data point for each month and there is a shaded purple zone that indicates the time period of the campaign (the third month).   </p>
 <h3 id="aggregated-number-of-deposits-per-month">Aggregated Number of Deposits per Month</h3>
@@ -996,14 +977,14 @@ df_deposit_counts
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
   <thead>
-    <tr style="text-align: right;">
-      <th></th>
+    <tr style="text-align: left;">
+      <th> </th>
       <th>month</th>
       <th>size</th>
     </tr>
@@ -1063,10 +1044,7 @@ fig7.update_layout(
 fig7.add_vrect(x0=2.5, x1=3.5, line_width=0, fillcolor=&quot;purple&quot;, opacity=0.2)
 fig7.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig7.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig7.png" />           </p>
 <pre><code class="language-python"># percent change in count, months 2-3, all deposits
 var_mo2_counts = df_deposit_counts.loc[df_deposit_counts['month'] == 2, 'size'].values[0]
 var_mo3_counts = df_deposit_counts.loc[df_deposit_counts['month'] == 3, 'size'].values[0]
@@ -1090,7 +1068,7 @@ df_deposit_amt
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
@@ -1157,10 +1135,7 @@ fig8.update_layout(
 fig8.add_vrect(x0=2.5, x1=3.5, line_width=0, fillcolor=&quot;purple&quot;, opacity=0.2)
 fig8.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig8.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig8.png" />            </p>
 <pre><code class="language-python"># percent change in amount, months 2-3, all deposits
 var_mo2_amt = df_deposit_amt.loc[df_deposit_amt['month'] == 2, 'deposit_amount'].values[0]
 var_mo3_amt = df_deposit_amt.loc[df_deposit_amt['month'] == 3, 'deposit_amount'].values[0]
@@ -1184,7 +1159,7 @@ df_sub1k_deposit_amt
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
@@ -1251,10 +1226,7 @@ fig9.update_layout(
 fig9.add_vrect(x0=2.5, x1=3.5, line_width=0, fillcolor=&quot;purple&quot;, opacity=0.2)
 fig9.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig9.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig9.png" />             </p>
 <pre><code class="language-python"># percent change in amount, months 2-3, all deposits
 var_mo2_sub1k_amt = df_sub1k_deposit_amt.loc[df_sub1k_deposit_amt['month'] == 2, 
     'deposit_amount'].values[0]
@@ -1338,10 +1310,7 @@ fig10.update_layout(
 fig10.add_vrect(x0=2.5, x1=3.5, line_width=0, fillcolor=&quot;purple&quot;, opacity=0.2)
 fig10.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig10.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig10.png" />              </p>
 <pre><code class="language-python"># pivot df
 df_region_count_pct = df_region_count.pivot(index='client_geographical_region', 
     columns='month', values='size').add_prefix('month_').reset_index().rename_axis(None, axis=1)
@@ -1366,7 +1335,7 @@ df_region_count_pct
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
@@ -1436,10 +1405,7 @@ fig11.update_layout(
 fig11.add_vrect(x0=2.5, x1=3.5, line_width=0, fillcolor=&quot;purple&quot;, opacity=0.2)
 fig11.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig11.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig11.png" />               </p>
 <pre><code class="language-python"># pivot df
 df_region_sum_pct = df_region_sum.pivot(index='client_geographical_region', 
     columns='month', values='deposit_amount').add_prefix('month_').reset_index().rename_axis(None, axis=1)
@@ -1464,7 +1430,7 @@ df_region_sum_pct
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
@@ -1592,10 +1558,7 @@ fig12.update_layout(
 fig12.add_vrect(x0=2.5, x1=3.5, line_width=0, fillcolor=&quot;purple&quot;, opacity=0.2)
 fig12.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig12.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig12.png" />             </p>
 <pre><code class="language-python"># pivot df
 df_residence_count_pct = df_residence_count.pivot(index='client_residence_status', 
     columns='month', values='size').add_prefix('month_').reset_index().rename_axis(None, axis=1)
@@ -1620,7 +1583,7 @@ df_residence_count_pct
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
@@ -1678,10 +1641,7 @@ fig13.update_layout(
 fig13.add_vrect(x0=2.5, x1=3.5, line_width=0, fillcolor=&quot;purple&quot;, opacity=0.2)
 fig13.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig13.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig13.png" />              </p>
 <pre><code class="language-python"># pivot df
 df_residence_sum_pct = df_residence_sum.pivot(index='client_residence_status', 
     columns='month', values='deposit_amount').add_prefix('month_').reset_index().rename_axis(None, axis=1)
@@ -1706,7 +1666,7 @@ df_residence_sum_pct
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
@@ -1810,10 +1770,7 @@ fig14.update_layout(
 fig14.add_vrect(x0=2.5, x1=3.5, line_width=0, fillcolor=&quot;purple&quot;, opacity=0.2)
 fig14.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig14.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig14.png" />               </p>
 <pre><code class="language-python"># pivot df
 df_age_count_pct = df_age_count.pivot(index='age_group', 
     columns='month', values='size').add_prefix('month_').reset_index().rename_axis(None, axis=1)
@@ -1838,7 +1795,7 @@ df_age_count_pct
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
@@ -1932,10 +1889,7 @@ fig15.update_layout(
 fig15.add_vrect(x0=2.5, x1=3.5, line_width=0, fillcolor=&quot;purple&quot;, opacity=0.2)
 fig15.show()
 </code></pre>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig15.png' alt='Line graph of monthly deposit counts (all)' width=65%/>
-</div>
-
+<p><img alt="" src="../images/fig15.png" />               </p>
 <pre><code class="language-python"># pivot df
 df_age_sum_pct = df_age_sum.pivot(index='age_group', 
     columns='month', values='deposit_amount').add_prefix('month_').reset_index().rename_axis(None, axis=1)
@@ -1960,7 +1914,7 @@ df_age_sum_pct
         vertical-align: top;
     }
 
-    .dataframe thead th {
+    .dataframe th, .dataframe td {
         text-align: right;
     }
 </style>
@@ -2027,19 +1981,11 @@ df_age_sum_pct
 <h3 id="campaign-success-on-full-client-set">Campaign Success on Full Client Set</h3>
 <p>In the full client set, there was a distinct increase in both the number of deposits and summed total of deposits between months two (pre-campaign) and three (campaign period). </p>
 <p>The following graph, <em>Deposits from June 2019 to October 2019</em>, demonstrates a 74.4% increase in the total number of deposits between months two and three, with month three being our campaign month (highlighted in purple).  </p>
-<div style='display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig7.png' alt='Line graph of monthly deposit counts (all)' width=45%/>
-</div>
-
+<p><img alt="" src="../images/fig7.png" />              </p>
 <p>The increase in the number of deposits wasn't just clients making more deposits of smaller amount, though. The total dollar amount deposited increased by a similar percent between months two and three, as well.</p>
 <p>The two following graphs, <em>Summed Deposits from June 2019 to October 2019</em> and <em>Summed Deposits from June 2019 to October 2019 (Limited to Deposits Under $1k)</em>, show 74.14% and 76.77% increases in the dollar amount of deposits between months two and three, respectively. </p>
-<div style='width: 50%; display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig8.png' alt='Line graph of monthly deposit totals (all)' width=90%/>
-</div>
-<div style='width: 50%; display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig9.png' alt='Line graph of monthly deposit counts (under $1,000)' width=90%/>
-</div>
-
+<p><img alt="" src="../images/fig8.png" /></p>
+<p><img alt="" src="../images/fig9.png" />             </p>
 <p>The fact that each of the three measures had an increase of approximately 75% during the month of the campaign versus the preceeding months is a strong indicator that the campaign was a relative success. Of course, we will want to take into consideration the fact that these values again dropped after the campaign, though not to pre-campaign numbers. This will be discussed in the recommended next steps.</p>
 <h3 id="campaign-success-on-client-subsets">Campaign Success on Client Subsets</h3>
 <p>This section reviews the campaign efficacy on the following client subsets:</p>
@@ -2057,42 +2003,95 @@ df_age_sum_pct
 <li>Client Residence Status: 8.08% (Low: 29.12%; High: 37.20% ) </li>
 <li>Client Age Group: 61.23% (Low: 17.12%; High: 78.35%) </li>
 </ul>
-<div style='width: 33%; display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig10.png' alt='Line graph of monthly deposit counts, geographical region subsets'/>
-
-|Region| % Change in Count | 
-|---|---|
-| Northeast | 37.56% | 
-| West | 36.26% | 
-|Midwest | 33.87% | 
-| South | 31.23% | 
-
-</div>
-<div style='width: 33%; display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig12.png' alt='Line graph of monthly deposit counts, residence status subsets'/>
-
-|Residence Status| % Change in Count | 
-|---|---|
-| Own | 37.20% | 
-| Rent | 29.12% | 
-
-</div>
-<div style='width: 33%; display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig14.png' alt='Line graph of monthly deposit counts, age group subsets'/>
-
-|Age Group| % Change in Count | 
-|---|---|
-| 20s | 78.35% | 
-| 30s | 43.19% | 
-|40s | 36.40% | 
-| 50s | 32.47% | 
-| 60s | 27.68% | 
-| 70s | 28.65% | 
-| 80s |21.28% | 
-| 90s + | 17.12% | 
-
-</div>
-
+<p><img alt="" src="../images/fig10.png" />               </p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>% Change in Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Northeast</td>
+<td>37.56%</td>
+</tr>
+<tr>
+<td>West</td>
+<td>36.26%</td>
+</tr>
+<tr>
+<td>Midwest</td>
+<td>33.87%</td>
+</tr>
+<tr>
+<td>South</td>
+<td>31.23%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../images/fig12.png" />                </p>
+<table>
+<thead>
+<tr>
+<th>Residence Status</th>
+<th>% Change in Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Own</td>
+<td>37.20%</td>
+</tr>
+<tr>
+<td>Rent</td>
+<td>29.12%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../images/fig14.png" />            </p>
+<table>
+<thead>
+<tr>
+<th>Age Group</th>
+<th>% Change in Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20s</td>
+<td>78.35%</td>
+</tr>
+<tr>
+<td>30s</td>
+<td>43.19%</td>
+</tr>
+<tr>
+<td>40s</td>
+<td>36.40%</td>
+</tr>
+<tr>
+<td>50s</td>
+<td>32.47%</td>
+</tr>
+<tr>
+<td>60s</td>
+<td>27.68%</td>
+</tr>
+<tr>
+<td>70s</td>
+<td>28.65%</td>
+</tr>
+<tr>
+<td>80s</td>
+<td>21.28%</td>
+</tr>
+<tr>
+<td>90s +</td>
+<td>17.12%</td>
+</tr>
+</tbody>
+</table>
 <p>From this, we can posit that individual regions and residence statuses did not play a huge role in the campaign success. However, client age had a direct impact on the overall success. Specifically, there's a strong trend that younger clients were more likely to act on the campaign than older clients.  </p>
 <h4 id="success-measured-by-dollar-amount-of-deposits">Success Measured by Dollar Amount of Deposits</h4>
 <p>For increases in the dollar amount deposited between months two and three, though, there was not an increase in every sub-group. Rather, while clients in their 90's and above did increase the number of deposits, there was actually a decrease in the total dollar amount deposited. The rest of the subsets did show an increase, though, with the following ranges represented:</p>
@@ -2102,42 +2101,95 @@ df_age_sum_pct
 <li>Client Age Group<sup>*</sup>: 56.75% (Low: 19.30%; High: 76.05%) </li>
 </ul>
 <p><sup>*</sup>Removing clients in their 90's and above, who showed a decrease in dollar amounts deposited</p>
-<div style='width: 33%; display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig11.png' alt='Line graph of monthly deposit sums, geographical region subsets'/>
-
-|Region| % Change in Amount |
-|---|---|
-| Northeast | 35.73% |
-| West | 35.15% |
-|Midwest | 30.31% |
-| South | 29.09% |
-
-</div>
-<div style='width: 33%; display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig13.png' alt='Line graph of monthly deposit sums, residence status subsets'/>
-
-|Residence Status| % Change in Amount |
-|---|---|
-| Own | 34.66% |
-| Rent | 27.59% |
-
-</div>
-<div style='width: 33%; display: inline-block; vertical-align: top; text-align: center;'>
-<img src='images/fig15.png' alt='Line graph of monthly deposit counts, age group subsets'/>
-
-|Age Group| % Change in Amount |
-|---|---|
-| 20s | 76.05% |
-| 30s | 42.81% |
-|40s | 37.88% |
-| 50s | 31.84% |
-| 60s | 26.19% |
-| 70s | 24.29% |
-| 80s | 19.30% |
-| 90s + | -12.31% |
-
-</div>
-
+<p><img alt="" src="../images/fig11.png" />       </p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>% Change in Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Northeast</td>
+<td>35.73%</td>
+</tr>
+<tr>
+<td>West</td>
+<td>35.15%</td>
+</tr>
+<tr>
+<td>Midwest</td>
+<td>30.31%</td>
+</tr>
+<tr>
+<td>South</td>
+<td>29.09%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../images/fig13.png" />     </p>
+<table>
+<thead>
+<tr>
+<th>Residence Status</th>
+<th>% Change in Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Own</td>
+<td>34.66%</td>
+</tr>
+<tr>
+<td>Rent</td>
+<td>27.59%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../images/fig15.png" />      </p>
+<table>
+<thead>
+<tr>
+<th>Age Group</th>
+<th>% Change in Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20s</td>
+<td>76.05%</td>
+</tr>
+<tr>
+<td>30s</td>
+<td>42.81%</td>
+</tr>
+<tr>
+<td>40s</td>
+<td>37.88%</td>
+</tr>
+<tr>
+<td>50s</td>
+<td>31.84%</td>
+</tr>
+<tr>
+<td>60s</td>
+<td>26.19%</td>
+</tr>
+<tr>
+<td>70s</td>
+<td>24.29%</td>
+</tr>
+<tr>
+<td>80s</td>
+<td>19.30%</td>
+</tr>
+<tr>
+<td>90s +</td>
+<td>-12.31%</td>
+</tr>
+</tbody>
+</table>
 <p>The trends shown in the number of deposits continued in the total dollar amount deposited per sub-group: geographical region and residence status had minimal imact on the campaign efficacy, while client ages had a clear impact on campaign success; younger age groups had better response to the campaign than older age groups.  </p>
 <h3 id="recommended-next-steps">Recommended Next Steps</h3>
 <p>While the campaign was generally successfull, there are three things mentioned in this analysis which require further review:</p>
