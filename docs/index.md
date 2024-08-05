@@ -14,7 +14,11 @@ I'm completing the analysis in two parts. The first part is just a general analy
 - **Methods:** Data exploration, merging multiple data sources, feature engineering, data visualization.   
 - **Summary:** Using data provided from StrataScratch, I completed an initial analysis on a marketing campaigns efficacy including the impact of the campaign on different customer segments.
 
-## Collaborative Projects
+## Past Projects
+
+These are some of my favorite projects that I've completed. In some cases I'm still working on formatting and styling, and will likely be updating them over time. But for right now my priority is wrapping up my current project. 
+
+### Collaborative Projects
 
 **[Traffic Analysis](Traffic_Analysis/Traffic_Analysis.md)**
 
@@ -28,7 +32,7 @@ I'm completing the analysis in two parts. The first part is just a general analy
 - **Methods:** Data exploration, outlier identification & removal, data visualization, model formulation & optimization
 - **Summary:** Using sanitized data provided by Portland State University's Transportation & Parking department, my team and I created an optimization model for installing new EV chargers on campus to meet current and future demands, including an alternative solution that may have greater benefit. My role involved formulating and implementing both optimization models as well as variable development.  
 
-## Individual Projects
+### Individual Projects
 
 **[Fraudulent Account Detection](Fraudulent_Acct_Detection/Fraudulent_Acct_Detection.md)**
 

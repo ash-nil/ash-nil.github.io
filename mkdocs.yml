@@ -7,6 +7,8 @@ theme:
   navigation_depth: 3
   locale: en
 plugins: []
+
+# repo details
 repo_name: GitHub Repo
 repo_url: 'https://github.com/ash-nil/ash-nil.github.io'
 edit_uri: ''
