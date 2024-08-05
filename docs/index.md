@@ -1,7 +1,19 @@
 # Sample Work
 
-This repository is a small sample of some work I've done both in my free time as as part of my MS in Data Science. 
+This repository is a small sample of some work I've done both in my free time as as part of my MS in Data Science. For additional information, you can always [connect with me on LinkedIn](https://www.linkedin.com/in/ashleynilson/).  
  
+## Current Project
+
+I'm currently working on a marketing campaign analysis. We have five months of data, with a marketing campaign being held in the third month. The goal of the analysis is to determine the efficacy of the campaign and identify next steps/areas of improvement. 
+
+I'm completing the analysis in two parts. The first part is just a general analysis: identifying a goal, reviewing the data, and getting a general overview of the results for the full client set as well as 
+
+**[Marketing Campaign Results - Part 1](Marketing_Campaign_Results/analysis_pt1.md)**
+
+- **Tools:** Python, Jupyter Notebook, Pandas, NumPy, Plotly
+- **Methods:** Data exploration, merging multiple data sources, feature engineering, data visualization.   
+- **Summary:** Using data provided from StrataScratch, I completed an initial analysis on a marketing campaigns efficacy including the impact of the campaign on different customer segments.
+
 ## Collaborative Projects
 
 **[Traffic Analysis](Traffic_Analysis/Traffic_Analysis.md)**
@@ -17,12 +29,6 @@ This repository is a small sample of some work I've done both in my free time as
 - **Summary:** Using sanitized data provided by Portland State University's Transportation & Parking department, my team and I created an optimization model for installing new EV chargers on campus to meet current and future demands, including an alternative solution that may have greater benefit. My role involved formulating and implementing both optimization models as well as variable development.  
 
 ## Individual Projects
-
-**[Marketing Campaign Results](Marketing_Campaign_Results/analysis_pt1.md)**
-
-- **Tools:** Python, Jupyter Notebook, Pandas, NumPy, Plotly
-- **Methods:** Data exploration, merging multiple data sources, feature engineering, data visualization.   
-- **Summary:** Using data provided from StrataScratch, I completed an initial analysis on a marketing campaigns efficacy including the impact of the campaign on different customer segments.
 
 **[Fraudulent Account Detection](Fraudulent_Acct_Detection/Fraudulent_Acct_Detection.md)**
 

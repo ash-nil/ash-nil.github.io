@@ -6,13 +6,17 @@ theme:
   user_color_mode_toggle: true
   navigation_depth: 3
   locale: en
+plugins: []
+repo_name: GitHub Repo
+repo_url: 'https://github.com/ash-nil/ash-nil.github.io'
+edit_uri: ''
 
 # site info
 site_name: Ashley Nilson
 site_url: https://ash-nil.github.io/
 site_author: Ashley Nilson
 site_description: >-
-  A few samples of work completed by Ashley Nilson, a data analyst with a strong background in project management and an MS in Applied Data Science for Business with a Graduate Certificate in Business Intelligence & Analytics from Portland State University. 
+  A few samples of work completed by Ashley Nilson, a data analyst with a background in project management, an MS in Applied Data Science for Business, and a Graduate Certificate in Business Intelligence & Analytics from Portland State University. 
 
 # navigation
 nav:
