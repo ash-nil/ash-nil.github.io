@@ -386,7 +386,7 @@ df = df.astype({'deposit_cadence':'category', 'month':'category',
 # update datetime column
 df['deposit_date'] = pd.to_datetime(df['deposit_date'])
 
-# download final csv for Tableau
+# download final csv for other use
 df.to_csv('data/merged_data.csv')
 
 df.info()
